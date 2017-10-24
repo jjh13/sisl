@@ -31,5 +31,7 @@
 *.out
 *.app
 
+
+external/
 build/
 .DS_Store
