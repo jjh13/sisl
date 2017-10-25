@@ -33,11 +33,11 @@ namespace sisl {
         Extend_Even_Even,       //!< Even extension about origin, even extension about midpoint
         Extend_Even_Odd,        //!< Even extension about origin, odd extension about midpoint
         Extend_Odd_Even,        //!< odd extension about origin, even extension about midpoint
-        Extend_Even_Odd,        //!< odd extension about origin, even extension about midpoint
+        Extend_Odd_Odd,        //!< odd extension about origin, even extension about midpoint
     };
 
     enum LatticeRegionShift {
-        None = 0,
+        NoShift = 0,
         Shift,
         None_Shift,
         Shift_None,
@@ -217,8 +217,7 @@ namespace sisl {
         * outside of the defined rectangular region.
         */
         virtual void set_extension_type(const LatticeExtensionType &e,
-                                        const LatticeRegionShift &end,
-                                        const bool &mirror) = 0;
+                                        const LatticeRegionShift &s) = 0;
 
 
 #ifdef SISL_CL

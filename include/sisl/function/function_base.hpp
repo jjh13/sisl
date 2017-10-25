@@ -56,7 +56,11 @@ namespace sisl {
 
         /*! \breif Evaluate the n'th partial derivative at a point
          */
-        virtual const double n_d(const int_tuple &order, double d0, ...) const = 0;
+        virtual const double n_d(const int_tuple &order, vector &p) const = 0;
+
+        /*! \breif Returns the input dimension of this function 
+        */
+        virtual const int dim() const = 0;
     };
 };
 
