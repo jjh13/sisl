@@ -18,14 +18,15 @@
 namespace sisl {
     
     // Basic primitive datatypes
-    using vector      = Eigen::Matrix<sisl_float, Eigen::Dynamic, 1>; //! dynamically sized (mathematical) vector datatype
-    using point       = Eigen::Matrix<sisl_float, Eigen::Dynamic, 1>; //! dynamically size point datatype
-    using transform   = Eigen::Matrix<sisl_float, Eigen::Dynamic, Eigen::Dynamic>; //! Dynamically sized transform (i.e. matrix)
+    using vector       = Eigen::Matrix<sisl_float, Eigen::Dynamic, 1>; //! dynamically sized (mathematical) vector datatype
+    using point        = Eigen::Matrix<sisl_float, Eigen::Dynamic, 1>; //! dynamically size point datatype
+    using transform    = Eigen::Matrix<sisl_float, Eigen::Dynamic, Eigen::Dynamic>; //! Dynamically sized transform (i.e. matrix)
 
-    using rgb_color   = Eigen::Matrix<sisl_float, 3, 1>; //! A fixed size 3-vector for holding colours
-    using rgba_color  = Eigen::Matrix<sisl_float, 4, 1>; //! A fixed size 4-vector for holding colours and an alpha channel 
+    using rgb_color    = Eigen::Matrix<sisl_float, 3, 1>; //! A fixed size 3-vector for holding colours
+    using rgba_color   = Eigen::Matrix<sisl_float, 4, 1>; //! A fixed size 4-vector for holding colours and an alpha channel 
 
     using lattice_site = Eigen::Matrix<int, Eigen::Dynamic, 1>; //! Lattice_site are integer tuples (vectors)
+    using int_tuple    = Eigen::Matrix<int, Eigen::Dynamic, 1>; //! integer tuples (vectors)
 
     /*! The various datatypes SISL can read, mainly used in the raw filetype reader */
     enum e_datatype {

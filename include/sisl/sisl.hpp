@@ -21,5 +21,6 @@
 #include <sisl/memory/sparse_array.hpp>
 
 // Base classes
-//#include <sisl/lattice/base_lattice.hpp>
+#include <sisl/lattice/base_lattice.hpp>
+#include <sisl/function/base_function.hpp>
 //#include <sisl/basis/basis_function.hpp>
