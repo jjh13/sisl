@@ -23,6 +23,19 @@ namespace sisl {
     template <class T>
     class cartesian_cubic : public base_lattice<T> {
     public:
+
+        /*! \brief Dummy zero allocator for the CC lattice.
+         */
+        cartesian_cubic() {
+            _array = array_n<T, 3>();
+            _sx = 1;
+            _sy = 1;
+            _sz = 1;
+            _nx = 0;
+            _ny = 0;
+            _nz = 0;
+        }
+
         /*! \brief Allocates a cubic cartesian lattice.
          * This lattice includes all integer points in [0, rx] x [0, ry], note
          * that this is inclusive.
@@ -37,6 +50,8 @@ namespace sisl {
             __zero = 0;
         }
 
+        /*! \brief Initializes a CC lattice from a file stream.
+         */
         cartesian_cubic(std::ifstream &stream) {
             if(!stream.good()) throw "Attempted to instantiate with invalid stream!";
 

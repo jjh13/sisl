@@ -20,6 +20,11 @@
 
 #include <iostream>
 
+
+
+// #ifdef SISL_CL
+
+
 /*! \brief Tests that we can simply create
  * arrays.
  */
@@ -43,13 +48,24 @@ TEST_CASE("Array create test", "array_n_create") {
 TEST_CASE("Array test copy constructor", "array_n_create") {
     using namespace sisl;
 
-    array_n<float, 1> array(100);
+    array_n<float, 1> array(100), array2;
     array((unsigned int)0) = 1.;
     array((unsigned int)1) = 2.;
 
+    // Test that we copied the data correctly
     array_n<float, 1> arr_copy = array;
     REQUIRE(arr_copy((unsigned int)0) == 1.);
     REQUIRE(arr_copy((unsigned int)1) == 2.);
+
+    // Test that modifying the new array doesn't stomp old values
+    arr_copy((unsigned int)0) = 0;
+    REQUIRE(array((unsigned int)0) == 1.);
+
+    // Same tests, but for the assignment operator
+    array2 = array;
+    REQUIRE(array2((unsigned int)0) == 1.); 
+    array2((unsigned int)0) = 0;
+    REQUIRE(array((unsigned int)0) == 1.);
 
 }
 

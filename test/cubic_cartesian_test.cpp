@@ -34,10 +34,33 @@ TEST_CASE("cartesian_cubic_lattice_init", "Cartesian Cubic Create Test") {
     cartesian_cubic<char> cart_cube_test(9, 9, 9);
 }
 
+/*! \brief Tests that the copy constructor works
+ */
+TEST_CASE("cartesian_cubic_copy_assign", "Cartesian Cubic Create Test") {
+    using namespace sisl;
+
+    cartesian_cubic<char> cart_cube_test(9, 9, 9), cc_copy;
+    cart_cube_test(4,2,0) = 100;
+
+    cartesian_cubic<char> cc2 = cart_cube_test;
+    
+    REQUIRE(cc2(4,2,0) == 100);
+    cc2(4,2,0) = 101;
+
+    REQUIRE(cart_cube_test(4,2,0) == 100);
+
+	cc_copy = cart_cube_test;
+    REQUIRE(cc_copy(4,2,0) == 100);
+    cc_copy(4,2,0) = 101;
+
+    REQUIRE(cart_cube_test(4,2,0) == 100);
+
+}
+
 /*! \brief Tests that we consistently read and write to these lattices, that is,
  * values don't overwrite each other, and each value is retained.
  */
-TEST_CASE("cartesian_cubic_lattice_init", "Cartesian Cubic Consistency Test") {
+TEST_CASE("cartesian_cubic_value_retention", "Cartesian Cubic Consistency Test") {
     using namespace sisl;
 
     cartesian_cubic<int> cart_cube_test(9, 9, 9);
