@@ -171,3 +171,7 @@ TEST_CASE("bcc_lattice_each_site", "Nearest BCC Site Test") {
     REQUIRE(lprime[1] == 3);
     REQUIRE(lprime[2] == 1);
 }
+
+//** TODO: Test linear indices
+
+//** TODO: Test extension modes

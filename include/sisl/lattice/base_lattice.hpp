@@ -18,7 +18,7 @@
 #include <vector>
 
 #include <sisl/primitives.hpp>
-#include <sisl/function/function_base.hpp>
+#include <sisl/function/base_function.hpp>
 
 #ifndef __SISL_BASE_LATTICE__
 #define __SISL_BASE_LATTICE__
