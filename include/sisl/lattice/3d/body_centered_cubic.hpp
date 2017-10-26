@@ -1,58 +1,68 @@
 /**
- * cartesian_cubic.hpp
+ * body_centered_cubic.hpp
  *
- * A specialized implementation of the Cartesian cubic lattice. The general implemnetation
- * exists in sisl/n_cartesian.hpp
+ * A specialized implementation of the A*_3 lattice. 
  *
- * @author Joshua Horacsek
+ * @Joshua Horacsek
  */
-#include <sisl/primitives.hpp>
-#include <sisl/lattice/base_lattice.hpp>
-#include <sisl/memory/array.hpp>
 
-#include <functional>
-#include <vector>
+#ifndef __SISL_BCC_LATTICE__
+#define __SISL_BCC_LATTICE__
 
-#ifndef __SISL_CART_CUBIC_LATTICE__
-#define __SISL_CART_CUBIC_LATTICE__
+ #include <sisl/primitives.hpp>
+ #include <sisl/lattice/base_lattice.hpp>
+ #include <sisl/memory/array.hpp>
+
+ #include <functional>
+ #include <vector>
 
 namespace sisl {
 
-    /*! \brief A specialized cubic Cartesian lattice class
+    /*! \brief Defines the body centered cubic lattice in 3d.
      */
     template <class T>
-    class cartesian_cubic : public base_lattice<T> {
+    class body_centered_cubic : public base_lattice<T> {
     public:
-
         /*! \brief Dummy zero allocator for the CC lattice.
          */
-        cartesian_cubic() : _array(array_n<T, 3>(1,1,1)), _sx(1), _sy(1), _sz(1), _nx(0),_ny(0),_nz(0) {
+        body_centered_cubic() :_array(array_n<T, 3>(1, 1, 1)){
+            _nx = _ny = _nz = 0;
+            _sx = _sy = _sz = 1;
+            _anx = _any =  _anz = 1;
         }
 
-        /*! \brief Allocates a cubic cartesian lattice.
-         * This lattice includes all integer points in [0, rx] x [0, ry], note
-         * that this is inclusive.
+        /*! \brief Allocates a BCC  lattice.
+         * This lattice includes all integer points in [0, rx] x [0, ry] x [0, rz], 
+         * with even Z parity note that this is inclusive.
          */
-        cartesian_cubic(unsigned int rx, unsigned int ry, unsigned int rz) : _array(rx+1, ry+1, rz+1), _nx(rx), _ny(ry), _nz(rz){
-            // Setup basis scaling factors
+        body_centered_cubic(const int &rx, const int &ry, const int &rz) {
+            _nx = rx;
+            _ny = ry;
+            _nz = rz;
+
             _sx = 1./double(rx);
             _sy = 1./double(ry);
             _sz = 1./double(rz);
 
-            // A little hack to help OOB access
+            //
+            _anx = ceil(double(rx+1)/2.);
+            _any = ceil(double(ry+1)/2.);
+            _anz = rz+1;
+
+            // Setup internal memory./l
+            _array = array_n<T, 3>(_anx, _any, _anz);
             __zero = 0;
         }
-
-        /*! \brief Initializes a CC lattice from a file stream.
+        /*! \brief Initializes a BCC lattice from a file stream.
          */
-        cartesian_cubic(std::ifstream &stream) {
+        body_centered_cubic(std::ifstream &stream) {
             if(!stream.good()) throw "Attempted to instantiate with invalid stream!";
 
             unsigned int sig = 0;
 
             stream.read((char *)&sig, sizeof(unsigned int));
 
-            if(sig != 'CCL_') throw "Invalid lattice loaded on CC!";
+            if(sig != 'BBCC') throw "Invalid lattice loaded on BCC!";
             stream.read((char *)&_nx, sizeof(unsigned int));
             stream.read((char *)&_ny, sizeof(unsigned int));
             stream.read((char *)&_nz, sizeof(unsigned int));
@@ -61,28 +71,46 @@ namespace sisl {
             _sy = 1./double(_ny);
             _sz = 1./double(_nz);
 
-            // Setup internal memory.
-            _array = array_n<T, 3>(_nx + 1, _ny + 1, _nz + 1);
+            //
+            _anx = ceil(double(_nx+1)/2.);
+            _any = ceil(double(_ny+1)/2.);
+            _anz = _nz+1;
+
+            // Setup internal memory./l
+            _array = array_n<T, 3>(_anx, _any, _anz);
             __zero = 0;
             _array.read_from_stream(stream);
         }
-        ~cartesian_cubic() { }
+
+        ~body_centered_cubic() {  }
 
         /*! \brief Access a lattice site.
          * Operators for accessing lattice sites. These index in the natural
          * coordinate system of the lattice.
          */
         virtual T& operator()(int d0, ...) {
-            int _x = d0, _y = 0, _z = 0; va_list vl;
+            int _x = d0, _y = 0, _z = 0;
+            int ax, ay, az;
+            va_list vl;
+
             va_start(vl, d0);
             _y = va_arg(vl, int);
             _z = va_arg(vl, int);
             va_end(vl);
             __zero = 0;
 
+            if(!is_lattice_site(_x, _y, _z)) throw "body_centered_cubic::operator() - given non lattice site!";
+            if(!in_bound(_x, _y, _z))  return __zero;
 
-            if(!in_bound(_x,_y, _z)) return __zero;
-            return _array(_x, _y, _z);
+            // Transform to 3d array index
+            {
+                int zmod = _z % 2;
+                ax = (_x - zmod) / 2;
+                ay = (_y - zmod) / 2;
+                az = _z;
+            }
+
+            return _array(ax, ay, az);
         }
 
         /*! \brief Access a lattice site.
@@ -90,17 +118,29 @@ namespace sisl {
          * coordinate system of the lattice.
          */
         virtual const T& operator()(int d0, ...) const {
-            int _x = d0, _y = 0, _z = 0; va_list vl;
-            T *__hack = (T *)&__zero; *__hack = 0; // This gets around the const modifier for this
+            int _x = d0, _y = 0, _z = 0;
+            int ax, ay, az;
+            va_list vl;
+
             va_start(vl, d0);
             _y = va_arg(vl, int);
             _z = va_arg(vl, int);
             va_end(vl);
 
-            // 
+            T *__hack = (T *)&__zero; *__hack = 0;
 
-            if(!in_bound(_x,_y, _z)) return __zero;
-            return _array(_x, _y, _z);
+            if(!is_lattice_site(_x, _y, _z)) throw "body_centered_cubic::operator() - given non lattice site!";
+            if(!in_bound(_x, _y, _z))  return __zero;
+
+            // Transform to 3d array index
+            {
+                int zmod = _z % 2;
+                ax = (_x - zmod) / 2;
+                ay = (_y - zmod) / 2;
+                az = _z;
+            }
+
+            return _array(ax, ay, az);
         }
 
         /*! \brief Access a lattice site.
@@ -108,23 +148,15 @@ namespace sisl {
          * coordinate system of the lattice.
          */
         virtual T& operator()(int *d) {
-            unsigned int x = d[0], y = d[1], z = d[2];
-            __zero = 0;
-
-            if(!in_bound(x, y, z)) return __zero;
-            return _array(x, y, z);
+            return (*this)(d[0], d[1], d[2]);
         }
 
         /*! \brief Access a lattice site.
          * Operators for accessing lattice sites. These index in the natural
          * coordinate system of the lattice.
          */
-        virtual const T& operator()(int *d)  const {
-            unsigned int x = d[0], y = d[1], z = d[2];
-            T *__hack = (T *)&__zero; *__hack = 0;
-
-            if(!in_bound(x, y, z)) return __zero;
-            return _array(x, y, z);
+        virtual const T& operator()(int *d) const {
+            return (*this)(d[0], d[1], d[2]);
         }
 
         /*! \brief Access a lattice site.
@@ -132,9 +164,7 @@ namespace sisl {
          * coordinate system of the lattice.
          */
         virtual T& operator()(const lattice_site &s) {
-            __zero = 0;
-            if(!in_bound(s[0], s[1], s[2])) return __zero;
-            return _array(s[0], s[1], s[2]);
+            return (*this)(s[0], s[1], s[2]);
         }
 
         /*! \brief Access a lattice site.
@@ -142,10 +172,7 @@ namespace sisl {
          * coordinate system of the lattice.
          */
         virtual const T& operator()(const lattice_site &s) const {
-            T *__hack = (T *)&__zero; *__hack = 0;
-
-            if(!in_bound(s[0], s[1], s[2])) return __zero;
-            return _array(s[0], s[1], s[2]);
+            return (*this)(s[0], s[1], s[2]);
         }
 
         /*! \brief Uniquely index a lattice site
@@ -154,12 +181,26 @@ namespace sisl {
          * integer.
          */
         virtual const unsigned int linear_index(int d0, ...) const {
-            unsigned int ret = 0; va_list vl;
+            int _x = d0, _y = 0, _z = 0;
+            int ax, ay, az;
+            va_list vl;
 
             va_start(vl, d0);
-            ret = _array.linear_index(d0, vl);
+            _y = va_arg(vl, int);
+            _z = va_arg(vl, int);
             va_end(vl);
-            return ret;
+
+            if(!is_lattice_site(_x, _y, _z)) throw "body_centered_cubic::linear_index() - given non lattice site!";
+
+            // Transform to 3d array index
+            {
+                int zmod = _z % 2;
+                ax = (_x - zmod) / 2;
+                ay = (_y - zmod) / 2;
+                az = _z;
+            }
+
+            return _array.linear_index(ax, ay, az);
         }
 
         /*! \brief Uniquely index a lattice site
@@ -168,8 +209,7 @@ namespace sisl {
          * integer.
          */
         virtual const unsigned int linear_index(int *d) const {
-           unsigned int x = d[0], y = d[1], z = d[2];
-           return _array.linear_index(x, y, z);
+            return this->linear_index(d[0], d[1], d[2]);
         }
 
         /*! \brief Uniquely index a lattice site
@@ -178,7 +218,7 @@ namespace sisl {
          * integer.
          */
         virtual const unsigned int linear_index(const lattice_site &s) const {
-            return _array.linear_index(s[0], s[1], s[2]);
+            return this->linear_index(s[0], s[1], s[2]);
         }
 
         /*! \brief Returns a natural scale so that the lattice sites
@@ -195,24 +235,26 @@ namespace sisl {
          * dimension.
          */
         virtual const lattice_site get_dimensions() const {
-            lattice_site dims(3);
-            dims << _nx, _ny, _nz;
-            return dims;
+            lattice_site s(3);
+            s << _nx , _ny , _nz ;
+            return s;
         }
 
         /*! \brief Returns a value within the unit hyper cube that
-         * represents the given lattice site scaled withing that
+         * represents the given lattice site scaled within that
          * unit hypercube.
          */
         virtual vector get_site_position(int d0, ...) const {
-            int _x = d0, _y = 0, _z; va_list vl;
+            int _x = d0, _y = 0, _z = 0;
             vector ret(3);
+            va_list vl;
 
             va_start(vl, d0);
             _y = va_arg(vl, int);
             _z = va_arg(vl, int);
             va_end(vl);
 
+            if(!is_lattice_site(_x, _y, _z)) throw "body_centered_cubic::get_site_position() - given non lattice site!";
             ret << double(_x)*_sx, double(_y)*_sy, double(_z)*_sz;
             return ret;
         }
@@ -222,7 +264,7 @@ namespace sisl {
          * unit hypercube.
          */
         virtual vector get_site_position(int *d) const {
-            return get_site_position(d[0], d[1], d[2]);
+            return this->get_site_position(d[0], d[1], d[2]);
         }
 
         /*! \brief Returns a value within the unit hyper cube that
@@ -230,21 +272,36 @@ namespace sisl {
          * unit hypercube.
          */
         virtual vector get_site_position(const lattice_site &s) const {
-            return get_site_position(s[0], s[1], s[2]);
+            return this->get_site_position(s[0], s[1], s[2]);
         }
 
         /*! \brief Returns the nearest lattice site for a given point
          * within the unit hyper cube.
          */
         virtual lattice_site get_nearest_site(const vector &pt) const {
-            int x = round(pt[0] * _nx);
-            int y = round(pt[1] * _ny);
-            int z = round(pt[2] * _ny);
+             vector xyz = pt * 0.5;
+             vector extent = get_dimensions().template cast<double>();
+             vector unit(3), ijk(3), uvw(3), v1, v2;
 
-            lattice_site r(3);
-            r << x, y, z;
+             xyz = xyz.array() * extent.array();
 
-            return r;
+             unit.fill(1.);
+             ijk = xyz + (0.5)*unit;
+             uvw = xyz + unit;
+
+             for(int i = 0; i < 3; i++) {
+                 ijk[i] = 2*floor(ijk[i]);
+                 uvw[i] = 2*floor(uvw[i]);
+            }
+            uvw -= unit;
+
+            v1 = ijk - 2*xyz;
+            v2 = uvw - 2*xyz;
+
+            if(v1.dot(v1) < v2.dot(v2)) {
+                return ijk.cast<int>();
+            }
+            return uvw.cast<int>();
         }
 
         /*!
@@ -252,21 +309,42 @@ namespace sisl {
          * truely corresponds to a valid lattice site on
          * this particular lattice.
          */
-        virtual bool is_lattice_site(int d0, ...) const  { return true; }
+        virtual bool is_lattice_site(int d0, ...) const {
+            int _x = d0, _y = 0, _z = 0;
+            va_list vl;
+
+            va_start(vl, d0);
+            _y = va_arg(vl, int);
+            _z = va_arg(vl, int);
+            va_end(vl);
+
+            if((_z % 2)) {
+                if((_y % 2) == 0 || (_x % 2) == 0) {
+                    return false;
+                }
+            } else if((_y % 2) == 1 || (_x % 2) == 1) {
+                return false;
+            }
+            return true;
+        }
 
         /*!
          * \brief Returns whether or not a lattice site
          * truely corresponds to a valid lattice site on
          * this particular lattice.
          */
-        virtual bool is_lattice_site(int *d) const { return true; }
+        virtual bool is_lattice_site(int *d) const {
+            return is_lattice_site(d[0], d[1], d[2]);
+        }
 
         /*!
          * \brief Returns whether or not a lattice_site object
          * truely corresponds to a valid lattice site on
          * this particular lattice.
          */
-        virtual bool is_lattice_site(const lattice_site &) const { return true; }
+        virtual bool is_lattice_site(const lattice_site &s) const {
+            return is_lattice_site(s[0], s[1], s[2]);
+        }
 
         /*!
          * \brief Returns whether a lattice site actually
@@ -292,22 +370,22 @@ namespace sisl {
          */
         virtual void each_site(const std::function<void(const lattice_site &)> &func, bool parallel = false) {
             #pragma omp parallel for if(parallel)
-            for(int i = 0; i <= _nx; i++) {
-                for(int j = 0; j <= _ny; j++) {
+            for(int i = 0; i <= _nx; i+= 2)
+                for(int j = 0; j <= _ny; j+=2)
                     for(int k = 0; k <= _nz; k++) {
-                        lattice_site site(3);
-                        site << i, j, k;
-                        func(site);
+                        lattice_site s(3);
+                        int zmod = k % 2;
+                        s << i+zmod,j+zmod,k;
+                        if(in_bound(s[0], s[1],s[2]))
+                            func(s);
                     }
-                }
-            }
         }
 
         /*!
          * \brief Returns the name of this lattice
          */
         virtual std::string get_lattice_name() const {
-            return "cartesian_cubic";
+            return "body_centered_cubic";
         }
 
         /*!
@@ -315,14 +393,16 @@ namespace sisl {
          * within this lattice.
          */
         virtual const int number_of_lattice_sites() const {
-            return (_nx + 1) * (_ny + 1) * (_nz + 1);
+            return 
+                (floor(_nx/2.)+1) * (floor(_ny/2.) + 1)  * (floor(_nz/2.) + 1)  + 
+                floor((_nx + 1)/2.) * floor((_ny + 1)/2.) * floor((_nz + 1)/2.);
         }
 
         /*!
          * \brief Dumps this lattice to a file stream.
          */
         virtual bool dump_to_stream(std::ofstream &stream) const {
-            unsigned int sig = 'CCL_';
+            unsigned int sig = 'BBCC';
 
             if(!stream.good()) return false;
 
@@ -344,58 +424,67 @@ namespace sisl {
 
         virtual void set_extension_type(const LatticeExtensionType &e,
                                         const LatticeRegionShift &s) {
-            // Check validity of the extension type
-            if(s == LatticeRegionShift::NoShift && e == LatticeExtensionType::ForceZero) {
-                m_Shift = s;
-                m_Extension = e;
-            }
-            else 
                 throw "Not implemented";
         }
 
     protected:
+        bool in_bound(const int &i, const int &j, const int &k) const {
+            return !(i < 0 || i > _nx || j < 0 || j > _ny || k < 0 || k > _nz);
+        }
+
         virtual const unsigned int linear_index(int d0, va_list vl) const {
-           return _array.linear_index(d0, vl);
-        }
+            int _x = d0, _y = 0, _z = 0;
+            int ax, ay, az;
 
+            _y = va_arg(vl, int);
+            _z = va_arg(vl, int);
+
+            return this->linear_index(_x, _y, _z);
+        }
         virtual T& operator()(int d0, va_list vl) {
-            unsigned int _x = d0, _y = 0, _z = 0;
-            _y = va_arg(vl, unsigned int);
-            _z = va_arg(vl, unsigned int);
+            int _x = d0, _y = 0, _z = 0;
+            int ax, ay, az;
 
-            __zero = 0;
+            _y = va_arg(vl, int);
+            _z = va_arg(vl, int);
 
-            if(!in_bound(_x, _y, _z)) return __zero;
-            return _array(_x, _y, _z);
+            return this->operator()(_x, _y, _z);
         }
-
         virtual const T& operator()(int d0, va_list vl) const {
-            unsigned int _x = d0, _y = 0, _z = 0;
-            _y = va_arg(vl, unsigned int);
-            _z = va_arg(vl, unsigned int);
-            T *__hack = (T *)&__zero; *__hack = 0;
+            int _x = d0, _y = 0, _z = 0;
+            int ax, ay, az;
 
-            if(!in_bound(_x, _y, _z)) return __zero;
-            return _array(_x, _y, _z);
+            _y = va_arg(vl, int);
+            _z = va_arg(vl, int);
+
+            return this->operator()(_x, _y, _z);
         }
+        virtual bool is_filled(int d0, va_list vl) const {
+            return true;
+        }
+        virtual bool is_lattice_site(int d0, va_list vl) const {
+            int _x = d0, _y = 0, _z = 0;
 
-        virtual bool is_filled(int d0, va_list vl) const { return true; }
-        virtual bool is_lattice_site(int d0, va_list vl) const { return true; }
+            _y = va_arg(vl, int);
+            _z = va_arg(vl, int);
 
+            if((_z % 2)) {
+                if((_y % 2) == 0 || (_x % 2) == 0) {
+                    return false;
+                }
+            } else if((_y % 2) == 1 || (_x % 2) == 1) {
+                return false;
+            }
+            return true;
+        }
     private:
-        bool in_bound(const int &x, const int &y, const int &z ) const {
-            return !(x < 0 || x > _nx || y < 0 || y > _ny || z < 0 || z > _nz);
-        }
-
-        unsigned int _nx, _ny, _nz;
+        int _nx, _ny, _nz;
+        int _anx, _any, _anz;
         double _sx, _sy, _sz;
         T __zero;
-        array_n<T, 3> _array;
 
-        LatticeRegionShift m_Shift;
-        LatticeExtensionType m_Extension;
+        array_n<T, 3> _array;
     };
 };
 
-
-#endif // __SISL_CART_PLANAR_LATTICE__
+#endif // __SISL_BCC_LATTICE__

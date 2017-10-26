@@ -49,7 +49,7 @@ TEST_CASE("cartesian_cubic_copy_assign", "Cartesian Cubic Create Test") {
 
     REQUIRE(cart_cube_test(4,2,0) == 100);
 
-	cc_copy = cart_cube_test;
+    cc_copy = cart_cube_test;
     REQUIRE(cc_copy(4,2,0) == 100);
     cc_copy(4,2,0) = 101;
 
