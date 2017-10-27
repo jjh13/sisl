@@ -12,8 +12,8 @@
 #include <iostream>
 #include <fstream>
 
-#include <sisl/primitives.h>
-#include <sisl/function/function_base.h>
+#include <sisl/primitives.hpp>
+#include <sisl/function/base_function.hpp>
 
 
 namespace sisl {
@@ -41,7 +41,7 @@ namespace sisl {
             /*! \breif Evaluate the function at a point.
              */
             virtual const double operator()(const vector &p) const {
-            	double len = p.length();
+            	double len = p.norm();
             	return m_Gamma * len - m_Alpha * cos(2.*M_PI*m_Fm*p[2]/len);
             }
 
@@ -89,4 +89,4 @@ namespace sisl {
     }
 }
 
-#endif // __SISL__MARSNHER_LOBB__
+#endif // __SISL__TEST_WINDOW__

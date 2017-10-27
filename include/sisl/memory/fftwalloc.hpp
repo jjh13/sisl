@@ -23,7 +23,7 @@
 #include <fftw3.h>
 
 #ifndef SISL_FFTW
-    #error "You cannot use the FFTW allocator, without FFTW installed!"
+    #error "You cannot use the FFTW allocator without FFTW installed!"
 #endif
 
 template <typename T>

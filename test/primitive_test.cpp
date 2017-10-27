@@ -27,8 +27,8 @@ TEST_CASE("raymake", "Create a ray") {
 
     // define a ray
     ray a_drop_of_golden_sun(
-    	ray_origin, 
-    	ray_direction
+        ray_origin, 
+        ray_direction
     );
 
     REQUIRE(ray_origin == a_drop_of_golden_sun.o);
@@ -50,8 +50,8 @@ TEST_CASE("raynorm", "Create a ray") {
 
     // define a ray
     ray a_drop_of_golden_sun(
-    	ray_origin, 
-    	ray_direction
+        ray_origin, 
+        ray_direction
     );
 
     REQUIRE(ray_direction.normalized() == a_drop_of_golden_sun.d);
