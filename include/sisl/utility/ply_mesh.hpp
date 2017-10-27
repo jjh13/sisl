@@ -9,7 +9,6 @@
  * duplicate vertex detection.
  */
 
-
 #ifndef _SISL_PLY_WRITER_H_
 #define _SISL_PLY_WRITER_H_
 
@@ -33,24 +32,13 @@ namespace utility{
         ply_mesh() : m_currentIndex(0), m_mergeTolerance(1e-12) {}
         ~ply_mesh(){}
 
-        /** Adds a vertex to the mesh, checking
-         * for duplicate vertices. Returns an index 
+        /** Adds a vertex to the mesh. Returns an index 
          * into the list of vertices.
          * \param p A vertex
          */ 
         int add_vertex(const vertex3 &p) {
             using namespace std;
             int r = 0;
-
-            /* First, search the vertex list to 
-               see if we have a similar enough
-               vertex already */
-            for(unsigned int i = 0; i < verts.size(); i++) {
-                vector diff = verts[i].p - p.p;
-                if(diff.norm() < m_mergeTolerance) {
-                    return i;
-                }
-            }
 
             // If we couldn't find a vert like ours,
             // Add it to the list
@@ -61,6 +49,18 @@ namespace utility{
             }
 
             return r;
+        }
+
+
+        sisl::vector get_vertex_pos(const unsigned int &index) {
+            if(index >= m_currentIndex) throw "Index out of bounds on ply_mesh!";
+            return verts[index].p;
+        }
+
+        void set_normal(const unsigned int &index, const sisl::vector &normal) {
+            if(index >= m_currentIndex) throw "Index out of bounds on ply_mesh!";
+
+            verts[index].n = normal.normalized();
         }
 
         /** Adds a triangle to the mesh, checking
@@ -116,6 +116,43 @@ namespace utility{
          */ 
         int count_faces() {
             return int(faces.size());
+        }
+
+        void remove_duplicate_vertices(){
+            std::vector<vertex3> v_new; 
+            int newIndex = 0;
+
+            std::map<int,int> old_to_new;
+            for(int i = 0; i < m_currentIndex; i++) {
+                int found = -1;
+                auto p = verts[i].p;
+
+                for(int j = 0; j < v_new.size(); j++){
+                    auto q = v_new[j].p;
+                    if((p-q).norm() < m_mergeTolerance) {
+                        found = j;
+                        break;
+                    }
+                }
+
+                if(found >= 0) {
+                    old_to_new[i] = found;
+                } else {
+                    v_new.push_back(verts[i]);
+                    old_to_new[i] = newIndex++;
+                }
+            }
+
+            verts = v_new;
+            for(unsigned int i = 0; i < faces.size(); i++) {
+                int ii = old_to_new[std::get<0>(faces[i])];
+                int jj = old_to_new[std::get<1>(faces[i])];
+                int kk = old_to_new[std::get<2>(faces[i])];
+
+                faces[i] = std::tuple<int,int,int>(ii,jj,kk);
+            }
+            m_currentIndex = newIndex;
+
         }
 
         /** Writes this mesh to a PLY file, returns false

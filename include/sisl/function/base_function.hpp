@@ -36,9 +36,31 @@ namespace sisl {
 
         /*! \breif Evaluate the function at a point.
          */
-        virtual const double d(int component, double d0, ...) const = 0;
+        virtual const double eval(double d0, ...) {
+        	va_list args;  
+        	int n = this->dim();
+        	vector p(n);
+
+        	p[0] = d0;
+			va_start(args, d0);  
+        	for(int i = 1; i < n; i++) {
+        		p[i] = va_arg (args, double);
+        	}
+        	va_end (args);
+        	return this->operator()(p);
+        }
 
         /*! \breif Evaluate the function at a point.
+         */
+        virtual const double eval(const vector &p) {
+        	return this->operator()(p);
+        }
+
+        /*! \breif Evaluate the derivative of a function at a point.
+         */
+        virtual const double d(int component, double d0, ...) const = 0;
+
+        /*! \breif Evaluate the derivative of a function at a point.
          */
         virtual const double d(int component, const vector &p) const = 0;
 

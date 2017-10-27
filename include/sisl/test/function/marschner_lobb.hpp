@@ -12,8 +12,8 @@
 #include <iostream>
 #include <fstream>
 
-#include <sisl/primitives.h>
-#include <sisl/function/function_base.h>
+#include <sisl/primitives.hpp>
+#include <sisl/function/base_function.hpp>
 
 
 namespace sisl {
