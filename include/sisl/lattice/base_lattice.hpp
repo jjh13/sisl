@@ -252,6 +252,16 @@ namespace sisl {
 
     };
 
+
+    /*!
+     * Samples a function on to any lattice
+     * note that this function may or may not be broken with the most
+     * recent convention change
+     * \param origin where to start sampling
+     * \param extent cuboid volume to capture
+     * \param l lattice on which to sample
+     * \param f a fucntion to evaluate
+     */
     template <class T>
     void sample_on_lattice(
         const vector &origin,

@@ -110,7 +110,7 @@ TEST_CASE("marschner_lobb_march", "March the marschner_lobb test function") {
 
 /** \breif Test to see if we can march the test window function.
  */ 
-TEST_CASE("hamm_march", "March the marschner_lobb test function") {
+TEST_CASE("hamm_march", "March the windowed test function") {
     sisl::test::test_window hamm(0.25, 2, 6);
     sisl::utility::isosurface mc;
 
