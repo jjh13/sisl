@@ -46,7 +46,7 @@ TEST_CASE("cartesian_cubic_copy_assign", "Cartesian Cubic Create Test") {
     // Next, combine this data with a basis function in a si_function
     si_function<
     	cartesian_cubic<float>, // specify the lattice (and its data type)
-    	zp3_element,              // specify the basis function
+    	tp_linear,              // specify the basis function
     	3> bucky(cc);           // specify the dimension, and call this si_function bucky (fed with the cc lattice)
    
     // by default, an si_fuction has no scaling set, it'll exend to the maximum 
