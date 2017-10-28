@@ -8,9 +8,8 @@
  * @author Joshua Horacsek
  **/
 
-#if 0
-#ifndef _SISL_RFSPACE_H_
-#define _SISL_RFSPACE_H_
+#ifndef _SISL_SI_FUNCTION_H_
+#define _SISL_SI_FUNCTION_H_
 
 #include <Eigen/Dense>
 #include <Eigen/Geometry>
@@ -19,6 +18,9 @@
 
 namespace sisl {
 
+	/*!
+	 * This performs a 
+	 */
     template<class L, class BF, int N>
     class si_function : public function {
     public:
@@ -195,28 +197,40 @@ namespace sisl {
         /*! \brief Sets the transform for this space,
         */
         void set_transform(const transform &t){
-            if(t.determinant() > 0)
+            if(fabs(t.determinant()) > 1e-8)
                 _mSpaceTransform = t;
         }
 
         /*! \bried Gets the transform assiated to this space,
          */
-         transform get_transform() const{
-             return _mSpaceTransform;
-         }
+        transform get_transform() const{
+            return _mSpaceTransform;
+        }
 
-         L *get_lattice() {
-             return _lattice;
-         }
+        L *get_lattice() {
+            return _lattice;
+        }
 
-         void set_scale(const vector &s) {
-             m_vUserScale = s;
-             _mSpaceTransform *= Eigen::Scaling(s);
-         }
+        void set_scale(const vector &s) {
+            m_vUserScale = s;
+            _mSpaceTransform *= Eigen::Scaling(s);
+        }
 
-         vector get_scale() const {
-             return m_vUserScale;
-         }
+        vector get_scale() const {
+            return m_vUserScale;
+        }
+        virtual const int dim() const {
+        	return N;
+        }
+         
+        virtual const double n_d(const int_tuple &order, double d0, ...) const {
+        	throw "Not yet implemnented";
+
+        }
+
+        virtual const double n_d(const int_tuple &order, vector &p) const {
+        	throw "Not yet implemnented";
+        }
 
     private:
         L *_lattice, *_d[N];
@@ -227,6 +241,5 @@ namespace sisl {
         sisl::vector m_vUserScale;
     };
 }
-#endif
 
-#endif // _SISL_RFSPACE_H_
+#endif // _SISL_SI_FUNCTION_H_

@@ -18,9 +18,11 @@
 #include <sisl/lattice/base_lattice.hpp>
 
 //#include <sisl/lattice/2d/cartesian_planar.hpp>
+#include <sisl/function/si_function.hpp>
 #include <sisl/lattice/3d/cartesian_cubic.hpp>
 
-//#include <sisl/lattice/3d/body_centered_cubic.hpp>
+#include <sisl/basis/tp_linear.hpp>
+#include <sisl/basis/tp_cubic_imom.hpp>
 
 #include <iostream>
 
@@ -129,6 +131,7 @@ TEST_CASE("cartesian_cubic_nearest_site", "Cartesian Cubic Nearest Site Test") {
     REQUIRE(lprime[2] == 0);
 }
 
+
 /********************************************
  * Tests for the various extension types
  ********************************************/
@@ -136,4 +139,49 @@ TEST_CASE("cartesian_cubic_nearest_site", "Cartesian Cubic Nearest Site Test") {
  * TODO:
  */
 
+/********************************************
+ * 
+ ********************************************/
+TEST_CASE("cartesian_tp_linear", "tp_cubic") {
+    using namespace sisl;
+    vector pt(3);
+    double value;
 
+    // Setup a generating matrix for the CC lattice
+    cartesian_cubic<short> lattice(2, 2, 2);
+
+    lattice(0,1,0) = 10;
+    lattice(1,1,0) = 10;
+
+    function *f = new si_function<
+                                cartesian_cubic<short>,
+                                tp_linear,
+                                3>(&lattice);
+
+    REQUIRE( (*f)(0.5, 0.5, 0.) == 10. );
+    REQUIRE( (*f)(0.25, 0.5, 0.) == 10. );
+    REQUIRE( (*f)(0.75, 0.25, 0.) == 2.5 );
+}
+
+TEST_CASE("cartesian_tp_cubic_imom", "tp_cubic") {
+    using namespace sisl;
+    vector pt(3);
+    double value;
+
+    // Setup a generating matrix for the CC lattice
+    cartesian_cubic<short> lattice(2, 2, 2);
+
+    lattice(0,1,0) = 2;
+    lattice(1,1,0) = 10;
+
+    function *f = new si_function<
+                                cartesian_cubic<short>,
+                                tp_cubic_imom,
+                                3>(&lattice);
+
+    if(fabs((*f)(0.5, 0.5, 0.) - 10.) > 0.00001)
+        FAIL("Not close enough to interpolating");
+
+    if(fabs((*f)(0.0, 0.5, 0.) - 2.) > 0.00001)
+        FAIL("Not close enough to interpolating");
+}
