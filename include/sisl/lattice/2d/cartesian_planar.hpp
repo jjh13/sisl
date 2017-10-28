@@ -177,7 +177,7 @@ namespace sisl {
             _y = va_arg(vl, int);
             va_end(vl);
 
-            ret << double(_x)*_sx, double(_y)*_sy;
+            ret << double(_x), double(_y);
             return ret;
         }
 
@@ -201,8 +201,8 @@ namespace sisl {
          * within the unit hyper cube.
          */
         virtual lattice_site get_nearest_site(const vector &pt) const {
-            int x = round(pt[0] * _nx);
-            int y = round(pt[1] * _ny);
+            int x = round(pt[0]);
+            int y = round(pt[1]);
 
             lattice_site r(2);
             r << x, y;

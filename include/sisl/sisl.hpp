@@ -8,15 +8,13 @@
  * @author Joshua Horacsek
  */
 
-#ifdef SISL_FFTW
-	#include <fftw3.h>
-#endif
-
 // Basic includes
 #include <sisl/primitives.hpp>
 
 // Basic memory abstractions
-#include <sisl/memory/fftwalloc.hpp>
+#ifdef SISL_FFTW
+    #include <sisl/memory/fftwalloc.hpp>
+#endif
 #include <sisl/memory/array.hpp>
 #include <sisl/memory/sparse_array.hpp>
 

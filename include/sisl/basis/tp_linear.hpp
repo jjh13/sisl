@@ -36,9 +36,9 @@ namespace sisl {
         static const double dbspline_1(const double &t){
             if(t > -1 && t <= 1) {
                 if(t < 0) {
-                    return -1;
-                } else {
                     return 1;
+                } else {
+                    return -1;
                 }
             }
             return 0;
@@ -149,8 +149,8 @@ namespace sisl {
      */
     template<class T>
     inline double __fast_planar_tp_linear__(const vector &p, const cartesian_planar<T> *lattice) {
-        vector sx = lattice->get_dimensions().template cast<double>();
-        vector vox = p.array() * sx.array();
+        //vector sx = lattice->get_dimensions().template cast<double>();
+        vector vox = p.array();// * sx.array();
 
 
         int vx = (int)floor(vox[0]), vy = (int)floor(vox[1]);
@@ -184,8 +184,8 @@ namespace sisl {
      */
     template<class T>
     inline double __fast_cubic_tp_linear__(const vector &p, const cartesian_cubic<T> *lattice) {
-        vector sx = lattice->get_dimensions().template cast<double>();
-        vector vox = p.array() * sx.array();
+        //vector sx = lattice->get_dimensions().template cast<double>();
+        vector vox = p.array();// * sx.array();
 
         int vx = (int)floor(vox[0]),
             vy = (int)floor(vox[1]),

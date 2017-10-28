@@ -12,10 +12,13 @@
 
 #include <sisl/memory/array.hpp>
 #include <sisl/memory/sparse_array.hpp>
-#include <sisl/memory/fftwalloc.hpp>
+
+#ifdef SISL_FFTW
+    #include <sisl/memory/fftwalloc.hpp>
+#endif
 
 #ifdef SISL_CL
-#include <sisl/opencl/opencl.hpp>
+    #include <sisl/opencl/opencl.hpp>
 #endif
 
 #include <iostream>
@@ -262,7 +265,7 @@ TEST_CASE("Sparse array index out of bounds","sparse_array_n_index_out_of_bounds
     REQUIRE(exceptionThrew == true);
 }
 
-
+#ifdef SISL_FFTW
 /*! \brief Tests that writes are consistent,
  * that is, that all writes read the same value,
  * and now values get overriden.
@@ -289,7 +292,7 @@ TEST_CASE("Array write test with FFT allocator", "array_n_fftwalloc") {
 
     REQUIRE(valsWereWrong == false);
 }
-
+#endif
 /*! \brief Array dump/read tests, writes array to
  * a temporary file and reads it back.
  */

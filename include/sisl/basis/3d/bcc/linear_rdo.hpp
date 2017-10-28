@@ -1162,8 +1162,7 @@ template<class T>
        };
 
 
-       vector sx = lattice->get_dimensions().template cast<double>();
-       vector vox = p.array() * sx.array();
+       vector vox = p.array();
        double xyz[4], s[4];
 
             int ii = ((vox[1] + vox[2])*0.5), vx = 0;

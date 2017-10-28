@@ -255,7 +255,7 @@ namespace sisl {
             va_end(vl);
 
             if(!is_lattice_site(_x, _y, _z)) throw "body_centered_cubic::get_site_position() - given non lattice site!";
-            ret << double(_x)*_sx, double(_y)*_sy, double(_z)*_sz;
+            ret << double(_x), double(_y), double(_z);
             return ret;
         }
 
@@ -280,11 +280,10 @@ namespace sisl {
          */
         virtual lattice_site get_nearest_site(const vector &pt) const {
              vector xyz = pt * 0.5;
-             vector extent = get_dimensions().template cast<double>();
              vector unit(3), ijk(3), uvw(3), v1, v2;
 
-             xyz = xyz.array() * extent.array();
-
+             xyz = xyz.array();
+             
              unit.fill(1.);
              ijk = xyz + (0.5)*unit;
              uvw = xyz + unit;

@@ -34,7 +34,7 @@ namespace sisl {
          * parameter.
          */
         template<int N>
-        static const double phi(const vector &) { return 0; }
+        static const double phi(const vector &p) { return 0; }
 
         /*! \brief Evaluates the un-scaled basis function.
          * Evaluates the basis function as if it were not scaled by any scaling
@@ -86,16 +86,13 @@ namespace sisl {
             double value = 0;
 
             for(lattice_site s : sites) {
-                vector offset_i;
 
                 if(!lattice->is_lattice_site(c+s)) continue;
                 if(!lattice->is_filled(c+s)) continue;
 
-                offset_i =  p.array()*extent.cast<double>().array();
-
-                double p = BF::template phi<N>(offset_i - (c+s).cast<double>());
-                if(p == 0.) continue;
-                value += p * (double)(*lattice)(c + s);
+                double w = BF::template phi<N>(p.cast<double>() - (c+s).cast<double>());
+                if(w == 0.) continue;
+                value += w * (double)(*lattice)(c + s);
             }
             return value;
         }
@@ -112,16 +109,13 @@ namespace sisl {
             double value = 0;
 
             for(lattice_site s : sites) {
-                vector offset_i;
 
                 if(!lattice->is_lattice_site(c+s)) continue;
                 if(!lattice->is_filled(c+s)) continue;
 
-                offset_i =  p.array()*extent.cast<double>().array();
-
-                double p = BF::template dphi<N>(offset_i - (c+s).cast<double>(), component);
-                if(p == 0.) continue;
-                value += p * (double)(*lattice)(c + s);
+                double w = BF::template dphi<N>(p - (c+s).cast<double>(), component);
+                if(w == 0.) continue;
+                value += w * (double)(*lattice)(c + s);
             }
             return value;
         }
@@ -140,17 +134,13 @@ namespace sisl {
             value.setZero();
 
             for(lattice_site s : sites) {
-                vector offset_i;
-
                 if(!lattice->is_lattice_site(c+s)) continue;
                 if(!lattice->is_filled(c+s)) continue;
 
-                offset_i =  p.array()*extent.cast<double>().array();
-
                 for(int j = 0; j < N; j++) {
-                    double p = BF::template dphi<N>(offset_i - (c+s).cast<double>(), j);
-                    if(p == 0.) continue;
-                    value[j] += p * (double)(*lattice)(c + s);
+                    double w = BF::template dphi<N>(p - (c+s).cast<double>(), j);
+                    if(w == 0.) continue;
+                    value[j] += w * (double)(*lattice)(c + s);
                 }
             }
             return value;
@@ -169,20 +159,16 @@ namespace sisl {
             value.setZero();
 
             for(lattice_site s : sites) {
-                vector offset_i;
-
                 if(!base->is_lattice_site(c+s)) continue;
 
-                offset_i =  p.array()*extent.cast<double>().array();
+                double w = BF::template phi<N>(p - (c+s).cast<double>());
 
-                double p = BF::template phi<N>(offset_i - (c+s).cast<double>());
-
-                if(p == 0.) continue;
+                if(w == 0.) continue;
 
                 for(int j = 0; j < N; j++) {
                     if(lattices[j] == nullptr) continue;
                     if(!lattices[j]->is_filled(c+s)) continue;
-                    value[j] += p * (double)(*lattices[j])(c + s);
+                    value[j] += w * (double)(*lattices[j])(c + s);
                 }
             }
             return value;
@@ -209,16 +195,14 @@ namespace sisl {
             double value = 0;
 
             for(lattice_site s : sites) {
-                vector offset_i;
 
                 if(!lattice->is_lattice_site(c+s)) continue;
                 if(!lattice->is_filled(c+s)) continue;
 
-                offset_i =  p.array()*extent.cast<double>().array();
 
-                double p = BF::template phi<N>(h, offset_i - (c+s).cast<double>());
-                if(p == 0.) continue;
-                value += p * (*lattice)(c + s);
+                double w = BF::template phi<N>(h, p - (c+s).cast<double>());
+                if(w == 0.) continue;
+                value += w * (*lattice)(c + s);
             }
             return value;
         }
@@ -237,16 +221,12 @@ namespace sisl {
             double value = 0;
 
             for(lattice_site s : sites) {
-                vector offset_i;
-
                 if(!lattice->is_lattice_site(c+s)) continue;
                 if(!lattice->is_filled(c+s)) continue;
 
-                offset_i =  p.array()*extent.cast<double>().array();
-
-                double p = BF::template dphi<N>(h, offset_i - (c+s).cast<double>(), component);
-                if(p == 0.) continue;
-                value += p * (*lattice)(c + s);
+                double w = BF::template dphi<N>(h, p - (c+s).cast<double>(), component);
+                if(w == 0.) continue;
+                value += w * (*lattice)(c + s);
             }
             return value;
         }
@@ -267,15 +247,13 @@ namespace sisl {
             value.setZero();
 
             for(lattice_site s : sites) {
-                vector offset_i;
-
                 if(!lattice->is_lattice_site(c+s)) continue;
                 if(!lattice->is_filled(c+s)) continue;
 
                 for(int j = 0; j < N; j++) {
-                    double p = BF::template dphi<N>(h, offset_i - (c+s).cast<double>(), j);
-                    if(p == 0.) continue;
-                    value[j] += p * (*lattice)(c + s);
+                    double w = BF::template dphi<N>(h, p - (c+s).cast<double>(), j);
+                    if(w == 0.) continue;
+                    value[j] += w * (*lattice)(c + s);
                 }
             }
             return value;
@@ -294,20 +272,16 @@ namespace sisl {
             value.setZero();
 
             for(lattice_site s : sites) {
-                vector offset_i;
-
                 if(!base->is_lattice_site(c+s)) continue;
 
-                offset_i =  p.array()*extent.cast<double>().array();
+                double w = BF::template phi<N>(h, p - (c+s).cast<double>());
 
-                double p = BF::template phi<N>(h, offset_i - (c+s).cast<double>());
-
-                if(p == 0.) continue;
+                if(w == 0.) continue;
 
                 for(int j = 0; j < N; j++) {
                     if(lattices[j] == nullptr) continue;
                     if(!lattices[j]->is_filled(c+s)) continue;
-                    value[j] += p * (double)(*lattices[j])(c + s);
+                    value[j] += w * (double)(*lattices[j])(c + s);
                 }
             }
             return value;

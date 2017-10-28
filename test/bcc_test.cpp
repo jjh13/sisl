@@ -13,7 +13,6 @@
 
 #include <sisl/memory/array.hpp>
 #include <sisl/memory/sparse_array.hpp>
-#include <sisl/memory/fftwalloc.hpp>
 
 #include <sisl/lattice/base_lattice.hpp>
 
@@ -145,7 +144,7 @@ TEST_CASE("bcc_lattice_vac_each_site", "Vacuous BCC Nearest Site Test") {
 
 /*! \brief Tests that a few sites map to their proper nearest site
  */
-TEST_CASE("bcc_lattice_each_site", "Nearest BCC Site Test") {
+TEST_CASE("bcc_nearest_site", "Nearest BCC Site Test") {
     using namespace sisl;
 
     // Setup a generating matrix for the BCC lattice
@@ -153,20 +152,20 @@ TEST_CASE("bcc_lattice_each_site", "Nearest BCC Site Test") {
     vector point(3);
     lattice_site lprime(3);
 
-    point << 0., 0., 1.;
+    point << 0., 0., 4.;
     lprime = bcc_test.get_nearest_site(point);
     REQUIRE(lprime[0] == 0);
     REQUIRE(lprime[1] == 0);
     REQUIRE(lprime[2] == 4);
 
     point << 0.25, .25, .49;
-    lprime = bcc_test.get_nearest_site(point);
+    lprime = bcc_test.get_nearest_site(point*4);
     REQUIRE(lprime[0] == 1);
     REQUIRE(lprime[1] == 1);
     REQUIRE(lprime[2] == 1);
 
     point << 0.25, .75, .49;
-    lprime = bcc_test.get_nearest_site(point);
+    lprime = bcc_test.get_nearest_site(point*4);
     REQUIRE(lprime[0] == 1);
     REQUIRE(lprime[1] == 3);
     REQUIRE(lprime[2] == 1);
@@ -175,3 +174,5 @@ TEST_CASE("bcc_lattice_each_site", "Nearest BCC Site Test") {
 //** TODO: Test linear indices
 
 //** TODO: Test extension modes
+
+

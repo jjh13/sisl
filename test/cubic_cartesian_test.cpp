@@ -7,17 +7,15 @@
  * @author Joshua Horacsek
  */
 
-
+#define NO_FAST_BASES
 #define CATCH_CONFIG_MAIN
 #include <catch/catch.hpp>
 
 #include <sisl/memory/array.hpp>
 #include <sisl/memory/sparse_array.hpp>
-#include <sisl/memory/fftwalloc.hpp>
 
 #include <sisl/lattice/base_lattice.hpp>
 
-//#include <sisl/lattice/2d/cartesian_planar.hpp>
 #include <sisl/function/si_function.hpp>
 #include <sisl/lattice/3d/cartesian_cubic.hpp>
 
@@ -112,22 +110,22 @@ TEST_CASE("cartesian_cubic_nearest_site", "Cartesian Cubic Nearest Site Test") {
     vector point(3);
     lattice_site lprime(3);
 
-    point << .26, .26, 0;
+    point << .51, .51, 0;
     lprime = cart_cube_test.get_nearest_site(point);
     REQUIRE(lprime[0] == 1);
     REQUIRE(lprime[1] == 1);
     REQUIRE(lprime[2] == 0);
 
-    point << .76, .76, 0;
+    point << 2.51, 1.9, 0;
     lprime = cart_cube_test.get_nearest_site(point);
-    REQUIRE(lprime[0] == 2);
+    REQUIRE(lprime[0] == 3);
     REQUIRE(lprime[1] == 2);
     REQUIRE(lprime[2] == 0);
 
     point << 0.24, .76, 0;
     lprime = cart_cube_test.get_nearest_site(point);
     REQUIRE(lprime[0] == 0);
-    REQUIRE(lprime[1] == 2);
+    REQUIRE(lprime[1] == 1);
     REQUIRE(lprime[2] == 0);
 }
 
@@ -153,10 +151,14 @@ TEST_CASE("cartesian_tp_linear", "tp_cubic") {
     lattice(0,1,0) = 10;
     lattice(1,1,0) = 10;
 
-    function *f = new si_function<
+    auto  *f = new si_function<
                                 cartesian_cubic<short>,
                                 tp_linear,
                                 3>(&lattice);
+
+    vector scale(3);
+    scale << 2.,2.,2.;
+    f->set_scale(scale);
 
     REQUIRE( (*f)(0.5, 0.5, 0.) == 10. );
     REQUIRE( (*f)(0.25, 0.5, 0.) == 10. );
@@ -174,14 +176,14 @@ TEST_CASE("cartesian_tp_cubic_imom", "tp_cubic") {
     lattice(0,1,0) = 2;
     lattice(1,1,0) = 10;
 
-    function *f = new si_function<
+    auto *f = new si_function<
                                 cartesian_cubic<short>,
                                 tp_cubic_imom,
                                 3>(&lattice);
 
-    if(fabs((*f)(0.5, 0.5, 0.) - 10.) > 0.00001)
-        FAIL("Not close enough to interpolating");
+    if(fabs((*f)(1., 1., 0.) - 10.) > 0.00001)
+        FAIL("Not close enough to interpolating 10");
 
-    if(fabs((*f)(0.0, 0.5, 0.) - 2.) > 0.00001)
-        FAIL("Not close enough to interpolating");
+    if(fabs((*f)(0.0, 1., 0.) - 2.) > 0.00001)
+        FAIL("Not close enough to interpolating 2");
 }

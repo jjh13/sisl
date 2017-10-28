@@ -35,25 +35,12 @@ namespace sisl {
 
 	    static inline const double dimom3(const double &t){
 	        double x = std::abs(t);
-	        if(x < 1.) return (3./2.)*x*x - 2*x - (1./2.);
-	        if(x < 2.) return (-3./6.)*x*x + 2*x - x ;
-	        return 0; 
-	    }
-/*
-	    static inline const double imom3(const double &t){
-	        double x = std::abs(t);
-	        if(x < 1.) return (1./2.)*x*x*x - x*x + 2./3.;
-	        if(x < 2.) return (-1./6.)*x*x*x + x*x - 2*x + 4./3.;
+            double s =  t < 0 ? -1 : 1;
+	        if(x < 1.) return s*((3./2.)*x*x - 2*x - (1./2.));
+	        if(x < 2.) return s*((-3./6.)*x*x + 2*x - (11./6.));
 	        return 0; 
 	    }
 
-	    static inline const double dimom3(const double &t){
-	        double x = std::abs(t);
-	        if(x < 1.) return (1./2.)*x*x*x - x*x + 2./3.;
-	        if(x < 2.) return (-1./6.)*x*x*x + x*x - 2*x + 4./3.;
-	        return 0; 
-	    }
-*/
     public:
         template <int N>
         static const double phi(const vector &p) {
@@ -64,7 +51,7 @@ namespace sisl {
 
         template <int N>
         static const double phi(const double &h, const vector &p) {
-            return tp_linear::phi<N>(p);
+            return tp_cubic_imom::phi<N>(p);
         }
 
         template <int N>
@@ -81,7 +68,7 @@ namespace sisl {
 
         template <int N>
         static const double dphi(const double &h, const vector &p, const int &d) {
-            return tp_linear::dphi<N>(p, d);
+            return tp_cubic_imom::dphi<N>(p, d);
         }
 
         template <int N>
