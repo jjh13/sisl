@@ -21,6 +21,11 @@
 
 #include <sisl/lattice/3d/body_centered_cubic.hpp>
 
+#include <sisl/function/si_function.hpp>
+
+#include <sisl/basis/3d/bcc/linear_rdo.hpp>
+
+
 #include <iostream>
 
 
@@ -171,8 +176,29 @@ TEST_CASE("bcc_nearest_site", "Nearest BCC Site Test") {
     REQUIRE(lprime[2] == 1);
 }
 
-//** TODO: Test linear indices
 
-//** TODO: Test extension modes
+/*! \brief Tests that a few sites map to their proper nearest site
+ */
+TEST_CASE("bcc_linear_interpolation", "BCC Lerp") {
+    using namespace sisl;
+
+    // Setup a generating matrix for the BCC lattice
+    body_centered_cubic<char> bcc_test( 4, 4, 4);
+    vector point(3);
+    lattice_site lprime(3);
+
+    bcc_test(0,0,0) = 100;
+
+    si_function<
+        body_centered_cubic<char>,
+        bcc_linear_rdo,
+        3> testf(&bcc_test);
+
+    REQUIRE(testf.eval(0.,0.,0.) == 100.);
+    REQUIRE(testf.eval(1.,0.,0.) == 50.);
+    REQUIRE(testf.eval(2.,0.,0.) == 0.);
+
+}
+
 
 
