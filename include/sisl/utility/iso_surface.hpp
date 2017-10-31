@@ -246,10 +246,18 @@ public:
 
                         #pragma omp critical (add_face2)
                         {
-                            faces.push_back(tuple<int,int,int>(
-                                vertexIndexList[triangles[idx][c]],
-                                vertexIndexList[triangles[idx][c+1]],
-                                vertexIndexList[triangles[idx][c+2]]));
+                            if(flip_normal) {
+                                faces.push_back(tuple<int,int,int>(
+                                    vertexIndexList[triangles[idx][c+2]],
+                                    vertexIndexList[triangles[idx][c+1]],
+                                    vertexIndexList[triangles[idx][c]]));
+
+                            }else {
+                                faces.push_back(tuple<int,int,int>(
+                                    vertexIndexList[triangles[idx][c]],
+                                    vertexIndexList[triangles[idx][c+1]],
+                                    vertexIndexList[triangles[idx][c+2]]));
+                            }
                             c += 3;
                         }
                     }

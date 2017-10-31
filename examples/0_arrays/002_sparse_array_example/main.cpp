@@ -1,3 +1,10 @@
+/**
+ * This is a little example that shows how to use arrays.
+ * It's an implementation of the game of life using
+ * the sparse_array_n class.
+ *
+ * @author Joshua Horacsek
+ */
 #include <algorithm>
 #include <functional>
 #include <cctype>
@@ -13,7 +20,6 @@
 // Basic includes
 #include <sisl/memory/array.hpp>
 #include <sisl/memory/sparse_array.hpp>
-#include <sisl/memory/fftwalloc.hpp>
 
 void print_at(int x, int y, const char *text)
 {
@@ -55,8 +61,6 @@ sisl::sparse_array_n<bool, 2> advance_board(const sisl::sparse_array_n<bool, 2> 
 	for(uint i = 0; i < m; i++)
 		for(uint j = 0; j < n; j++) {
 			int nbrs = count_neighbours(board, m, n, i, j);
-			
-			new_board(i,j) = false;
 
 			if(board(i,j)) {
 			 	if(nbrs == 2 || nbrs == 3)
@@ -80,7 +84,8 @@ int main(int argc, char *argv[]) {
 
 	for(uint i = 0; i < 30; i++)
 		for(uint j = 0; j < 60; j++) {
-			board(i,j) = rand() % 100 < 20;
+			if(rand() % 100 < 20)
+				board(i,j) = true;
 		}
 
 	for(int i = 0; i < 1000; i++) {

@@ -19,7 +19,7 @@
 #include <algorithm>
 
 #include <sisl/memory/array.hpp>
-#include <sisl/function_space/function_space.hpp>
+#include <sisl/function/base_function.hpp>
 
 namespace sisl {
     namespace utility {
@@ -131,7 +131,7 @@ namespace sisl {
 
                 // Write image data
                 for(int i = 0; i < m_iHeight; i++) {
-                    for(int j = m_iWidth  - 1; j >= 0; j--) {
+                    for(int j = 0; j < m_iWidth; j++) {
                         vector pix = m_aArray(j,i);
 
                         pix[0] = 255. * (pix[0] - min_max[0])/(min_max[1] - min_max[0]);

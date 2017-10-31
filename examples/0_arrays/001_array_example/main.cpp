@@ -1,3 +1,11 @@
+/**
+ * This is a little example that shows how to use arrays.
+ * It's an implementation of the game of life using
+ * the array_n class.
+ *
+ * @author Joshua Horacsek
+ */
+
 #include <algorithm>
 #include <functional>
 #include <cctype>
@@ -13,7 +21,6 @@
 // Basic includes
 #include <sisl/memory/array.hpp>
 #include <sisl/memory/sparse_array.hpp>
-#include <sisl/memory/fftwalloc.hpp>
 
 void print_at(int x, int y, const char *text)
 {
