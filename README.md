@@ -55,29 +55,28 @@ with sudo privledges, if needed.
 
 Running Examples & Tests
 ====
-There is a test input file under the examples directory
+If you've built the project in the step above, you've built the examples and tests as well. Example code
+can be found in the ```Examples``` directory, whereas test can be found in the ```tests``` directory.
+Output executables for each can be found in the corresponding directory in your ```build``` folder.
 
-Specify an input file via
 
+Using SISL in Your Projects
+====
+SISL is header only, thus all one needs to ensure is that the Eigen and SISL include files can be
+found by the compiler. For GCC this may look something like
 ```
-inputFile = test/stent16.raw
-inputResolution = 512, 512, 174
-inputSpacing = 0.8398, 0.8398, 3.2
-inputType = uint16
-
-isoValue = 500
-
-camperaUp = 0, 0, 1
-cameraLookAt = 0, 0, 0
-cameraPosition = 0, -5, 0
+gcc {input files .c} -I./path/containing/sisl -I./path/containing/eigen -o output
 ```
 
-This sets the dimensios of the virtual film plane
-```
-filmRatio = 1, 1
-```
 
-And this outputs the image rendered to vol_render.ppm with image dimensions of 128x128
-```
-outFile = vol_render, 128, 128
+
+Documentation
+====
+
+Documentation is included in its compiled output format under the ```doc``` directory. It can be 
+regenerated via doxygen with the following commands
+
+```{bash}
+cd doc
+doxygen config.dox
 ```
