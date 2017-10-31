@@ -288,8 +288,10 @@ public:
                 double ddz = ((*f)(x[0],   x[1]  , x[2]+h) - (*f)(x[0]  , x[1]  , x[2]-h))/(2*h);
                 gv << ddx, ddy, ddz;
             }
-
-            plyfile.set_normal(i, gv);
+            if(flip_normal)
+                plyfile.set_normal(i, -gv);
+            else
+                plyfile.set_normal(i, gv);
         }
 
     }

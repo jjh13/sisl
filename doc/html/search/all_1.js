@@ -6,5 +6,6 @@ var searchData=
   ['array_5fn',['array_n',['../classsisl_1_1array__n.html',1,'sisl::array_n&lt; T, N, Allocator &gt;'],['../classsisl_1_1array__n.html#acf5287e20ac20856d3ce1af561d3d02a',1,'sisl::array_n::array_n(const Allocator &amp;a=Allocator())'],['../classsisl_1_1array__n.html#ab37d133a8c067cdaf8063ba49205fdea',1,'sisl::array_n::array_n(const Allocator &amp;a, unsigned int d0,...)'],['../classsisl_1_1array__n.html#a014fd246834441f65441e88d298fc839',1,'sisl::array_n::array_n(unsigned int d0,...)'],['../classsisl_1_1array__n.html#a5e645e1a620903d12e4d00f99d58622c',1,'sisl::array_n::array_n(const array_n &amp;obj)']]],
   ['array_5fn_3c_20t_2c_202_20_3e',['array_n&lt; T, 2 &gt;',['../classsisl_1_1array__n.html',1,'sisl']]],
   ['array_5fn_3c_20t_2c_203_20_3e',['array_n&lt; T, 3 &gt;',['../classsisl_1_1array__n.html',1,'sisl']]],
+  ['array_5fn_3c_20vector_2c_202_20_3e',['array_n&lt; vector, 2 &gt;',['../classsisl_1_1array__n.html',1,'sisl']]],
   ['at',['at',['../structsisl_1_1ray.html#ae32b430c114c83d70ffa2a091ee6c753',1,'sisl::ray']]]
 ];

@@ -1,0 +1,115 @@
+\hypertarget{classsisl_1_1utility_1_1ppm__image}{}\section{sisl\+:\+:utility\+:\+:ppm\+\_\+image Class Reference}
+\label{classsisl_1_1utility_1_1ppm__image}\index{sisl\+::utility\+::ppm\+\_\+image@{sisl\+::utility\+::ppm\+\_\+image}}
+
+
+P\+PM image writer.  
+
+
+
+
+{\ttfamily \#include $<$ppm\+\_\+image.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsisl_1_1utility_1_1ppm__image_ab049aa633ce351727260eb9ca82b6a71}{ppm\+\_\+image} (const int \&width, const int \&height)
+\begin{DoxyCompactList}\small\item\em Creates a new image. \end{DoxyCompactList}\item 
+\hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \& \hyperlink{classsisl_1_1utility_1_1ppm__image_ad2ec02b1fcc76fbaa3d4df71200e0521}{operator()} (const int \&x, const int \&y)
+\begin{DoxyCompactList}\small\item\em Accessor for pixel values. \end{DoxyCompactList}\item 
+void \hyperlink{classsisl_1_1utility_1_1ppm__image_a7e3ae9169fecfcd95dc8352fa4ca1c12}{reconstruct\+\_\+image} (\hyperlink{classsisl_1_1function}{function} $\ast$f, int component=-\/1, double x=0., double y=0., double extent\+\_\+x=1., double extent\+\_\+y=1.)
+\begin{DoxyCompactList}\small\item\em Samples a 2D function. \end{DoxyCompactList}\item 
+void \hyperlink{classsisl_1_1utility_1_1ppm__image_a2fd1c61391d4be4802be8e2af85d507c}{clamp} (const double \&min, const double \&max)
+\begin{DoxyCompactList}\small\item\em Clams all values for all components between min and max. \end{DoxyCompactList}\item 
+bool \hyperlink{classsisl_1_1utility_1_1ppm__image_ac84d6c79a7ea161cb0588c838994d9d0}{write} (const std\+::string \&out, bool normalize=true)
+\begin{DoxyCompactList}\small\item\em Writes an image to the specified file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+P\+PM image writer. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsisl_1_1utility_1_1ppm__image_ab049aa633ce351727260eb9ca82b6a71}\label{classsisl_1_1utility_1_1ppm__image_ab049aa633ce351727260eb9ca82b6a71}} 
+\index{sisl\+::utility\+::ppm\+\_\+image@{sisl\+::utility\+::ppm\+\_\+image}!ppm\+\_\+image@{ppm\+\_\+image}}
+\index{ppm\+\_\+image@{ppm\+\_\+image}!sisl\+::utility\+::ppm\+\_\+image@{sisl\+::utility\+::ppm\+\_\+image}}
+\subsubsection{\texorpdfstring{ppm\+\_\+image()}{ppm\_image()}}
+{\footnotesize\ttfamily sisl\+::utility\+::ppm\+\_\+image\+::ppm\+\_\+image (\begin{DoxyParamCaption}\item[{const int \&}]{width,  }\item[{const int \&}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a new image. 
+
+Creates a new image with dimensions width and height. Each cell contains an rgb\+\_\+color value. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsisl_1_1utility_1_1ppm__image_a2fd1c61391d4be4802be8e2af85d507c}\label{classsisl_1_1utility_1_1ppm__image_a2fd1c61391d4be4802be8e2af85d507c}} 
+\index{sisl\+::utility\+::ppm\+\_\+image@{sisl\+::utility\+::ppm\+\_\+image}!clamp@{clamp}}
+\index{clamp@{clamp}!sisl\+::utility\+::ppm\+\_\+image@{sisl\+::utility\+::ppm\+\_\+image}}
+\subsubsection{\texorpdfstring{clamp()}{clamp()}}
+{\footnotesize\ttfamily void sisl\+::utility\+::ppm\+\_\+image\+::clamp (\begin{DoxyParamCaption}\item[{const double \&}]{min,  }\item[{const double \&}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clams all values for all components between min and max. 
+
+Clams all values for all components between min and max. 
+\begin{DoxyParams}{Parameters}
+{\em min} & Minimum value, values below this are set to minimum. \\
+\hline
+{\em max} & Maximum value, values above this are set to maximum. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsisl_1_1utility_1_1ppm__image_ad2ec02b1fcc76fbaa3d4df71200e0521}\label{classsisl_1_1utility_1_1ppm__image_ad2ec02b1fcc76fbaa3d4df71200e0521}} 
+\index{sisl\+::utility\+::ppm\+\_\+image@{sisl\+::utility\+::ppm\+\_\+image}!operator()@{operator()}}
+\index{operator()@{operator()}!sisl\+::utility\+::ppm\+\_\+image@{sisl\+::utility\+::ppm\+\_\+image}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector}\& sisl\+::utility\+::ppm\+\_\+image\+::operator() (\begin{DoxyParamCaption}\item[{const int \&}]{x,  }\item[{const int \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accessor for pixel values. 
+
+Accesses an R\+GB value at pixel x,y. Stored between 0 and 1, where 0 is the lowest intensity and 1 in the highest intensity. \mbox{\Hypertarget{classsisl_1_1utility_1_1ppm__image_a7e3ae9169fecfcd95dc8352fa4ca1c12}\label{classsisl_1_1utility_1_1ppm__image_a7e3ae9169fecfcd95dc8352fa4ca1c12}} 
+\index{sisl\+::utility\+::ppm\+\_\+image@{sisl\+::utility\+::ppm\+\_\+image}!reconstruct\+\_\+image@{reconstruct\+\_\+image}}
+\index{reconstruct\+\_\+image@{reconstruct\+\_\+image}!sisl\+::utility\+::ppm\+\_\+image@{sisl\+::utility\+::ppm\+\_\+image}}
+\subsubsection{\texorpdfstring{reconstruct\+\_\+image()}{reconstruct\_image()}}
+{\footnotesize\ttfamily void sisl\+::utility\+::ppm\+\_\+image\+::reconstruct\+\_\+image (\begin{DoxyParamCaption}\item[{\hyperlink{classsisl_1_1function}{function} $\ast$}]{f,  }\item[{int}]{component = {\ttfamily -\/1},  }\item[{double}]{x = {\ttfamily 0.},  }\item[{double}]{y = {\ttfamily 0.},  }\item[{double}]{extent\+\_\+x = {\ttfamily 1.},  }\item[{double}]{extent\+\_\+y = {\ttfamily 1.} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Samples a 2D function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & function to sample \\
+\hline
+{\em component} & Component to fill, 0 = r, 1 = b, 2 = g, -\/1 = all \\
+\hline
+{\em x,y} & Starting position \\
+\hline
+{\em extent\+\_\+x,extent\+\_\+y} & Dimension of area to sample \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsisl_1_1utility_1_1ppm__image_ac84d6c79a7ea161cb0588c838994d9d0}\label{classsisl_1_1utility_1_1ppm__image_ac84d6c79a7ea161cb0588c838994d9d0}} 
+\index{sisl\+::utility\+::ppm\+\_\+image@{sisl\+::utility\+::ppm\+\_\+image}!write@{write}}
+\index{write@{write}!sisl\+::utility\+::ppm\+\_\+image@{sisl\+::utility\+::ppm\+\_\+image}}
+\subsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily bool sisl\+::utility\+::ppm\+\_\+image\+::write (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{out,  }\item[{bool}]{normalize = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Writes an image to the specified file. 
+
+Writes an image to a file, if normalize is specified, values are normalized to be between 0 and 1 along each component independently.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & Output ppm file. \\
+\hline
+{\em normalize} & Normalize components to between 0 and 1 \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/joshuahoracsek/\+Projects/sisl\+\_\+redux/include/sisl/utility/ppm\+\_\+image.\+hpp\end{DoxyCompactItemize}
