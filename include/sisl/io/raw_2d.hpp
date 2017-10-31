@@ -1,8 +1,8 @@
 /**
- * base_lattice.h
- * Defines the abstract class for a lattice
+ * raw_2d.hpp
+ * IO for raw files in 2D.
  *
- * @Joshua Horacsek
+ * @author Joshua Horacsek
  */
 #ifndef __SISL__RAW2D__
 #define __SISL__RAW2D__

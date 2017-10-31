@@ -1,0 +1,84 @@
+\hypertarget{classsisl_1_1tp__cubic__imom}{}\section{sisl\+:\+:tp\+\_\+cubic\+\_\+imom Class Reference}
+\label{classsisl_1_1tp__cubic__imom}\index{sisl\+::tp\+\_\+cubic\+\_\+imom@{sisl\+::tp\+\_\+cubic\+\_\+imom}}
+
+
+Tensor product cubic interpolating M\+OM.  
+
+
+
+
+{\ttfamily \#include $<$tp\+\_\+cubic\+\_\+imom.\+hpp$>$}
+
+
+
+Inheritance diagram for sisl\+:\+:tp\+\_\+cubic\+\_\+imom\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classsisl_1_1tp__cubic__imom__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sisl\+:\+:tp\+\_\+cubic\+\_\+imom\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classsisl_1_1tp__cubic__imom__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__cubic__imom_af48f785081da40284238e2f47144db2e}\label{classsisl_1_1tp__cubic__imom_af48f785081da40284238e2f47144db2e}} 
+{\footnotesize template$<$int N$>$ }\\static const double {\bfseries phi} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__cubic__imom_aea84d8c194616c55c24755c2c59587ed}\label{classsisl_1_1tp__cubic__imom_aea84d8c194616c55c24755c2c59587ed}} 
+{\footnotesize template$<$int N$>$ }\\static const double {\bfseries phi} (const double \&h, const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__cubic__imom_a52f88d8e9f4e4adf666286c32500c1bb}\label{classsisl_1_1tp__cubic__imom_a52f88d8e9f4e4adf666286c32500c1bb}} 
+{\footnotesize template$<$int N$>$ }\\static const double {\bfseries dphi} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const int \&d)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__cubic__imom_a9bf0b1172905f6334c92e3823cd64399}\label{classsisl_1_1tp__cubic__imom_a9bf0b1172905f6334c92e3823cd64399}} 
+{\footnotesize template$<$int N$>$ }\\static const double {\bfseries dphi} (const double \&h, const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const int \&d)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__cubic__imom_a9a0bbb2100db27a5b8b931338bdfc3b4}\label{classsisl_1_1tp__cubic__imom_a9a0bbb2100db27a5b8b931338bdfc3b4}} 
+{\footnotesize template$<$int N$>$ }\\static std\+::vector$<$ \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} $>$ {\bfseries get\+\_\+integer\+\_\+support} ()
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__cubic__imom_ad851e32c4fa4af352b831b6c9d1827a8}\label{classsisl_1_1tp__cubic__imom_ad851e32c4fa4af352b831b6c9d1827a8}} 
+static bool {\bfseries has\+\_\+derivative} ()
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__cubic__imom_ac846d3615a779cc2d2f3201f4bc12c9a}\label{classsisl_1_1tp__cubic__imom_ac846d3615a779cc2d2f3201f4bc12c9a}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__cubic__imom_af465e487917108dc0a1a4f76118abc36}\label{classsisl_1_1tp__cubic__imom_af465e487917108dc0a1a4f76118abc36}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum\+\_\+deriv} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const int \&component)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__cubic__imom_a958e6a310da8fae4a25b59d443594b3a}\label{classsisl_1_1tp__cubic__imom_a958e6a310da8fae4a25b59d443594b3a}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__cubic__imom_a90b70c9920402c1c021b89518318e250}\label{classsisl_1_1tp__cubic__imom_a90b70c9920402c1c021b89518318e250}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$base, const L $\ast$$\ast$lattices)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__cubic__imom_a216ad095abfc41041a09154e77f0a763}\label{classsisl_1_1tp__cubic__imom_a216ad095abfc41041a09154e77f0a763}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const double \&h)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__cubic__imom_a8868ac71fd2df7e1d20c923118d2fe74}\label{classsisl_1_1tp__cubic__imom_a8868ac71fd2df7e1d20c923118d2fe74}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum\+\_\+deriv\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const int \&component, const double \&h)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__cubic__imom_ab69d77bc980a9d66530a28abb3a6eb3e}\label{classsisl_1_1tp__cubic__imom_ab69d77bc980a9d66530a28abb3a6eb3e}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const double \&h)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__cubic__imom_ad04f216c381d5dfce904a063a1328011}\label{classsisl_1_1tp__cubic__imom_ad04f216c381d5dfce904a063a1328011}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$base, const L $\ast$$\ast$lattices, const double \&h)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Tensor product cubic interpolating M\+OM. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/joshuahoracsek/\+Projects/sisl\+\_\+redux/include/sisl/basis/tp\+\_\+cubic\+\_\+imom.\+hpp\end{DoxyCompactItemize}

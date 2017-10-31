@@ -1,0 +1,82 @@
+S\+I\+SL (Shift Invariant Space Library) is minimalistic (i.\+e. header only) C++ library that eases data processing tasks and interpolation on non-\/\+Cartesian (and Cartesian lattices). There are many works in the field of scientific visualization that use the techniques implemented in this framework, but do not provide source code implementations. This inherently makes those works difficult to understand and extend.
+
+\section*{Requirements }
+
+This project requires a few libraries to compile, specifically\+:
+\begin{DoxyItemize}
+\item {\ttfamily cmake}
+\item {\ttfamily F\+F\+T\+W3}
+\item {\ttfamily eigen3}
+\item {\ttfamily Open\+CL}
+\end{DoxyItemize}
+
+Although the only hard requirement is eigen3. If you don\textquotesingle{}t have this library, there\textquotesingle{}s a submodule in the repository that will pull a usable version of eigen3. See Getting the Code
+
+On mac\+OS, these can be installed via Mac\+Ports 
+\begin{DoxyCode}
+Getting the Code
+====
+First checkout the code:
+```git checkout https://github.com/jjh13/sisl\_redux.gi
+\end{DoxyCode}
+
+
+If you don\textquotesingle{}t have eigen3 installed, then checkout the submodules\+: 
+\begin{DoxyCode}
+```git submodule updat
+\end{DoxyCode}
+
+
+However, keep in mind that this is a header only library intended to be installed on a system, so as a user it is advised to install eigen3 to your system, rather than depending on the submodule in this repository.
+
+\section*{Compiling \& Installing }
+
+To compile, change to the project directory and run the commands\+:
+
+
+\begin{DoxyCode}
+mkdir build
+cd build
+cmake ..
+make 
+\end{DoxyCode}
+
+
+This will build the tests and examples. To install use 
+\begin{DoxyCode}
+make install
+\end{DoxyCode}
+ with sudo privledges, if needed.
+
+\section*{Running Examples \& Tests }
+
+There is a test input file under the examples directory
+
+Specify an input file via
+
+
+\begin{DoxyCode}
+inputFile = test/stent16.raw
+inputResolution = 512, 512, 174
+inputSpacing = 0.8398, 0.8398, 3.2
+inputType = uint16
+
+isoValue = 500
+
+camperaUp = 0, 0, 1
+cameraLookAt = 0, 0, 0
+cameraPosition = 0, -5, 0
+\end{DoxyCode}
+
+
+This sets the dimensios of the virtual film plane 
+\begin{DoxyCode}
+filmRatio = 1, 1
+\end{DoxyCode}
+
+
+And this outputs the image rendered to vol\+\_\+render.\+ppm with image dimensions of 128x128 
+\begin{DoxyCode}
+outFile = vol\_render, 128, 128
+\end{DoxyCode}
+ 

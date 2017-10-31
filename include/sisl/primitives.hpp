@@ -18,15 +18,21 @@
 namespace sisl {
     
     // Basic primitive datatypes
-    using vector       = Eigen::Matrix<sisl_float, Eigen::Dynamic, 1>; //! dynamically sized (mathematical) vector datatype
-    using point        = Eigen::Matrix<sisl_float, Eigen::Dynamic, 1>; //! dynamically size point datatype
-    using transform    = Eigen::Matrix<sisl_float, Eigen::Dynamic, Eigen::Dynamic>; //! Dynamically sized transform (i.e. matrix)
-
-    using rgb_color    = Eigen::Matrix<sisl_float, 3, 1>; //! A fixed size 3-vector for holding colours
-    using rgba_color   = Eigen::Matrix<sisl_float, 4, 1>; //! A fixed size 4-vector for holding colours and an alpha channel 
-
-    using lattice_site = Eigen::Matrix<int, Eigen::Dynamic, 1>; //! Lattice_site are integer tuples (vectors)
-    using int_tuple    = Eigen::Matrix<int, Eigen::Dynamic, 1>; //! integer tuples (vectors)
+    //! dynamically sized (mathematical) vector datatype
+    using vector       = Eigen::Matrix<sisl_float, Eigen::Dynamic, 1>; 
+    //! dynamically size point datatype
+    using point        = Eigen::Matrix<sisl_float, Eigen::Dynamic, 1>; 
+    //! Dynamically sized transform (i.e. matrix)
+    using transform    = Eigen::Matrix<sisl_float, Eigen::Dynamic, Eigen::Dynamic>; 
+    
+    //! A fixed size 3-vector for holding colours
+    using rgb_color    = Eigen::Matrix<sisl_float, 3, 1>; 
+    //! A fixed size 4-vector for holding colours and an alpha channel 
+    using rgba_color   = Eigen::Matrix<sisl_float, 4, 1>; 
+    //! Lattice_site are integer tuples (vectors)
+    using lattice_site = Eigen::Matrix<int, Eigen::Dynamic, 1>; 
+    //! integer tuples (vectors)
+    using int_tuple    = Eigen::Matrix<int, Eigen::Dynamic, 1>; 
 
     /*! The various datatypes SISL can read, mainly used in the raw filetype reader */
     enum e_datatype {
@@ -38,7 +44,8 @@ namespace sisl {
         SDT_DOUBLE = 4
     };
 
-    /*! 
+    /*! \brief 3D plane class.
+     *
      * A plain plane class. 
      */
     struct plane {
@@ -56,7 +63,8 @@ namespace sisl {
         plane(const plane &_p) : n(_p.n), d(_p.d) { }
     };
 
-    /*!
+    /*! \brief 3D vertex.
+     *
      * A vertex in the graphics sense, i.e. a spatial point, and a normal to help shading 
      * heuristics.
      */
@@ -86,11 +94,14 @@ namespace sisl {
         vertex3(const vertex3 &_v) : p(_v.p), n(_v.n) { }
     };
 
-    /**
+    /** \brief Triangle in 3D space.
+     * 
      * A collection of three points that creates a ploygon in space
      */
     struct triangle {
-        vertex3 v1, v2, v3;
+        vertex3 v1; //!< triangle vertex 1 
+        vertex3 v2; //!< triangle vertex 2
+        vertex3 v3; //!< triangle vertex 3 
 
         /*! Ray constructor
          * \param _v1,_v2,_v3 The vertices that make up a triangle.
@@ -104,7 +115,8 @@ namespace sisl {
         triangle(const triangle &_t) : v1(_t.v1), v2(_t.v2), v3(_t.v3) { } 
     };
 
-    /*!
+    /*! \brief A ray in space.
+     * 
      * A ray class, i.e. a half line.
      */
     struct ray {

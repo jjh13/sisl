@@ -1,6 +1,6 @@
 /**
  * nearest_neighbor.hpp
- * Provides the an abstract class for basis functions of arbitary dimension.
+ * Nearest neighbor interpolation on any lattice, in any dimension.
  *
  * @author Joshua Horacsek
  */

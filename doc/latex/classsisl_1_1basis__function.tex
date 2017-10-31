@@ -1,0 +1,73 @@
+\hypertarget{classsisl_1_1basis__function}{}\section{sisl\+:\+:basis\+\_\+function Class Reference}
+\label{classsisl_1_1basis__function}\index{sisl\+::basis\+\_\+function@{sisl\+::basis\+\_\+function}}
+
+
+Abstract definition of a basis function. Provides an interface that any basis function of a shift invariant space must adhere to. This also provides the heavy lifting code for a ``brute force\textquotesingle{}\textquotesingle{} convolution sum. \hyperlink{classsisl_1_1tp__linear}{tp\+\_\+linear} is a good example of how to implement basis functions.  
+
+
+
+
+{\ttfamily \#include $<$basis\+\_\+function.\+hpp$>$}
+
+
+
+Inheritance diagram for sisl\+:\+:basis\+\_\+function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classsisl_1_1basis__function__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsisl_1_1basis__function_ae263cdbf1ad31e828d43af62fd645d6d}\label{classsisl_1_1basis__function_ae263cdbf1ad31e828d43af62fd645d6d}} 
+{\footnotesize template$<$int N$>$ }\\static const double \hyperlink{classsisl_1_1basis__function_ae263cdbf1ad31e828d43af62fd645d6d}{phi} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p)
+\begin{DoxyCompactList}\small\item\em Evaluates the un-\/scaled basis function. Evaluates the basis function as if it were not scaled by any scaling parameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1basis__function_a5a0fc716cb31c0b4a39ae9ffef9210dd}\label{classsisl_1_1basis__function_a5a0fc716cb31c0b4a39ae9ffef9210dd}} 
+{\footnotesize template$<$int N$>$ }\\static const double \hyperlink{classsisl_1_1basis__function_a5a0fc716cb31c0b4a39ae9ffef9210dd}{phi} (const double \&h, const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p)
+\begin{DoxyCompactList}\small\item\em Evaluates the un-\/scaled basis function. Evaluates the basis function as if it were not scaled by any scaling parameter. This, however, does take a scale parameter, as the basis may change per scale (e.\+g. exponential splines) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1basis__function_a08ca4f754c0f9bd937f362c91b37a159}\label{classsisl_1_1basis__function_a08ca4f754c0f9bd937f362c91b37a159}} 
+{\footnotesize template$<$int N$>$ }\\static const double \hyperlink{classsisl_1_1basis__function_a08ca4f754c0f9bd937f362c91b37a159}{dphi} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const int \&d)
+\begin{DoxyCompactList}\small\item\em Evaluates the derivative of an un-\/scaled basis function. Evaluates the derivative of a basis function as if it were not scaled by any scaling parameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1basis__function_ad4210a18404d763b781152fb41b3f173}\label{classsisl_1_1basis__function_ad4210a18404d763b781152fb41b3f173}} 
+{\footnotesize template$<$int N$>$ }\\static const double \hyperlink{classsisl_1_1basis__function_ad4210a18404d763b781152fb41b3f173}{dphi} (const double \&h, const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const int \&d)
+\begin{DoxyCompactList}\small\item\em Evaluates the derivative of the un-\/scaled basis function. Evaluates the basis function as if it were not scaled by any scaling parameter. This, however, does take a scale parameter, as the basis may change per scale (e.\+g. exponential splines) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1basis__function_a6e8b07cacc2f6a14272992d40c19cabb}\label{classsisl_1_1basis__function_a6e8b07cacc2f6a14272992d40c19cabb}} 
+{\footnotesize template$<$int N$>$ }\\static std\+::vector$<$ \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} $>$ \hyperlink{classsisl_1_1basis__function_a6e8b07cacc2f6a14272992d40c19cabb}{get\+\_\+integer\+\_\+support} ()
+\begin{DoxyCompactList}\small\item\em Returns the integer support for this basis function. Returns the closure of the support of the basis function, intersected with the integer lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1basis__function_a320a0e4a41913993312fa99e59605663}\label{classsisl_1_1basis__function_a320a0e4a41913993312fa99e59605663}} 
+static bool {\bfseries has\+\_\+derivative} ()
+\item 
+\mbox{\Hypertarget{classsisl_1_1basis__function_acbd2e8d5399260b958bb781685b38983}\label{classsisl_1_1basis__function_acbd2e8d5399260b958bb781685b38983}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice)
+\item 
+\mbox{\Hypertarget{classsisl_1_1basis__function_acd7a5e4de21481e6a543fa65f92c19c9}\label{classsisl_1_1basis__function_acd7a5e4de21481e6a543fa65f92c19c9}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum\+\_\+deriv} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const int \&component)
+\item 
+\mbox{\Hypertarget{classsisl_1_1basis__function_afacf657c3306f83ae42d73978ee38a47}\label{classsisl_1_1basis__function_afacf657c3306f83ae42d73978ee38a47}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice)
+\item 
+\mbox{\Hypertarget{classsisl_1_1basis__function_ae4e59e60ccac8d4060a417f9f0353d53}\label{classsisl_1_1basis__function_ae4e59e60ccac8d4060a417f9f0353d53}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$base, const L $\ast$$\ast$lattices)
+\item 
+\mbox{\Hypertarget{classsisl_1_1basis__function_aa7171cdb11702fcc6bfe49de1925a1a4}\label{classsisl_1_1basis__function_aa7171cdb11702fcc6bfe49de1925a1a4}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const double \&h)
+\item 
+\mbox{\Hypertarget{classsisl_1_1basis__function_a1bed96cde85d879444b965f7d3c9199d}\label{classsisl_1_1basis__function_a1bed96cde85d879444b965f7d3c9199d}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum\+\_\+deriv\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const int \&component, const double \&h)
+\item 
+\mbox{\Hypertarget{classsisl_1_1basis__function_a5e9afa1d8e02b37de4fc6d38fcf79b56}\label{classsisl_1_1basis__function_a5e9afa1d8e02b37de4fc6d38fcf79b56}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const double \&h)
+\item 
+\mbox{\Hypertarget{classsisl_1_1basis__function_aaee0095420132eb4a2b798c3ec135ce9}\label{classsisl_1_1basis__function_aaee0095420132eb4a2b798c3ec135ce9}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$base, const L $\ast$$\ast$lattices, const double \&h)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract definition of a basis function. Provides an interface that any basis function of a shift invariant space must adhere to. This also provides the heavy lifting code for a ``brute force\textquotesingle{}\textquotesingle{} convolution sum. \hyperlink{classsisl_1_1tp__linear}{tp\+\_\+linear} is a good example of how to implement basis functions. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/joshuahoracsek/\+Projects/sisl\+\_\+redux/include/sisl/basis/basis\+\_\+function.\+hpp\end{DoxyCompactItemize}

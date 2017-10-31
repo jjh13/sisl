@@ -15,7 +15,7 @@
 #ifndef __SISL_BASIS_FUNCTION_H__
 #define __SISL_BASIS_FUNCTION_H__
 
-#ifndef NO_FAST_BASES
+#ifndef NO_FAST_BASES //! if NO_FAST_BASES is defined, all fast implementations of basis functions will be disabled 
 #define FAST_BASIS_SPECIALIZATION(basis, lattice, function, dim, type) \
 template<> \
 inline double basis::convolution_sum<dim, lattice<type>, basis>(const vector &p, const lattice<type> *l) { \
@@ -27,6 +27,12 @@ inline double basis::convolution_sum<dim, lattice<type>, basis>(const vector &p,
 
 namespace sisl {
 
+    /*! \brief Abstract definition of a basis function.
+     * Provides an interface that any basis function of a shift invariant
+     * space must adhere to. This also provides the heavy lifting code for a 
+     * ``brute force'' convolution sum. tp_linear is a good example of how
+     * to implement basis functions.
+     */
     class basis_function {
     public:
         /*! \brief Evaluates the un-scaled basis function.
@@ -59,6 +65,10 @@ namespace sisl {
         template< int N>
         static const double dphi(const double &h, const vector &p, const int &d ) { return 0; }
 
+        /*! \brief Returns the integer support for this basis function.
+         * Returns the closure of the support of the basis function, intersected
+         * with the integer lattice.
+         */
         template<int N>
         static std::vector<lattice_site> get_integer_support() { throw "basis_function()::getSupport() - Not Implemented!"; }
 

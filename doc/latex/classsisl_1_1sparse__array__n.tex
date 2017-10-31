@@ -1,0 +1,163 @@
+\hypertarget{classsisl_1_1sparse__array__n}{}\section{sisl\+:\+:sparse\+\_\+array\+\_\+n$<$ T, N, Allocator $>$ Class Template Reference}
+\label{classsisl_1_1sparse__array__n}\index{sisl\+::sparse\+\_\+array\+\_\+n$<$ T, N, Allocator $>$@{sisl\+::sparse\+\_\+array\+\_\+n$<$ T, N, Allocator $>$}}
+
+
+An n-\/dimensional sparese array. This class abstracts away the concept of an n-\/dimensional array, it should be easy to create an array of type T on N dimensions. It differes from an array in that, when instantiated, it consumes no memory. When you begin to fill cells of the array with data, only then does memory begin to fill up. Accessing a cell without data returns \char`\"{}default\+Value\char`\"{}, which is set in the constructor.  
+
+
+
+
+{\ttfamily \#include $<$sparse\+\_\+array.\+hpp$>$}
+
+
+
+Inheritance diagram for sisl\+:\+:sparse\+\_\+array\+\_\+n$<$ T, N, Allocator $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classsisl_1_1sparse__array__n__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sisl\+:\+:sparse\+\_\+array\+\_\+n$<$ T, N, Allocator $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classsisl_1_1sparse__array__n__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsisl_1_1sparse__array__n_a8c957cdf94a178f0d77c1c3c374f1f91}{sparse\+\_\+array\+\_\+n} (const Allocator \&a=Allocator())
+\item 
+\hyperlink{classsisl_1_1sparse__array__n_afd76d3fbb0e923e2b28cfba1c675482b}{sparse\+\_\+array\+\_\+n} (const Allocator \&a, const T \&dv, unsigned int d0,...)
+\item 
+\hyperlink{classsisl_1_1sparse__array__n_a3132fb2f99e33ea6c34129eb1a02523f}{sparse\+\_\+array\+\_\+n} (const T \&dv, unsigned int d0,...)
+\item 
+\mbox{\Hypertarget{classsisl_1_1sparse__array__n_a8cffd9aaa7d7ea15fdc5071dd3ddbac7}\label{classsisl_1_1sparse__array__n_a8cffd9aaa7d7ea15fdc5071dd3ddbac7}} 
+{\bfseries sparse\+\_\+array\+\_\+n} (const T \&dv, unsigned int $\ast$d)
+\item 
+\hyperlink{classsisl_1_1sparse__array__n_ae639c5c814a4649fcfa5ea2616e51f12}{$\sim$sparse\+\_\+array\+\_\+n} ()
+\item 
+unsigned int \hyperlink{classsisl_1_1sparse__array__n_a4418f97d93ce2a6cef4639ed371ee47e}{linear\+\_\+index} (unsigned int d0,...) const
+\item 
+unsigned int \hyperlink{classsisl_1_1sparse__array__n_a43cf90a26a41032cfc091ebb45112d13}{linear\+\_\+index} (unsigned int d0, va\+\_\+list vl) const
+\item 
+unsigned int \hyperlink{classsisl_1_1sparse__array__n_a39aa26464a84f3895ab34b55f5925175}{linear\+\_\+index} (unsigned int $\ast$idx) const
+\item 
+T \& \hyperlink{classsisl_1_1sparse__array__n_a828d9cd11de929845c584d469b4cfb0d}{operator()} (unsigned int d0,...)
+\item 
+const T \& \hyperlink{classsisl_1_1sparse__array__n_a37b840c55a4225232fdc8852a1a068dd}{operator()} (unsigned int d0,...) const
+\item 
+T \& \hyperlink{classsisl_1_1sparse__array__n_a21e3bb0965fa54371ad65e6c5cc10520}{operator()} (unsigned int $\ast$d)
+\item 
+const T \& \hyperlink{classsisl_1_1sparse__array__n_ad7ab70c556272a847c076ff5f3a2ad26}{operator()} (unsigned int $\ast$d) const
+\item 
+\mbox{\Hypertarget{classsisl_1_1sparse__array__n_a7db3ee8940017e21e3673641071f9654}\label{classsisl_1_1sparse__array__n_a7db3ee8940017e21e3673641071f9654}} 
+const bool \hyperlink{classsisl_1_1sparse__array__n_a7db3ee8940017e21e3673641071f9654}{has\+\_\+value} (unsigned int d0,...) const
+\begin{DoxyCompactList}\small\item\em Returns whether an index has a value For a multidimensional index, this returns whether or not that index has a value. The value at that index will always be readable, use this to know whether or not it\textquotesingle{}s a true value, or an automatically generated value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1sparse__array__n_a7fc06154d0a6c469cab565d68876e637}\label{classsisl_1_1sparse__array__n_a7fc06154d0a6c469cab565d68876e637}} 
+const bool \hyperlink{classsisl_1_1sparse__array__n_a7fc06154d0a6c469cab565d68876e637}{has\+\_\+value} (unsigned int $\ast$d) const
+\begin{DoxyCompactList}\small\item\em Returns whether an index has a value For a multidimensional index, this returns whether or not that index has a value. The value at that index will always be readable, use this to know whether or not it\textquotesingle{}s a true value, or an automatically generated value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1sparse__array__n_aa45b35c8068495755175df44e8b3c117}\label{classsisl_1_1sparse__array__n_aa45b35c8068495755175df44e8b3c117}} 
+bool \hyperlink{classsisl_1_1sparse__array__n_aa45b35c8068495755175df44e8b3c117}{dump\+\_\+to\+\_\+stream} (std\+::ofstream \&stream) const
+\begin{DoxyCompactList}\small\item\em Dumps this array to a file stream at its current index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1sparse__array__n_a76553311b73e61d9abc06b615f9997d6}\label{classsisl_1_1sparse__array__n_a76553311b73e61d9abc06b615f9997d6}} 
+bool \hyperlink{classsisl_1_1sparse__array__n_a76553311b73e61d9abc06b615f9997d6}{read\+\_\+from\+\_\+stream} (std\+::ifstream \&stream)
+\begin{DoxyCompactList}\small\item\em Reads data from a filestream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T, int N, class Allocator = std\+::allocator$<$\+T$>$$>$\newline
+class sisl\+::sparse\+\_\+array\+\_\+n$<$ T, N, Allocator $>$}
+
+An n-\/dimensional sparese array. This class abstracts away the concept of an n-\/dimensional array, it should be easy to create an array of type T on N dimensions. It differes from an array in that, when instantiated, it consumes no memory. When you begin to fill cells of the array with data, only then does memory begin to fill up. Accessing a cell without data returns \char`\"{}default\+Value\char`\"{}, which is set in the constructor. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsisl_1_1sparse__array__n_a8c957cdf94a178f0d77c1c3c374f1f91}\label{classsisl_1_1sparse__array__n_a8c957cdf94a178f0d77c1c3c374f1f91}} 
+\index{sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}!sparse\+\_\+array\+\_\+n@{sparse\+\_\+array\+\_\+n}}
+\index{sparse\+\_\+array\+\_\+n@{sparse\+\_\+array\+\_\+n}!sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}}
+\subsubsection{\texorpdfstring{sparse\+\_\+array\+\_\+n()}{sparse\_array\_n()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T , int N, class Allocator  = std\+::allocator$<$\+T$>$$>$ \\
+\hyperlink{classsisl_1_1sparse__array__n}{sisl\+::sparse\+\_\+array\+\_\+n}$<$ T, N, Allocator $>$\+::\hyperlink{classsisl_1_1sparse__array__n}{sparse\+\_\+array\+\_\+n} (\begin{DoxyParamCaption}\item[{const Allocator \&}]{a = {\ttfamily Allocator()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor. Default constructor, allocates nothing. \mbox{\Hypertarget{classsisl_1_1sparse__array__n_afd76d3fbb0e923e2b28cfba1c675482b}\label{classsisl_1_1sparse__array__n_afd76d3fbb0e923e2b28cfba1c675482b}} 
+\index{sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}!sparse\+\_\+array\+\_\+n@{sparse\+\_\+array\+\_\+n}}
+\index{sparse\+\_\+array\+\_\+n@{sparse\+\_\+array\+\_\+n}!sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}}
+\subsubsection{\texorpdfstring{sparse\+\_\+array\+\_\+n()}{sparse\_array\_n()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class T , int N, class Allocator  = std\+::allocator$<$\+T$>$$>$ \\
+\hyperlink{classsisl_1_1sparse__array__n}{sisl\+::sparse\+\_\+array\+\_\+n}$<$ T, N, Allocator $>$\+::\hyperlink{classsisl_1_1sparse__array__n}{sparse\+\_\+array\+\_\+n} (\begin{DoxyParamCaption}\item[{const Allocator \&}]{a,  }\item[{const T \&}]{dv,  }\item[{unsigned int}]{d0,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+N-\/dim constructor. Allocates an array with N dimensions with maximum dimensions given by the parameters. \mbox{\Hypertarget{classsisl_1_1sparse__array__n_a3132fb2f99e33ea6c34129eb1a02523f}\label{classsisl_1_1sparse__array__n_a3132fb2f99e33ea6c34129eb1a02523f}} 
+\index{sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}!sparse\+\_\+array\+\_\+n@{sparse\+\_\+array\+\_\+n}}
+\index{sparse\+\_\+array\+\_\+n@{sparse\+\_\+array\+\_\+n}!sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}}
+\subsubsection{\texorpdfstring{sparse\+\_\+array\+\_\+n()}{sparse\_array\_n()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class T , int N, class Allocator  = std\+::allocator$<$\+T$>$$>$ \\
+\hyperlink{classsisl_1_1sparse__array__n}{sisl\+::sparse\+\_\+array\+\_\+n}$<$ T, N, Allocator $>$\+::\hyperlink{classsisl_1_1sparse__array__n}{sparse\+\_\+array\+\_\+n} (\begin{DoxyParamCaption}\item[{const T \&}]{dv,  }\item[{unsigned int}]{d0,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+N-\/dim constructor. Allocates an array with N dimensions with maximum dimensions given by the parameters. \mbox{\Hypertarget{classsisl_1_1sparse__array__n_ae639c5c814a4649fcfa5ea2616e51f12}\label{classsisl_1_1sparse__array__n_ae639c5c814a4649fcfa5ea2616e51f12}} 
+\index{sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}!````~sparse\+\_\+array\+\_\+n@{$\sim$sparse\+\_\+array\+\_\+n}}
+\index{````~sparse\+\_\+array\+\_\+n@{$\sim$sparse\+\_\+array\+\_\+n}!sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}}
+\subsubsection{\texorpdfstring{$\sim$sparse\+\_\+array\+\_\+n()}{~sparse\_array\_n()}}
+{\footnotesize\ttfamily template$<$class T , int N, class Allocator  = std\+::allocator$<$\+T$>$$>$ \\
+\hyperlink{classsisl_1_1sparse__array__n}{sisl\+::sparse\+\_\+array\+\_\+n}$<$ T, N, Allocator $>$\+::$\sim$\hyperlink{classsisl_1_1sparse__array__n}{sparse\+\_\+array\+\_\+n} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+N-\/dim constructor. Allocates an array with N dimensions with maximum dimensions given by the parameters. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsisl_1_1sparse__array__n_a4418f97d93ce2a6cef4639ed371ee47e}\label{classsisl_1_1sparse__array__n_a4418f97d93ce2a6cef4639ed371ee47e}} 
+\index{sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}!linear\+\_\+index@{linear\+\_\+index}}
+\index{linear\+\_\+index@{linear\+\_\+index}!sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}}
+\subsubsection{\texorpdfstring{linear\+\_\+index()}{linear\_index()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T , int N, class Allocator  = std\+::allocator$<$\+T$>$$>$ \\
+unsigned int \hyperlink{classsisl_1_1sparse__array__n}{sisl\+::sparse\+\_\+array\+\_\+n}$<$ T, N, Allocator $>$\+::linear\+\_\+index (\begin{DoxyParamCaption}\item[{unsigned int}]{d0,  }\item[{}]{... }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+/brief Returns a unique index for this index. This returns a unique index for a point index, this should generally be an index between 0 and max\+\_\+dim\+\_\+1$\ast$max\+\_\+dim\+\_\+2$\ast$...$\ast$max\+\_\+dim\+\_\+N -\/ 1. \mbox{\Hypertarget{classsisl_1_1sparse__array__n_a43cf90a26a41032cfc091ebb45112d13}\label{classsisl_1_1sparse__array__n_a43cf90a26a41032cfc091ebb45112d13}} 
+\index{sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}!linear\+\_\+index@{linear\+\_\+index}}
+\index{linear\+\_\+index@{linear\+\_\+index}!sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}}
+\subsubsection{\texorpdfstring{linear\+\_\+index()}{linear\_index()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class T , int N, class Allocator  = std\+::allocator$<$\+T$>$$>$ \\
+unsigned int \hyperlink{classsisl_1_1sparse__array__n}{sisl\+::sparse\+\_\+array\+\_\+n}$<$ T, N, Allocator $>$\+::linear\+\_\+index (\begin{DoxyParamCaption}\item[{unsigned int}]{d0,  }\item[{va\+\_\+list}]{vl }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+/brief Returns a unique index for this index. This returns a unique index for a point index, this should generally be an index between 0 and max\+\_\+dim\+\_\+1$\ast$max\+\_\+dim\+\_\+2$\ast$...$\ast$max\+\_\+dim\+\_\+N -\/ 1. \mbox{\Hypertarget{classsisl_1_1sparse__array__n_a39aa26464a84f3895ab34b55f5925175}\label{classsisl_1_1sparse__array__n_a39aa26464a84f3895ab34b55f5925175}} 
+\index{sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}!linear\+\_\+index@{linear\+\_\+index}}
+\index{linear\+\_\+index@{linear\+\_\+index}!sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}}
+\subsubsection{\texorpdfstring{linear\+\_\+index()}{linear\_index()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class T , int N, class Allocator  = std\+::allocator$<$\+T$>$$>$ \\
+unsigned int \hyperlink{classsisl_1_1sparse__array__n}{sisl\+::sparse\+\_\+array\+\_\+n}$<$ T, N, Allocator $>$\+::linear\+\_\+index (\begin{DoxyParamCaption}\item[{unsigned int $\ast$}]{idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+/brief Returns a unique index for this index. This returns a unique index for a point index, this should generally be an index between 0 and max\+\_\+dim\+\_\+1$\ast$max\+\_\+dim\+\_\+2$\ast$...$\ast$max\+\_\+dim\+\_\+N -\/ 1. \mbox{\Hypertarget{classsisl_1_1sparse__array__n_a828d9cd11de929845c584d469b4cfb0d}\label{classsisl_1_1sparse__array__n_a828d9cd11de929845c584d469b4cfb0d}} 
+\index{sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}!operator()@{operator()}}
+\index{operator()@{operator()}!sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class T , int N, class Allocator  = std\+::allocator$<$\+T$>$$>$ \\
+T\& \hyperlink{classsisl_1_1sparse__array__n}{sisl\+::sparse\+\_\+array\+\_\+n}$<$ T, N, Allocator $>$\+::operator() (\begin{DoxyParamCaption}\item[{unsigned int}]{d0,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+/brief Accessor functions. Access a value in the array, returns a reference so it is possible to write to indices via this overload. \mbox{\Hypertarget{classsisl_1_1sparse__array__n_a37b840c55a4225232fdc8852a1a068dd}\label{classsisl_1_1sparse__array__n_a37b840c55a4225232fdc8852a1a068dd}} 
+\index{sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}!operator()@{operator()}}
+\index{operator()@{operator()}!sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class T , int N, class Allocator  = std\+::allocator$<$\+T$>$$>$ \\
+const T\& \hyperlink{classsisl_1_1sparse__array__n}{sisl\+::sparse\+\_\+array\+\_\+n}$<$ T, N, Allocator $>$\+::operator() (\begin{DoxyParamCaption}\item[{unsigned int}]{d0,  }\item[{}]{... }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+/brief Accessor functions. Access a value in the array, returns a reference so it is possible to write to indices via this overload. \mbox{\Hypertarget{classsisl_1_1sparse__array__n_a21e3bb0965fa54371ad65e6c5cc10520}\label{classsisl_1_1sparse__array__n_a21e3bb0965fa54371ad65e6c5cc10520}} 
+\index{sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}!operator()@{operator()}}
+\index{operator()@{operator()}!sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class T , int N, class Allocator  = std\+::allocator$<$\+T$>$$>$ \\
+T\& \hyperlink{classsisl_1_1sparse__array__n}{sisl\+::sparse\+\_\+array\+\_\+n}$<$ T, N, Allocator $>$\+::operator() (\begin{DoxyParamCaption}\item[{unsigned int $\ast$}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+/brief Accessor functions. Access a value in the array, returns a reference so it is possible to write to indices via this overload. \mbox{\Hypertarget{classsisl_1_1sparse__array__n_ad7ab70c556272a847c076ff5f3a2ad26}\label{classsisl_1_1sparse__array__n_ad7ab70c556272a847c076ff5f3a2ad26}} 
+\index{sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}!operator()@{operator()}}
+\index{operator()@{operator()}!sisl\+::sparse\+\_\+array\+\_\+n@{sisl\+::sparse\+\_\+array\+\_\+n}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class T , int N, class Allocator  = std\+::allocator$<$\+T$>$$>$ \\
+const T\& \hyperlink{classsisl_1_1sparse__array__n}{sisl\+::sparse\+\_\+array\+\_\+n}$<$ T, N, Allocator $>$\+::operator() (\begin{DoxyParamCaption}\item[{unsigned int $\ast$}]{d }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+/brief Accessor functions. Access a value in the array, returns a reference so it is possible to write to indices via this overload. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/joshuahoracsek/\+Projects/sisl\+\_\+redux/include/sisl/memory/sparse\+\_\+array.\+hpp\end{DoxyCompactItemize}

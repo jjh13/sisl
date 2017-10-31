@@ -1,0 +1,84 @@
+\hypertarget{classsisl_1_1tp__quadratic}{}\section{sisl\+:\+:tp\+\_\+quadratic Class Reference}
+\label{classsisl_1_1tp__quadratic}\index{sisl\+::tp\+\_\+quadratic@{sisl\+::tp\+\_\+quadratic}}
+
+
+Tensor product quadratic spline.  
+
+
+
+
+{\ttfamily \#include $<$tp\+\_\+quadratic.\+hpp$>$}
+
+
+
+Inheritance diagram for sisl\+:\+:tp\+\_\+quadratic\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classsisl_1_1tp__quadratic__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sisl\+:\+:tp\+\_\+quadratic\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classsisl_1_1tp__quadratic__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__quadratic_ab296bef374fc6cefe2ec7d80689b448e}\label{classsisl_1_1tp__quadratic_ab296bef374fc6cefe2ec7d80689b448e}} 
+{\footnotesize template$<$int N$>$ }\\static const double {\bfseries phi} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__quadratic_a6da6a6fbeae8cf3f51bd8eac943abb50}\label{classsisl_1_1tp__quadratic_a6da6a6fbeae8cf3f51bd8eac943abb50}} 
+{\footnotesize template$<$int N$>$ }\\static const double {\bfseries phi} (const double \&h, const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__quadratic_a1958f4481128150832c89c56ed20b98c}\label{classsisl_1_1tp__quadratic_a1958f4481128150832c89c56ed20b98c}} 
+{\footnotesize template$<$int N$>$ }\\static const double {\bfseries dphi} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const int \&d)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__quadratic_a3a2e1e155c83f696ff4216877c9bb018}\label{classsisl_1_1tp__quadratic_a3a2e1e155c83f696ff4216877c9bb018}} 
+{\footnotesize template$<$int N$>$ }\\static const double {\bfseries dphi} (const double \&h, const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const int \&d)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__quadratic_aa463fc4a5127a7dfebe15d4f06182fce}\label{classsisl_1_1tp__quadratic_aa463fc4a5127a7dfebe15d4f06182fce}} 
+{\footnotesize template$<$int N$>$ }\\static std\+::vector$<$ \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} $>$ {\bfseries get\+\_\+integer\+\_\+support} ()
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__quadratic_abe066745c28ae8424c0fb80b524c3b39}\label{classsisl_1_1tp__quadratic_abe066745c28ae8424c0fb80b524c3b39}} 
+static bool {\bfseries has\+\_\+derivative} ()
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__quadratic_a850082ac2adb0124b7994c18af6dcc53}\label{classsisl_1_1tp__quadratic_a850082ac2adb0124b7994c18af6dcc53}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__quadratic_a7280d1af6563968684553ee3b99dd0f1}\label{classsisl_1_1tp__quadratic_a7280d1af6563968684553ee3b99dd0f1}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum\+\_\+deriv} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const int \&component)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__quadratic_a2243705ea86692e64149d82e88a0e0fc}\label{classsisl_1_1tp__quadratic_a2243705ea86692e64149d82e88a0e0fc}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__quadratic_afe95f0af6e952f68ca431ef619824829}\label{classsisl_1_1tp__quadratic_afe95f0af6e952f68ca431ef619824829}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$base, const L $\ast$$\ast$lattices)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__quadratic_a86821dd0fec5985b5d24a753168f3db7}\label{classsisl_1_1tp__quadratic_a86821dd0fec5985b5d24a753168f3db7}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const double \&h)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__quadratic_a6e136b55112a47e19693c20b0c8d685f}\label{classsisl_1_1tp__quadratic_a6e136b55112a47e19693c20b0c8d685f}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum\+\_\+deriv\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const int \&component, const double \&h)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__quadratic_a04f7d2e073ef040804cc80a97798e18e}\label{classsisl_1_1tp__quadratic_a04f7d2e073ef040804cc80a97798e18e}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const double \&h)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__quadratic_a20a5e68fe8020f5ce933a7ebc236bf5e}\label{classsisl_1_1tp__quadratic_a20a5e68fe8020f5ce933a7ebc236bf5e}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$base, const L $\ast$$\ast$lattices, const double \&h)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Tensor product quadratic spline. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/joshuahoracsek/\+Projects/sisl\+\_\+redux/include/sisl/basis/tp\+\_\+quadratic.\+hpp\end{DoxyCompactItemize}

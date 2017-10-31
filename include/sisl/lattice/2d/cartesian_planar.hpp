@@ -1,7 +1,7 @@
 /**
  * cartesian_planar.hpp
  *
- * A specialized implementation of the Cartesian planar lattice.
+ * A specialized implementation of the planar Cartesian lattice.
  *
  * @author Joshua Horacsek
  */

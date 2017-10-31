@@ -1,5 +1,5 @@
 /**
- * bcc_quintic_rdo.hpp
+ * quintic_rdo.hpp
  *
  * Default evaluation code for the spline defined by
 [-1  1  1 -1 -1  1  1 -1]
@@ -20,6 +20,9 @@
 
 
 namespace sisl {
+    /**
+     * \brief Quintic BCC basis function.
+     */
     class bcc_quintic_rdo : public basis_function {
     private:
         static inline double __pp_r0____d0__(const double &x_0, const double &x_1, const double &x_2) {

@@ -1,5 +1,5 @@
 /**
- * si_function.h
+ * si_function.hpp
  *
  * This file defines functions from a shift invariant space. We call these
  * Shift Invariant Functions (si_functions), which is a slight abuse 
@@ -18,19 +18,19 @@
 
 namespace sisl {
 
-	/*!
-	 * This performs a 
+	/*! \brief Combines a lattice and a generating function.
+	 * 
 	 */
     template<class L, class BF, int N>
     class si_function : public function {
     public:
-        /*! \breif Evaluate the function at a point.
+        /*! \brief Evaluate the function at a point.
          */
         si_function() : _bForceScale(false), _lattice(nullptr), _dBasisScale(1.), _bUseBasisDerivative(true){
             _mSpaceTransform = Eigen::MatrixXd::Identity(N, N);
         }
 
-        /*! \breif Evaluate the function at a point.
+        /*! \brief Evaluate the function at a point.
          */
         si_function(L *lattice) : si_function(){
             _lattice = lattice;
@@ -40,7 +40,7 @@ namespace sisl {
 
         }
 
-        /*! \breif Evaluate the function at a point.
+        /*! \brief Evaluate the function at a point.
          */
         virtual const double operator()(double d0, ...) const {
             va_list vl;
@@ -56,7 +56,7 @@ namespace sisl {
             return (*this)(V);
         }
 
-        /*! \breif Evaluate the function at a point.
+        /*! \brief Evaluate the function at a point.
          */
         virtual const double operator()(const vector &p) const {
             if(_lattice == nullptr) return 0;
@@ -72,7 +72,7 @@ namespace sisl {
                         _dBasisScale);
         }
 
-        /*! \breif Evaluate the function at a point.
+        /*! \brief Evaluate the function at a point.
          */
         virtual const double d(int component, double d0, ...) const {
             va_list vl;
@@ -88,7 +88,7 @@ namespace sisl {
             return d(component, V);
         }
 
-        /*! \breif Evaluate the function at a point.
+        /*! \brief Evaluate the function at a point.
          */
         virtual const double d(int component, const vector &p) const {
             if(_bUseBasisDerivative && BF::has_derivative()) {
@@ -116,7 +116,7 @@ namespace sisl {
 
         }
 
-        /*! \breif Evaluate the function at a point.
+        /*! \brief Evaluate the function at a point.
          */
         virtual const vector grad(double d0, ...) const {
             va_list vl;
@@ -132,7 +132,7 @@ namespace sisl {
             return grad(V);
         }
 
-        /*! \breif Evaluate the function at a point.
+        /*! \brief Evaluate the function at a point.
          */
         virtual const vector grad(const vector &p) const {
             if(_bUseBasisDerivative && BF::has_derivative()) {
@@ -158,7 +158,7 @@ namespace sisl {
                         _dBasisScale);
 
         }
-        /*! \breif Sets a scale for the basis function to use.
+        /*! \brief Sets a scale for the basis function to use.
         */
         void set_basis_scale(const double &h) {
             _dBasisScale = h;

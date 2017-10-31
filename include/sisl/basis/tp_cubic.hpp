@@ -1,9 +1,7 @@
 /**
- * tp_linear.h
- * Implements the tensor product linear b_spline in 'N' dimensions. 
- *
- * b_3imom(x)
- =  *
+ * tp_cubic.hpp
+ * Implements the tensor product cubic b_spline in 'N' dimensions. 
+ * 
  * @author Joshua Horacsek
  */
 
@@ -20,6 +18,9 @@
 
 namespace sisl {
 
+    /** \brief Tensor product cubic spline.
+     * 
+     */
     class tp_cubic : public basis_function {
     private:
 

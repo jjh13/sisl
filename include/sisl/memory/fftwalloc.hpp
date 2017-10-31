@@ -26,6 +26,10 @@
     #error "You cannot use the FFTW allocator without FFTW installed!"
 #endif
 
+/*!
+ * Allocator that uses FFTW to allocate properly aligned 
+ * regions of memory for Fourier transforms.
+ */
 template <typename T>
 class _fftwalloc {
 

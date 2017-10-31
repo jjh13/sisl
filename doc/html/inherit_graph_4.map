@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classsisl_1_1base__lattice.html" title="Base abstract lattice class. Defines the base class for a lattice, which are by definition subsets of..." alt="" coords="5,68,155,93"/>
+<area shape="rect" id="node2" href="$classsisl_1_1body__centered__cubic.html" title="Defines the body centered cubic lattice in 3d. " alt="" coords="224,5,360,44"/>
+<area shape="rect" id="node3" href="$classsisl_1_1cartesian__cubic.html" title="A specialized cubic Cartesian lattice class. " alt="" coords="206,68,377,93"/>
+<area shape="rect" id="node4" href="$classsisl_1_1cartesian__planar.html" title="A specialized Cartesian planar lattice class. " alt="" coords="203,117,380,143"/>
+</map>

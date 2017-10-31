@@ -316,20 +316,20 @@ namespace sisl {
             return false;
         }
 
-        /*! \breif Uploads the contents of this array on to an OpenCL device
+        /*! \brief Uploads the contents of this array on to an OpenCL device
          * 
          */
         cl_mem copy_to_cl_device(cl_context &context, cl_command_queue &command_q) const {
 
         }
 
-        /*! \breif Pushes the data on the opencl deviceback on to the host
+        /*! \brief Pushes the data on the opencl deviceback on to the host
         */
         int resync_cl_to_host(cl_command_queue &command_q, cl_mem &dmemory) {
 
         }
 
-        /*! \breif 
+        /*! \brief 
         */
         std::string generate_cl_accessor(const char *name) {
 

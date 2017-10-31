@@ -197,7 +197,6 @@ TEST_CASE("bcc_linear_interpolation", "BCC Lerp") {
     REQUIRE(testf.eval(0.,0.,0.) == 100.);
     REQUIRE(testf.eval(1.,0.,0.) == 50.);
     REQUIRE(testf.eval(2.,0.,0.) == 0.);
-
 }
 
 

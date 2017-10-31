@@ -1,4 +1,5 @@
 /**
+ * iso_surface.hpp
  * A marching cubes implementation for functions. Any function that
  * inherits from fuction in base_function.hpp can use this implementation
  * to quickly output a mesh.
@@ -18,14 +19,21 @@
 #include <map>
 
 namespace sisl{
+/*!
+ * \brief Namespace for utility functions, anything that's generally helpful, but
+ * not related to shift invariant spaces.
+ */ 
 namespace utility{
 
+/** \brief An implementation of marching cubes.
+*/
 class isosurface{
 public:
     isosurface() : m_shadingSs(0.0001) { }
     ~isosurface(){ }
 
-    /*!
+    /*! \brief Set heuristic parameters
+     * 
      * If the function we're marching has to rely on using 
      * a heuristic for shading, then we'll use ss to do a 
      * finite difference to calculate the partial derivatives in x y z.
@@ -36,16 +44,23 @@ public:
         m_shadingSs = ss;
     }
 
-    /*!
-     * Runs marching cubes (with corrected ambiguouties) over
+    /*! \brief March isosurface
+     * 
+     * Runs marching cubes (with corrected ambiguities) over
      * f. It starts at origin, and marches a prismic volume 
-     * with the dimensions in extent.
+     * with the dimensions in extent. If the dx,dy,dz are provided, then they
+     * will be used as the normal for the mesh, if not, then this function will attempt
+     * to use the grad member of the f. If that doesn't work, it'll use a divided 
+     * difference to approximate the shading. The step size for this can be set via
+     * set_shading_stepsize. 
+     *
      * \param f the input function
-     * \param isoValue the iso value to extract
-     * \param stepSize the size of steps, or the length of the edges of the cubes
-     * \param origin where the marchin begins in space
-     * \param extent the dimensions of the volume to march over
-     * \param dx,dy,dz if specified, these are functions to use for the dx dy and dz gradient components.
+     * \param isoValue The iso value to extract
+     * \param stepSize The size of steps, or the length of the edges of the cubes
+     * \param origin Where the marching begins in space
+     * \param extent The dimensions of the volume to march over
+     * \param flip_normal Whether to flip the output normal.
+     * \param dx,dy,dz If specified, these are functions to use for the dx dy and dz gradient components.
      */
     void march_function(
             function *f,
@@ -53,6 +68,7 @@ public:
             const double &stepSize,
             sisl::vector origin,
             sisl::vector extent,
+            bool flip_normal = false,
             sisl::function *dx = nullptr,
             sisl::function *dy = nullptr,
             sisl::function *dz = nullptr){
@@ -278,7 +294,8 @@ public:
 
     }
 
-    /*!
+    /*! \brief Output file
+     * 
      * Writes the marched isosurface into a file.
      * \param out the filename to output the ply to.
      */
@@ -286,7 +303,8 @@ public:
         return plyfile.write(out);
     }
 
-    /*!
+    /*! \brief Transform mesh.
+     * 
      * Applies a transformation matrix to the vertices of the levelset.
      * \param Tr a transformation matrix.
      */

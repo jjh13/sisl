@@ -1,0 +1,118 @@
+\hypertarget{classsisl_1_1utility_1_1ply__mesh}{}\section{sisl\+:\+:utility\+:\+:ply\+\_\+mesh Class Reference}
+\label{classsisl_1_1utility_1_1ply__mesh}\index{sisl\+::utility\+::ply\+\_\+mesh@{sisl\+::utility\+::ply\+\_\+mesh}}
+
+
+A barebones ply mesh writer.  
+
+
+
+
+{\ttfamily \#include $<$ply\+\_\+mesh.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsisl_1_1utility_1_1ply__mesh_ae9183ada87112161dd0a77b69ab7ce40}\label{classsisl_1_1utility_1_1ply__mesh_ae9183ada87112161dd0a77b69ab7ce40}} 
+\hyperlink{classsisl_1_1utility_1_1ply__mesh_ae9183ada87112161dd0a77b69ab7ce40}{ply\+\_\+mesh} ()
+\begin{DoxyCompactList}\small\item\em Create an empty mesh. \end{DoxyCompactList}\item 
+int \hyperlink{classsisl_1_1utility_1_1ply__mesh_a133740c648ea0dfcc71b79f0c4737ca4}{add\+\_\+vertex} (const \hyperlink{structsisl_1_1vertex3}{vertex3} \&p)
+\item 
+\mbox{\Hypertarget{classsisl_1_1utility_1_1ply__mesh_a6ebea0a3ed87fc61bac43905cbf6433a}\label{classsisl_1_1utility_1_1ply__mesh_a6ebea0a3ed87fc61bac43905cbf6433a}} 
+\hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{sisl\+::vector} {\bfseries get\+\_\+vertex\+\_\+pos} (const unsigned int \&index)
+\item 
+\mbox{\Hypertarget{classsisl_1_1utility_1_1ply__mesh_a1c2ac4284e2a45d601e1f9d504fc9955}\label{classsisl_1_1utility_1_1ply__mesh_a1c2ac4284e2a45d601e1f9d504fc9955}} 
+void {\bfseries set\+\_\+normal} (const unsigned int \&index, const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{sisl\+::vector} \&normal)
+\item 
+int \hyperlink{classsisl_1_1utility_1_1ply__mesh_a70f823f9e4642b7bd58af145c097cfb3}{add\+\_\+triangle} (\hyperlink{structsisl_1_1vertex3}{vertex3} v1, \hyperlink{structsisl_1_1vertex3}{vertex3} v2, \hyperlink{structsisl_1_1vertex3}{vertex3} v3)
+\item 
+int \hyperlink{classsisl_1_1utility_1_1ply__mesh_a1cee19476c65b8f721d763116f7ed792}{add\+\_\+triangle} (int i, int j, int k)
+\item 
+void \hyperlink{classsisl_1_1utility_1_1ply__mesh_ae7b3db5e9e4d147f8b9c971691b416eb}{transform\+\_\+mesh} (const \hyperlink{namespacesisl_a2ef12d285ca3e626c05abbdec1f8a679}{transform} \&t)
+\item 
+int \hyperlink{classsisl_1_1utility_1_1ply__mesh_a4deac3d136ba76fface8b15fa3446728}{count\+\_\+vertices} ()
+\item 
+int \hyperlink{classsisl_1_1utility_1_1ply__mesh_a0457bbece84efba494f74b4b7bb87d82}{count\+\_\+faces} ()
+\item 
+\mbox{\Hypertarget{classsisl_1_1utility_1_1ply__mesh_aca9982449cf061ef0938f5435d577771}\label{classsisl_1_1utility_1_1ply__mesh_aca9982449cf061ef0938f5435d577771}} 
+void {\bfseries remove\+\_\+duplicate\+\_\+vertices} ()
+\item 
+bool \hyperlink{classsisl_1_1utility_1_1ply__mesh_a4fce9e2a1f3d81b2243465d305164205}{write} (const std\+::string \&out) const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A barebones ply mesh writer. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsisl_1_1utility_1_1ply__mesh_a70f823f9e4642b7bd58af145c097cfb3}\label{classsisl_1_1utility_1_1ply__mesh_a70f823f9e4642b7bd58af145c097cfb3}} 
+\index{sisl\+::utility\+::ply\+\_\+mesh@{sisl\+::utility\+::ply\+\_\+mesh}!add\+\_\+triangle@{add\+\_\+triangle}}
+\index{add\+\_\+triangle@{add\+\_\+triangle}!sisl\+::utility\+::ply\+\_\+mesh@{sisl\+::utility\+::ply\+\_\+mesh}}
+\subsubsection{\texorpdfstring{add\+\_\+triangle()}{add\_triangle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int sisl\+::utility\+::ply\+\_\+mesh\+::add\+\_\+triangle (\begin{DoxyParamCaption}\item[{\hyperlink{structsisl_1_1vertex3}{vertex3}}]{v1,  }\item[{\hyperlink{structsisl_1_1vertex3}{vertex3}}]{v2,  }\item[{\hyperlink{structsisl_1_1vertex3}{vertex3}}]{v3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds a triangle to the mesh, checking for duplicate vertices. Returns an index into the list of faces. 
+\begin{DoxyParams}{Parameters}
+{\em v1,v2,v3} & A vertices that form a polygon \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsisl_1_1utility_1_1ply__mesh_a1cee19476c65b8f721d763116f7ed792}\label{classsisl_1_1utility_1_1ply__mesh_a1cee19476c65b8f721d763116f7ed792}} 
+\index{sisl\+::utility\+::ply\+\_\+mesh@{sisl\+::utility\+::ply\+\_\+mesh}!add\+\_\+triangle@{add\+\_\+triangle}}
+\index{add\+\_\+triangle@{add\+\_\+triangle}!sisl\+::utility\+::ply\+\_\+mesh@{sisl\+::utility\+::ply\+\_\+mesh}}
+\subsubsection{\texorpdfstring{add\+\_\+triangle()}{add\_triangle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int sisl\+::utility\+::ply\+\_\+mesh\+::add\+\_\+triangle (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds a triangle to the mesh, checking for duplicate vertices. Returns an index into the list of faces. 
+\begin{DoxyParams}{Parameters}
+{\em v1,v2,v3} & Vertex indices (from add\+\_\+verte) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsisl_1_1utility_1_1ply__mesh_a133740c648ea0dfcc71b79f0c4737ca4}\label{classsisl_1_1utility_1_1ply__mesh_a133740c648ea0dfcc71b79f0c4737ca4}} 
+\index{sisl\+::utility\+::ply\+\_\+mesh@{sisl\+::utility\+::ply\+\_\+mesh}!add\+\_\+vertex@{add\+\_\+vertex}}
+\index{add\+\_\+vertex@{add\+\_\+vertex}!sisl\+::utility\+::ply\+\_\+mesh@{sisl\+::utility\+::ply\+\_\+mesh}}
+\subsubsection{\texorpdfstring{add\+\_\+vertex()}{add\_vertex()}}
+{\footnotesize\ttfamily int sisl\+::utility\+::ply\+\_\+mesh\+::add\+\_\+vertex (\begin{DoxyParamCaption}\item[{const \hyperlink{structsisl_1_1vertex3}{vertex3} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds a vertex to the mesh. Returns an index into the list of vertices. 
+\begin{DoxyParams}{Parameters}
+{\em p} & A vertex \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsisl_1_1utility_1_1ply__mesh_a0457bbece84efba494f74b4b7bb87d82}\label{classsisl_1_1utility_1_1ply__mesh_a0457bbece84efba494f74b4b7bb87d82}} 
+\index{sisl\+::utility\+::ply\+\_\+mesh@{sisl\+::utility\+::ply\+\_\+mesh}!count\+\_\+faces@{count\+\_\+faces}}
+\index{count\+\_\+faces@{count\+\_\+faces}!sisl\+::utility\+::ply\+\_\+mesh@{sisl\+::utility\+::ply\+\_\+mesh}}
+\subsubsection{\texorpdfstring{count\+\_\+faces()}{count\_faces()}}
+{\footnotesize\ttfamily int sisl\+::utility\+::ply\+\_\+mesh\+::count\+\_\+faces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the number of unique faces in the mesh \mbox{\Hypertarget{classsisl_1_1utility_1_1ply__mesh_a4deac3d136ba76fface8b15fa3446728}\label{classsisl_1_1utility_1_1ply__mesh_a4deac3d136ba76fface8b15fa3446728}} 
+\index{sisl\+::utility\+::ply\+\_\+mesh@{sisl\+::utility\+::ply\+\_\+mesh}!count\+\_\+vertices@{count\+\_\+vertices}}
+\index{count\+\_\+vertices@{count\+\_\+vertices}!sisl\+::utility\+::ply\+\_\+mesh@{sisl\+::utility\+::ply\+\_\+mesh}}
+\subsubsection{\texorpdfstring{count\+\_\+vertices()}{count\_vertices()}}
+{\footnotesize\ttfamily int sisl\+::utility\+::ply\+\_\+mesh\+::count\+\_\+vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the number of unique vertices in the mesh \mbox{\Hypertarget{classsisl_1_1utility_1_1ply__mesh_ae7b3db5e9e4d147f8b9c971691b416eb}\label{classsisl_1_1utility_1_1ply__mesh_ae7b3db5e9e4d147f8b9c971691b416eb}} 
+\index{sisl\+::utility\+::ply\+\_\+mesh@{sisl\+::utility\+::ply\+\_\+mesh}!transform\+\_\+mesh@{transform\+\_\+mesh}}
+\index{transform\+\_\+mesh@{transform\+\_\+mesh}!sisl\+::utility\+::ply\+\_\+mesh@{sisl\+::utility\+::ply\+\_\+mesh}}
+\subsubsection{\texorpdfstring{transform\+\_\+mesh()}{transform\_mesh()}}
+{\footnotesize\ttfamily void sisl\+::utility\+::ply\+\_\+mesh\+::transform\+\_\+mesh (\begin{DoxyParamCaption}\item[{const \hyperlink{namespacesisl_a2ef12d285ca3e626c05abbdec1f8a679}{transform} \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Transforms all vertices in the mesh according to a transformation matrix. 
+\begin{DoxyParams}{Parameters}
+{\em t} & A transformation matrix. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsisl_1_1utility_1_1ply__mesh_a4fce9e2a1f3d81b2243465d305164205}\label{classsisl_1_1utility_1_1ply__mesh_a4fce9e2a1f3d81b2243465d305164205}} 
+\index{sisl\+::utility\+::ply\+\_\+mesh@{sisl\+::utility\+::ply\+\_\+mesh}!write@{write}}
+\index{write@{write}!sisl\+::utility\+::ply\+\_\+mesh@{sisl\+::utility\+::ply\+\_\+mesh}}
+\subsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily bool sisl\+::utility\+::ply\+\_\+mesh\+::write (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Writes this mesh to a P\+LY file, returns false if the file \textquotesingle{}out\textquotesingle{} could not be opened for writing. 
+\begin{DoxyParams}{Parameters}
+{\em out} & A the name of the file to output to \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/joshuahoracsek/\+Projects/sisl\+\_\+redux/include/sisl/utility/ply\+\_\+mesh.\+hpp\end{DoxyCompactItemize}

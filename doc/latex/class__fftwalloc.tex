@@ -1,0 +1,94 @@
+\hypertarget{class__fftwalloc}{}\section{\+\_\+fftwalloc$<$ T $>$ Class Template Reference}
+\label{class__fftwalloc}\index{\+\_\+fftwalloc$<$ T $>$@{\+\_\+fftwalloc$<$ T $>$}}
+
+
+{\ttfamily \#include $<$fftwalloc.\+hpp$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__fftwalloc_1_1rebind}{rebind}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class__fftwalloc_aa39bf0bf7c81e62434dcfe71ab0ee0eb}\label{class__fftwalloc_aa39bf0bf7c81e62434dcfe71ab0ee0eb}} 
+typedef T $\ast$ {\bfseries pointer}
+\item 
+\mbox{\Hypertarget{class__fftwalloc_a226bc1d494aa6b8224578dd6ba27045d}\label{class__fftwalloc_a226bc1d494aa6b8224578dd6ba27045d}} 
+typedef const T $\ast$ {\bfseries const\+\_\+pointer}
+\item 
+\mbox{\Hypertarget{class__fftwalloc_a17bbb853161aa48edd58e827e6c74ad8}\label{class__fftwalloc_a17bbb853161aa48edd58e827e6c74ad8}} 
+typedef T \& {\bfseries reference}
+\item 
+\mbox{\Hypertarget{class__fftwalloc_a165785478480616a8f645f33f4374117}\label{class__fftwalloc_a165785478480616a8f645f33f4374117}} 
+typedef const T \& {\bfseries const\+\_\+reference}
+\item 
+\mbox{\Hypertarget{class__fftwalloc_aa1358d579b838daa085c1b85efdc3857}\label{class__fftwalloc_aa1358d579b838daa085c1b85efdc3857}} 
+typedef T {\bfseries value\+\_\+type}
+\item 
+\mbox{\Hypertarget{class__fftwalloc_a2c184fee5e28c8e961d3cbe63142e887}\label{class__fftwalloc_a2c184fee5e28c8e961d3cbe63142e887}} 
+typedef size\+\_\+t {\bfseries size\+\_\+type}
+\item 
+\mbox{\Hypertarget{class__fftwalloc_a5416536647a7a201ec0f718e2aab9e63}\label{class__fftwalloc_a5416536647a7a201ec0f718e2aab9e63}} 
+typedef ptrdiff\+\_\+t {\bfseries difference\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class__fftwalloc_a54f95b42717abce667c3d6a79f7d3f3c}\label{class__fftwalloc_a54f95b42717abce667c3d6a79f7d3f3c}} 
+{\bfseries \+\_\+fftwalloc} (const \hyperlink{class__fftwalloc}{\+\_\+fftwalloc} \&)
+\item 
+\mbox{\Hypertarget{class__fftwalloc_a00107cb398eb5f31c06acfb4c6174aa2}\label{class__fftwalloc_a00107cb398eb5f31c06acfb4c6174aa2}} 
+{\footnotesize template$<$typename U $>$ }\\{\bfseries \+\_\+fftwalloc} (const \hyperlink{class__fftwalloc}{\+\_\+fftwalloc}$<$ U $>$ \&)
+\item 
+\mbox{\Hypertarget{class__fftwalloc_a4e380a29022678dbb6bb87ec37ebc648}\label{class__fftwalloc_a4e380a29022678dbb6bb87ec37ebc648}} 
+T $\ast$ {\bfseries address} (T \&r) const
+\item 
+\mbox{\Hypertarget{class__fftwalloc_abdf36ae342931e7152886d998b0b51ec}\label{class__fftwalloc_abdf36ae342931e7152886d998b0b51ec}} 
+const T $\ast$ {\bfseries address} (const T \&s) const
+\item 
+\mbox{\Hypertarget{class__fftwalloc_a7eda8df0b9b1c8f414ccdaf86bf30f53}\label{class__fftwalloc_a7eda8df0b9b1c8f414ccdaf86bf30f53}} 
+size\+\_\+t {\bfseries max\+\_\+size} () const
+\item 
+\mbox{\Hypertarget{class__fftwalloc_a31f9e314e5aff021d1b496a8f9980c62}\label{class__fftwalloc_a31f9e314e5aff021d1b496a8f9980c62}} 
+bool {\bfseries operator!=} (const \hyperlink{class__fftwalloc}{\+\_\+fftwalloc} \&other) const
+\item 
+\mbox{\Hypertarget{class__fftwalloc_a35fe8abd389c2f24b158865b0430b707}\label{class__fftwalloc_a35fe8abd389c2f24b158865b0430b707}} 
+void {\bfseries construct} (T $\ast$const p, const T \&t) const
+\item 
+\mbox{\Hypertarget{class__fftwalloc_a4924626f2f99a3c948bd2ebc7b0e8672}\label{class__fftwalloc_a4924626f2f99a3c948bd2ebc7b0e8672}} 
+void {\bfseries destroy} (T $\ast$const p) const
+\item 
+\mbox{\Hypertarget{class__fftwalloc_a8278c8ba3d522669780755530c040f91}\label{class__fftwalloc_a8278c8ba3d522669780755530c040f91}} 
+bool {\bfseries operator==} (const \hyperlink{class__fftwalloc}{\+\_\+fftwalloc} \&other) const
+\item 
+\mbox{\Hypertarget{class__fftwalloc_a97598b788bd8462c9719b2847575b4d5}\label{class__fftwalloc_a97598b788bd8462c9719b2847575b4d5}} 
+T $\ast$ {\bfseries allocate} (const size\+\_\+t n) const
+\item 
+\mbox{\Hypertarget{class__fftwalloc_a36bada8dcbe796997e9c905c6a405c92}\label{class__fftwalloc_a36bada8dcbe796997e9c905c6a405c92}} 
+void {\bfseries deallocate} (T $\ast$const p, const size\+\_\+t n) const
+\item 
+\mbox{\Hypertarget{class__fftwalloc_ad95103db3b0f655ec474b86feb2d3034}\label{class__fftwalloc_ad95103db3b0f655ec474b86feb2d3034}} 
+{\footnotesize template$<$typename U $>$ }\\T $\ast$ {\bfseries allocate} (const size\+\_\+t n, const U $\ast$) const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class \+\_\+fftwalloc$<$ T $>$}
+
+\hyperlink{fftwalloc_8hpp_source}{fftwalloc.\+hpp}
+
+An allocator that wraps F\+F\+TW Malloc, for properly aligned memory allocations.
+
+Taken mostly from \char`\"{}\+The Mallocator\char`\"{} \href{http://blogs.msdn.com/b/vcblog/archive/2008/08/28/the-mallocator.aspx}{\tt http\+://blogs.\+msdn.\+com/b/vcblog/archive/2008/08/28/the-\/mallocator.\+aspx} With a few very minor changes.
+
+\begin{DoxyAuthor}{Author}
+Joshua Horacsek
+\end{DoxyAuthor}
+Allocator that uses F\+F\+TW to allocate properly aligned regions of memory for Fourier transforms. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/joshuahoracsek/\+Projects/sisl\+\_\+redux/include/sisl/memory/fftwalloc.\+hpp\end{DoxyCompactItemize}

@@ -1,18 +1,16 @@
 /**
  * base_lattice.hpp
+ * Defines the abstract class for a lattice. 
+
+ * Lattices are basically containers for values of a generic type T. 
+ * Specialized implementations can often leverage faster implementations 
+ * of certain method implementations.
  *
- * Defines the abstract class for a lattice. Lattices are basically containers
- * for values of type T. We can generally specify them with a generating matrix
- * (see generic_lattice.hpp), specialized implementations can often leverage
- * faster implementations of certain method implementations.
- *
- * These just hold values, the basis function and function space are responsible
- * for continuous floating point interpolation between lattice sites (see
- * basis/basis_function.hpp and functions_space/function_space.hpp
- * respectively.)
- *
- * @Joshua Horacsek
+ * @author Joshua Horacsek
  */
+
+#ifndef __SISL_BASE_LATTICE__
+#define __SISL_BASE_LATTICE__
 
 #include <functional>
 #include <vector>
@@ -20,12 +18,10 @@
 #include <sisl/primitives.hpp>
 #include <sisl/function/base_function.hpp>
 
-#ifndef __SISL_BASE_LATTICE__
-#define __SISL_BASE_LATTICE__
-
+//!\brief Global namespace for all of SISL
 namespace sisl {
 
-    //! Defines how a lattice should be extended into 
+    //! Defines how a lattice should be extended. Useful for data processing that requires perodic behaviour 
     enum LatticeExtensionType {
         InvalidAccess = -1,     //!< All accesses outside of the lattice generate an exception
         ForceZero = 0,          //!< All reads outside of the lattice return 0, writes generate an exception
@@ -36,6 +32,7 @@ namespace sisl {
         Extend_Odd_Odd,        //!< odd extension about origin, even extension about midpoint
     };
 
+    //! Defines how a lattice extension gets shifted
     enum LatticeRegionShift {
         NoShift = 0,
         Shift,
@@ -44,7 +41,7 @@ namespace sisl {
         Shift_Shift,
     };
 
-    /*!
+    /*! \brief Base abstract lattice class. 
      * Defines the base class for a lattice, which are by definition
      * subsets of Z^n.
      */
@@ -223,22 +220,22 @@ namespace sisl {
 #ifdef SISL_CL
 
         /*!
-         * \breif Determines whether the current object has an OpenCL capable
+         * \brief Determines whether the current object has an OpenCL capable
          * memory store in the backend.
          */
         virtual bool has_cl_backing() const = 0;
 
-        /*! \breif Uploads the contents of this array on to an OpenCL device
+        /*! \brief Uploads the contents of this array on to an OpenCL device
          * 
          */
         virtual cl_mem copy_to_cl_device(cl_context &context, cl_command_queue &command_q) const = 0;
 
-        /*! \breif Pushes the data on the opencl deviceback on to the host
+        /*! \brief Pushes the data on the opencl deviceback on to the host
         */
         virtual int resync_cl_to_host(cl_command_queue &command_q, cl_mem &dmemory);
 
 
-        /*! \breif Generates a string of OpenCL code to access these 
+        /*! \brief Generates a string of OpenCL code to access these 
         */
         virtual std::string generate_cl_accessor(const char *name) const = 0;
 #endif

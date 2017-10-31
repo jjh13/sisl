@@ -1,0 +1,368 @@
+\hypertarget{namespacesisl}{}\section{sisl Namespace Reference}
+\label{namespacesisl}\index{sisl@{sisl}}
+
+
+Global namespace for all of S\+I\+SL.  
+
+
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacesisl_1_1test}{test}
+\begin{DoxyCompactList}\small\item\em Namespace for most test functions within S\+I\+SL, this includes anything that would be useful for verification of experimental results. \end{DoxyCompactList}\item 
+ \hyperlink{namespacesisl_1_1utility}{utility}
+\begin{DoxyCompactList}\small\item\em Namespace for utility functions, anything that\textquotesingle{}s generally helpful, but not related to shift invariant spaces. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsisl_1_1array__n}{array\+\_\+n}
+\begin{DoxyCompactList}\small\item\em An n-\/dimensional array. This class abstracts away the concept of an n-\/dimensional array, it should be easy to create an array of type T on N dimensions. This is useful as it often ends up being the case that many integer sampling lattices can be broken down into interleaved Cartesian grids. At the end of the day, this implementation flattens the representation down onto dense linear memory. \end{DoxyCompactList}\item 
+class \hyperlink{classsisl_1_1base__lattice}{base\+\_\+lattice}
+\begin{DoxyCompactList}\small\item\em Base abstract lattice class. Defines the base class for a lattice, which are by definition subsets of Z$^\wedge$n. \end{DoxyCompactList}\item 
+class \hyperlink{classsisl_1_1basis__function}{basis\+\_\+function}
+\begin{DoxyCompactList}\small\item\em Abstract definition of a basis function. Provides an interface that any basis function of a shift invariant space must adhere to. This also provides the heavy lifting code for a ``brute force\textquotesingle{}\textquotesingle{} convolution sum. \hyperlink{classsisl_1_1tp__linear}{tp\+\_\+linear} is a good example of how to implement basis functions. \end{DoxyCompactList}\item 
+class \hyperlink{classsisl_1_1bcc__quintic__rdo}{bcc\+\_\+quintic\+\_\+rdo}
+\begin{DoxyCompactList}\small\item\em Quintic B\+CC basis function. \end{DoxyCompactList}\item 
+class \hyperlink{classsisl_1_1body__centered__cubic}{body\+\_\+centered\+\_\+cubic}
+\begin{DoxyCompactList}\small\item\em Defines the body centered cubic lattice in 3d. \end{DoxyCompactList}\item 
+class \hyperlink{classsisl_1_1cartesian__cubic}{cartesian\+\_\+cubic}
+\begin{DoxyCompactList}\small\item\em A specialized cubic Cartesian lattice class. \end{DoxyCompactList}\item 
+class \hyperlink{classsisl_1_1cartesian__planar}{cartesian\+\_\+planar}
+\begin{DoxyCompactList}\small\item\em A specialized Cartesian planar lattice class. \end{DoxyCompactList}\item 
+class \hyperlink{classsisl_1_1function}{function}
+\begin{DoxyCompactList}\small\item\em Abstract base class for a function. Defines a function that is valid over all R$^\wedge$n, it\textquotesingle{}s up to the underlying implementation to decide how those values map to real values. \end{DoxyCompactList}\item 
+class \hyperlink{classsisl_1_1nearest__neighbor}{nearest\+\_\+neighbor}
+\begin{DoxyCompactList}\small\item\em Nearest neighbor interpolation for any lattice. Simply finds the nearest lattice site and returns the value at that site. This class doesn\textquotesingle{}t implement phi or dphi functions, as one would need to know the lattice a-\/priori for those, and this class structure isn\textquotesingle{}t sophisticated enough to facilitate that. \end{DoxyCompactList}\item 
+struct \hyperlink{structsisl_1_1plane}{plane}
+\begin{DoxyCompactList}\small\item\em 3D plane class. \end{DoxyCompactList}\item 
+struct \hyperlink{structsisl_1_1ray}{ray}
+\begin{DoxyCompactList}\small\item\em A ray in space. \end{DoxyCompactList}\item 
+class \hyperlink{classsisl_1_1si__function}{si\+\_\+function}
+\begin{DoxyCompactList}\small\item\em Combines a lattice and a generating function. \end{DoxyCompactList}\item 
+class \hyperlink{classsisl_1_1sparse__array__n}{sparse\+\_\+array\+\_\+n}
+\begin{DoxyCompactList}\small\item\em An n-\/dimensional sparese array. This class abstracts away the concept of an n-\/dimensional array, it should be easy to create an array of type T on N dimensions. It differes from an array in that, when instantiated, it consumes no memory. When you begin to fill cells of the array with data, only then does memory begin to fill up. Accessing a cell without data returns \char`\"{}default\+Value\char`\"{}, which is set in the constructor. \end{DoxyCompactList}\item 
+class \hyperlink{classsisl_1_1tp__cubic}{tp\+\_\+cubic}
+\begin{DoxyCompactList}\small\item\em Tensor product cubic spline. \end{DoxyCompactList}\item 
+class \hyperlink{classsisl_1_1tp__cubic__imom}{tp\+\_\+cubic\+\_\+imom}
+\begin{DoxyCompactList}\small\item\em Tensor product cubic interpolating M\+OM. \end{DoxyCompactList}\item 
+class \hyperlink{classsisl_1_1tp__linear}{tp\+\_\+linear}
+\begin{DoxyCompactList}\small\item\em Tensor product linear basis function. Tensor product linear basis function. On the planar and cubic Cartesian lattices, we have F\+A\+S\+T\+\_\+\+B\+A\+S\+ES which correspond to bilinear and trilinear interpolation. \end{DoxyCompactList}\item 
+class \hyperlink{classsisl_1_1tp__quadratic}{tp\+\_\+quadratic}
+\begin{DoxyCompactList}\small\item\em Tensor product quadratic spline. \end{DoxyCompactList}\item 
+struct \hyperlink{structsisl_1_1triangle}{triangle}
+\begin{DoxyCompactList}\small\item\em Triangle in 3D space. \end{DoxyCompactList}\item 
+struct \hyperlink{structsisl_1_1vertex3}{vertex3}
+\begin{DoxyCompactList}\small\item\em 3D vertex. \end{DoxyCompactList}\item 
+class \hyperlink{classsisl_1_1zp3__element}{zp3\+\_\+element}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}\label{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}} 
+using \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} = Eigen\+::\+Matrix$<$ sisl\+\_\+float, Eigen\+::\+Dynamic, 1 $>$
+\begin{DoxyCompactList}\small\item\em dynamically sized (mathematical) vector datatype \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacesisl_afaf80b1234035c1dbd3d570c96c6a63a}\label{namespacesisl_afaf80b1234035c1dbd3d570c96c6a63a}} 
+using \hyperlink{namespacesisl_afaf80b1234035c1dbd3d570c96c6a63a}{point} = Eigen\+::\+Matrix$<$ sisl\+\_\+float, Eigen\+::\+Dynamic, 1 $>$
+\begin{DoxyCompactList}\small\item\em dynamically size point datatype \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacesisl_a2ef12d285ca3e626c05abbdec1f8a679}\label{namespacesisl_a2ef12d285ca3e626c05abbdec1f8a679}} 
+using \hyperlink{namespacesisl_a2ef12d285ca3e626c05abbdec1f8a679}{transform} = Eigen\+::\+Matrix$<$ sisl\+\_\+float, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$
+\begin{DoxyCompactList}\small\item\em Dynamically sized transform (i.\+e. matrix) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacesisl_aa043f4ef2b36e60d18bb37009e3aeed2}\label{namespacesisl_aa043f4ef2b36e60d18bb37009e3aeed2}} 
+using \hyperlink{namespacesisl_aa043f4ef2b36e60d18bb37009e3aeed2}{rgb\+\_\+color} = Eigen\+::\+Matrix$<$ sisl\+\_\+float, 3, 1 $>$
+\begin{DoxyCompactList}\small\item\em A fixed size 3-\/vector for holding colours. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacesisl_acbd6b969b6b4f5c56b84502d3f561636}\label{namespacesisl_acbd6b969b6b4f5c56b84502d3f561636}} 
+using \hyperlink{namespacesisl_acbd6b969b6b4f5c56b84502d3f561636}{rgba\+\_\+color} = Eigen\+::\+Matrix$<$ sisl\+\_\+float, 4, 1 $>$
+\begin{DoxyCompactList}\small\item\em A fixed size 4-\/vector for holding colours and an alpha channel. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacesisl_acd18feee4026583db6185df2b25434aa}\label{namespacesisl_acd18feee4026583db6185df2b25434aa}} 
+using \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} = Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 1 $>$
+\begin{DoxyCompactList}\small\item\em Lattice\+\_\+site are integer tuples (vectors) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacesisl_adc492e1c166a136d08b283394d81cd71}\label{namespacesisl_adc492e1c166a136d08b283394d81cd71}} 
+using \hyperlink{namespacesisl_adc492e1c166a136d08b283394d81cd71}{int\+\_\+tuple} = Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 1 $>$
+\begin{DoxyCompactList}\small\item\em integer tuples (vectors) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324f}{Lattice\+Extension\+Type} \{ \newline
+\hyperlink{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324fadfcb36de23898505e7d6a7118c886659}{Invalid\+Access} = -\/1, 
+\hyperlink{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324fac0e9f82838a1a73b81d84d19571341a1}{Force\+Zero} = 0, 
+\hyperlink{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324fae2c9e90c80ef46b1a6b3b5c61dd8392e}{Periodic}, 
+\hyperlink{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324faa83636be87d2bc6798c54dbafe922e39}{Extend\+\_\+\+Even\+\_\+\+Even}, 
+\newline
+\hyperlink{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324fa4557b0af0e76c30cf1ce9c7be615183c}{Extend\+\_\+\+Even\+\_\+\+Odd}, 
+\hyperlink{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324fa7f5a23d007bce2170e4aa405b7a0829e}{Extend\+\_\+\+Odd\+\_\+\+Even}, 
+\hyperlink{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324fa1ba3dc19cdffc9a67e046e50e1e64187}{Extend\+\_\+\+Odd\+\_\+\+Odd}
+ \}\begin{DoxyCompactList}\small\item\em Defines how a lattice should be extended. Useful for data processing that requires perodic behaviour. \end{DoxyCompactList}
+\item 
+\mbox{\Hypertarget{namespacesisl_af139f6f74488292ae48c0d71eaa5d4f1}\label{namespacesisl_af139f6f74488292ae48c0d71eaa5d4f1}} 
+enum \hyperlink{namespacesisl_af139f6f74488292ae48c0d71eaa5d4f1}{Lattice\+Region\+Shift} \{ \newline
+{\bfseries No\+Shift} = 0, 
+{\bfseries Shift}, 
+{\bfseries None\+\_\+\+Shift}, 
+{\bfseries Shift\+\_\+\+None}, 
+\newline
+{\bfseries Shift\+\_\+\+Shift}
+ \}\begin{DoxyCompactList}\small\item\em Defines how a lattice extension gets shifted. \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespacesisl_acb05df69c6b8f6d31074a5f4cec4baeb}{e\+\_\+datatype} \{ \newline
+{\bfseries S\+D\+T\+\_\+\+U\+N\+K\+N\+O\+WN} = -\/1, 
+{\bfseries S\+D\+T\+\_\+\+U\+I\+N\+T8} = 0, 
+{\bfseries S\+D\+T\+\_\+\+U\+I\+N\+T16} = 1, 
+{\bfseries S\+D\+T\+\_\+\+U\+I\+N\+T32} = 2, 
+\newline
+{\bfseries S\+D\+T\+\_\+\+F\+L\+O\+AT} = 3, 
+{\bfseries S\+D\+T\+\_\+\+D\+O\+U\+B\+LE} = 4
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\double \hyperlink{namespacesisl_a7295912c88c93a730de6a93f9bfff854}{\+\_\+\+\_\+fast\+\_\+planar\+\_\+tp\+\_\+linear\+\_\+\+\_\+} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const \hyperlink{classsisl_1_1cartesian__planar}{cartesian\+\_\+planar}$<$ T $>$ $\ast$lattice)
+\item 
+\mbox{\Hypertarget{namespacesisl_a88de527ba071c0203e68dde0caf2257a}\label{namespacesisl_a88de527ba071c0203e68dde0caf2257a}} 
+{\bfseries F\+A\+S\+T\+\_\+\+B\+A\+S\+I\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+I\+Z\+A\+T\+I\+ON} (\hyperlink{classsisl_1_1tp__linear}{tp\+\_\+linear}, \hyperlink{classsisl_1_1cartesian__planar}{cartesian\+\_\+planar}, \hyperlink{namespacesisl_a7295912c88c93a730de6a93f9bfff854}{\+\_\+\+\_\+fast\+\_\+planar\+\_\+tp\+\_\+linear\+\_\+\+\_\+}, 2, unsigned char)
+\item 
+\mbox{\Hypertarget{namespacesisl_a38991de77fa5cd8ecbd9e3bf6f6a1c59}\label{namespacesisl_a38991de77fa5cd8ecbd9e3bf6f6a1c59}} 
+{\bfseries F\+A\+S\+T\+\_\+\+B\+A\+S\+I\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+I\+Z\+A\+T\+I\+ON} (\hyperlink{classsisl_1_1tp__linear}{tp\+\_\+linear}, \hyperlink{classsisl_1_1cartesian__planar}{cartesian\+\_\+planar}, \hyperlink{namespacesisl_a7295912c88c93a730de6a93f9bfff854}{\+\_\+\+\_\+fast\+\_\+planar\+\_\+tp\+\_\+linear\+\_\+\+\_\+}, 2, char)
+\item 
+\mbox{\Hypertarget{namespacesisl_ae7efd7a61d967125eb5a75b37371a1bc}\label{namespacesisl_ae7efd7a61d967125eb5a75b37371a1bc}} 
+{\bfseries F\+A\+S\+T\+\_\+\+B\+A\+S\+I\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+I\+Z\+A\+T\+I\+ON} (\hyperlink{classsisl_1_1tp__linear}{tp\+\_\+linear}, \hyperlink{classsisl_1_1cartesian__planar}{cartesian\+\_\+planar}, \hyperlink{namespacesisl_a7295912c88c93a730de6a93f9bfff854}{\+\_\+\+\_\+fast\+\_\+planar\+\_\+tp\+\_\+linear\+\_\+\+\_\+}, 2, short)
+\item 
+\mbox{\Hypertarget{namespacesisl_a8d3efa8fdefe2c747c5f38181f71a469}\label{namespacesisl_a8d3efa8fdefe2c747c5f38181f71a469}} 
+{\bfseries F\+A\+S\+T\+\_\+\+B\+A\+S\+I\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+I\+Z\+A\+T\+I\+ON} (\hyperlink{classsisl_1_1tp__linear}{tp\+\_\+linear}, \hyperlink{classsisl_1_1cartesian__planar}{cartesian\+\_\+planar}, \hyperlink{namespacesisl_a7295912c88c93a730de6a93f9bfff854}{\+\_\+\+\_\+fast\+\_\+planar\+\_\+tp\+\_\+linear\+\_\+\+\_\+}, 2, int)
+\item 
+\mbox{\Hypertarget{namespacesisl_a73583c8d98b61ea4e01b1c8418765e82}\label{namespacesisl_a73583c8d98b61ea4e01b1c8418765e82}} 
+{\bfseries F\+A\+S\+T\+\_\+\+B\+A\+S\+I\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+I\+Z\+A\+T\+I\+ON} (\hyperlink{classsisl_1_1tp__linear}{tp\+\_\+linear}, \hyperlink{classsisl_1_1cartesian__planar}{cartesian\+\_\+planar}, \hyperlink{namespacesisl_a7295912c88c93a730de6a93f9bfff854}{\+\_\+\+\_\+fast\+\_\+planar\+\_\+tp\+\_\+linear\+\_\+\+\_\+}, 2, float)
+\item 
+\mbox{\Hypertarget{namespacesisl_a6226cce64b0dc23d509ea87b3953d04d}\label{namespacesisl_a6226cce64b0dc23d509ea87b3953d04d}} 
+{\bfseries F\+A\+S\+T\+\_\+\+B\+A\+S\+I\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+I\+Z\+A\+T\+I\+ON} (\hyperlink{classsisl_1_1tp__linear}{tp\+\_\+linear}, \hyperlink{classsisl_1_1cartesian__planar}{cartesian\+\_\+planar}, \hyperlink{namespacesisl_a7295912c88c93a730de6a93f9bfff854}{\+\_\+\+\_\+fast\+\_\+planar\+\_\+tp\+\_\+linear\+\_\+\+\_\+}, 2, double)
+\item 
+{\footnotesize template$<$class T $>$ }\\double \hyperlink{namespacesisl_a41665c7664aae419e4fa4154c7b2acc8}{\+\_\+\+\_\+fast\+\_\+cubic\+\_\+tp\+\_\+linear\+\_\+\+\_\+} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const \hyperlink{classsisl_1_1cartesian__cubic}{cartesian\+\_\+cubic}$<$ T $>$ $\ast$lattice)
+\item 
+\mbox{\Hypertarget{namespacesisl_a736191041ea567e08ff434e0f91efc88}\label{namespacesisl_a736191041ea567e08ff434e0f91efc88}} 
+{\bfseries F\+A\+S\+T\+\_\+\+B\+A\+S\+I\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+I\+Z\+A\+T\+I\+ON} (\hyperlink{classsisl_1_1tp__linear}{tp\+\_\+linear}, \hyperlink{classsisl_1_1cartesian__cubic}{cartesian\+\_\+cubic}, \hyperlink{namespacesisl_a41665c7664aae419e4fa4154c7b2acc8}{\+\_\+\+\_\+fast\+\_\+cubic\+\_\+tp\+\_\+linear\+\_\+\+\_\+}, 3, unsigned char)
+\item 
+\mbox{\Hypertarget{namespacesisl_a6d532da6f321398da173dc4df88e60bc}\label{namespacesisl_a6d532da6f321398da173dc4df88e60bc}} 
+{\bfseries F\+A\+S\+T\+\_\+\+B\+A\+S\+I\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+I\+Z\+A\+T\+I\+ON} (\hyperlink{classsisl_1_1tp__linear}{tp\+\_\+linear}, \hyperlink{classsisl_1_1cartesian__cubic}{cartesian\+\_\+cubic}, \hyperlink{namespacesisl_a41665c7664aae419e4fa4154c7b2acc8}{\+\_\+\+\_\+fast\+\_\+cubic\+\_\+tp\+\_\+linear\+\_\+\+\_\+}, 3, char)
+\item 
+\mbox{\Hypertarget{namespacesisl_a3585cd21b92e4cb2331f3bb2bd841344}\label{namespacesisl_a3585cd21b92e4cb2331f3bb2bd841344}} 
+{\bfseries F\+A\+S\+T\+\_\+\+B\+A\+S\+I\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+I\+Z\+A\+T\+I\+ON} (\hyperlink{classsisl_1_1tp__linear}{tp\+\_\+linear}, \hyperlink{classsisl_1_1cartesian__cubic}{cartesian\+\_\+cubic}, \hyperlink{namespacesisl_a41665c7664aae419e4fa4154c7b2acc8}{\+\_\+\+\_\+fast\+\_\+cubic\+\_\+tp\+\_\+linear\+\_\+\+\_\+}, 3, short)
+\item 
+\mbox{\Hypertarget{namespacesisl_aa63757b79e857499d8a22c4352bda314}\label{namespacesisl_aa63757b79e857499d8a22c4352bda314}} 
+{\bfseries F\+A\+S\+T\+\_\+\+B\+A\+S\+I\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+I\+Z\+A\+T\+I\+ON} (\hyperlink{classsisl_1_1tp__linear}{tp\+\_\+linear}, \hyperlink{classsisl_1_1cartesian__cubic}{cartesian\+\_\+cubic}, \hyperlink{namespacesisl_a41665c7664aae419e4fa4154c7b2acc8}{\+\_\+\+\_\+fast\+\_\+cubic\+\_\+tp\+\_\+linear\+\_\+\+\_\+}, 3, int)
+\item 
+\mbox{\Hypertarget{namespacesisl_a585e64aca67403ff6a314670d7d9b53a}\label{namespacesisl_a585e64aca67403ff6a314670d7d9b53a}} 
+{\bfseries F\+A\+S\+T\+\_\+\+B\+A\+S\+I\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+I\+Z\+A\+T\+I\+ON} (\hyperlink{classsisl_1_1tp__linear}{tp\+\_\+linear}, \hyperlink{classsisl_1_1cartesian__cubic}{cartesian\+\_\+cubic}, \hyperlink{namespacesisl_a41665c7664aae419e4fa4154c7b2acc8}{\+\_\+\+\_\+fast\+\_\+cubic\+\_\+tp\+\_\+linear\+\_\+\+\_\+}, 3, float)
+\item 
+\mbox{\Hypertarget{namespacesisl_a0c510cfd2fd41c64ea57a3e52e8412b8}\label{namespacesisl_a0c510cfd2fd41c64ea57a3e52e8412b8}} 
+{\bfseries F\+A\+S\+T\+\_\+\+B\+A\+S\+I\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+I\+Z\+A\+T\+I\+ON} (\hyperlink{classsisl_1_1tp__linear}{tp\+\_\+linear}, \hyperlink{classsisl_1_1cartesian__cubic}{cartesian\+\_\+cubic}, \hyperlink{namespacesisl_a41665c7664aae419e4fa4154c7b2acc8}{\+\_\+\+\_\+fast\+\_\+cubic\+\_\+tp\+\_\+linear\+\_\+\+\_\+}, 3, double)
+\item 
+\mbox{\Hypertarget{namespacesisl_a7226c23f2b3fc3bfc30594977d6dec3f}\label{namespacesisl_a7226c23f2b3fc3bfc30594977d6dec3f}} 
+{\footnotesize template$<$class O , class I , class BF $>$ }\\regular\+\_\+function\+\_\+space$<$ C\+C\+\_\+\+L\+A\+T\+T\+I\+CE(O, I), BF, O, I, 2 $>$ $\ast$ {\bfseries read\+\_\+2d\+\_\+raw\+\_\+file} (int rx, int ry, I scale\+\_\+x, I scale\+\_\+y, const std\+::string \&file, const \hyperlink{namespacesisl_acb05df69c6b8f6d31074a5f4cec4baeb}{e\+\_\+datatype} \&type)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacesisl_aac0589ffc20d038475dc0b502cbcbfdf}{sample\+\_\+on\+\_\+lattice} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&origin, const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&extent, \hyperlink{classsisl_1_1base__lattice}{base\+\_\+lattice}$<$ T $>$ $\ast$l, \hyperlink{classsisl_1_1function}{function} $\ast$f)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Global namespace for all of S\+I\+SL. 
+
+\hyperlink{quintic__rdo_8hpp_source}{quintic\+\_\+rdo.\+hpp}
+
+Default evaluation code for the spline defined by \mbox{[}-\/1 1 1 -\/1 -\/1 1 1 -\/1\mbox{]} \mbox{[} 1 -\/1 1 -\/1 1 -\/1 1 -\/1\mbox{]} \mbox{[} 1 1 -\/1 -\/1 1 1 -\/1 -\/1\mbox{]} Auto-\/generated from the Sage worksheet.
+
+\hyperlink{zp3__element_8hpp_source}{zp3\+\_\+element.\+hpp}
+
+Default evaluation code for the spline defined by \mbox{[}-\/1 1 1 -\/1 1 0 0\mbox{]} \mbox{[} 1 -\/1 1 -\/1 0 1 0\mbox{]} \mbox{[} 1 1 -\/1 -\/1 0 0 1\mbox{]} Auto-\/generated from the Sage worksheet.
+
+\hyperlink{nearest__neighbor_8hpp_source}{nearest\+\_\+neighbor.\+hpp} Nearest neighbor interpolation on any lattice, in any dimension.
+
+\begin{DoxyAuthor}{Author}
+Joshua Horacsek
+\end{DoxyAuthor}
+\hyperlink{tp__cubic_8hpp_source}{tp\+\_\+cubic.\+hpp} Implements the tensor product cubic b\+\_\+spline in \textquotesingle{}N\textquotesingle{} dimensions.
+
+\begin{DoxyAuthor}{Author}
+Joshua Horacsek
+\end{DoxyAuthor}
+tp\+\_\+cubic\+\_\+imom.\+h Implements the tensor product interpolating cubic imom in \textquotesingle{}N\textquotesingle{} dimensions.
+
+b\+\_\+3imom(x) = b\+\_\+3(x) -\/ 1/6 d$^\wedge$2/dx$^\wedge$2 b\+\_\+3(x)
+
+\begin{DoxyAuthor}{Author}
+Joshua Horacsek
+\end{DoxyAuthor}
+\hyperlink{tp__linear_8hpp_source}{tp\+\_\+linear.\+hpp} Implements the tensor product linear b\+\_\+spline in \textquotesingle{}N\textquotesingle{} dimensions.
+
+Box spline generating matrix\+: \mbox{[}1, 0, 0\mbox{]} \mbox{[}0, 1, 0\mbox{]} \mbox{[}0, 0, 1\mbox{]}
+
+\begin{DoxyAuthor}{Author}
+Joshua Horacsek
+\end{DoxyAuthor}
+\hyperlink{tp__quadratic_8hpp_source}{tp\+\_\+quadratic.\+hpp} Implements the tensor product quadratic b\+\_\+spline in \textquotesingle{}N\textquotesingle{} dimensions.
+
+Box spline generating matrix\+: \mbox{[}1, 0, 0, 1, 0, 0\mbox{]} \mbox{[}0, 1, 0, 0, 1, 0\mbox{]} \mbox{[}0, 0, 1, 0, 0, 1\mbox{]}
+
+\begin{DoxyAuthor}{Author}
+Joshua Horacsek
+\end{DoxyAuthor}
+\hyperlink{base__function_8hpp_source}{base\+\_\+function.\+hpp}
+
+Abstract class that defines the basic structure of a function in S\+I\+SL. Basically, all functions are mappings from R$^\wedge$n to R, and only need to provide a means of reconstructing values from that function space.
+
+\begin{DoxyAuthor}{Author}
+Joshua Horacsek
+\end{DoxyAuthor}
+\hyperlink{si__function_8hpp_source}{si\+\_\+function.\+hpp}
+
+This file defines functions from a shift invariant space. We call these Shift Invariant Functions (si\+\_\+functions), which is a slight abuse of naming to mean that they come from shift invariant spaces.
+
+\begin{DoxyAuthor}{Author}
+Joshua Horacsek
+\end{DoxyAuthor}
+\hyperlink{cartesian__planar_8hpp_source}{cartesian\+\_\+planar.\+hpp}
+
+A specialized implementation of the planar Cartesian lattice.
+
+\begin{DoxyAuthor}{Author}
+Joshua Horacsek
+\end{DoxyAuthor}
+\hyperlink{body__centered__cubic_8hpp_source}{body\+\_\+centered\+\_\+cubic.\+hpp}
+
+A specialized implementation of the A$\ast$\+\_\+3 lattice.
+
+Horacsek
+
+\hyperlink{cartesian__cubic_8hpp_source}{cartesian\+\_\+cubic.\+hpp}
+
+A specialized implementation of the Cartesian cubic lattice. The general implemnetation exists in sisl/n\+\_\+cartesian.\+hpp
+
+\begin{DoxyAuthor}{Author}
+Joshua Horacsek
+\end{DoxyAuthor}
+\hyperlink{base__lattice_8hpp_source}{base\+\_\+lattice.\+hpp} Defines the abstract class for a lattice.
+
+Lattices are basically containers for values of a generic type T. Specialized implementations can often leverage faster implementations of certain method implementations.
+
+\begin{DoxyAuthor}{Author}
+Joshua Horacsek
+\end{DoxyAuthor}
+\hyperlink{array_8hpp_source}{array.\+hpp}
+
+This class defines a general abstraction to multi-\/dimensional arrays. Basically, we want a templated base class to define how access should be implemented -- this builds a base for the rules that potentially more sparse representations use.
+
+\begin{DoxyAuthor}{Author}
+Joshua Horacsek
+\end{DoxyAuthor}
+\hyperlink{sparse__array_8hpp_source}{sparse\+\_\+array.\+hpp}
+
+This class defines another abstraction to multi-\/dimensional arrays. This is much like \hyperlink{array_8hpp_source}{array.\+hpp}, but uses a dictionary to sparesely store values.
+
+\begin{DoxyAuthor}{Author}
+Joshua Horacsek
+\end{DoxyAuthor}
+\hyperlink{marschner__lobb_8hpp_source}{marschner\+\_\+lobb.\+hpp} Defines the marschner-\/lobb test function as a descendent of the function abstract class.
+
+\begin{DoxyAuthor}{Author}
+Joshua Horacsek
+\end{DoxyAuthor}
+\hyperlink{test__window_8hpp_source}{test\+\_\+window.\+hpp}
+
+Defines a test window function in 3D.
+
+\begin{DoxyAuthor}{Author}
+Joshua Horacsek
+\end{DoxyAuthor}
+\hyperlink{iso__surface_8hpp_source}{iso\+\_\+surface.\+hpp} A marching cubes implementation for functions. Any function that inherits from fuction in \hyperlink{base__function_8hpp_source}{base\+\_\+function.\+hpp} can use this implementation to quickly output a mesh.
+
+\begin{DoxyAuthor}{Author}
+Joshua Horacsek
+\end{DoxyAuthor}
+\hyperlink{ply__mesh_8hpp_source}{ply\+\_\+mesh.\+hpp} A very quick n\textquotesingle{} dirty implementation of a mesh writer. Mainly used to quickly output meshes from a marching algo.
+
+\begin{DoxyAuthor}{Author}
+Joshua Horacsek
+\end{DoxyAuthor}
+T\+O\+DO\+: Add a more sophisticated spatial data structure for duplicate vertex detection. 
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespacesisl_acb05df69c6b8f6d31074a5f4cec4baeb}\label{namespacesisl_acb05df69c6b8f6d31074a5f4cec4baeb}} 
+\index{sisl@{sisl}!e\+\_\+datatype@{e\+\_\+datatype}}
+\index{e\+\_\+datatype@{e\+\_\+datatype}!sisl@{sisl}}
+\subsubsection{\texorpdfstring{e\+\_\+datatype}{e\_datatype}}
+{\footnotesize\ttfamily enum \hyperlink{namespacesisl_acb05df69c6b8f6d31074a5f4cec4baeb}{sisl\+::e\+\_\+datatype}}
+
+The various datatypes S\+I\+SL can read, mainly used in the raw filetype reader \mbox{\Hypertarget{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324f}\label{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324f}} 
+\index{sisl@{sisl}!Lattice\+Extension\+Type@{Lattice\+Extension\+Type}}
+\index{Lattice\+Extension\+Type@{Lattice\+Extension\+Type}!sisl@{sisl}}
+\subsubsection{\texorpdfstring{Lattice\+Extension\+Type}{LatticeExtensionType}}
+{\footnotesize\ttfamily enum \hyperlink{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324f}{sisl\+::\+Lattice\+Extension\+Type}}
+
+
+
+Defines how a lattice should be extended. Useful for data processing that requires perodic behaviour. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Invalid\+Access@{Invalid\+Access}!sisl@{sisl}}\index{sisl@{sisl}!Invalid\+Access@{Invalid\+Access}}}\mbox{\Hypertarget{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324fadfcb36de23898505e7d6a7118c886659}\label{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324fadfcb36de23898505e7d6a7118c886659}} 
+Invalid\+Access&All accesses outside of the lattice generate an exception. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Force\+Zero@{Force\+Zero}!sisl@{sisl}}\index{sisl@{sisl}!Force\+Zero@{Force\+Zero}}}\mbox{\Hypertarget{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324fac0e9f82838a1a73b81d84d19571341a1}\label{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324fac0e9f82838a1a73b81d84d19571341a1}} 
+Force\+Zero&All reads outside of the lattice return 0, writes generate an exception. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Periodic@{Periodic}!sisl@{sisl}}\index{sisl@{sisl}!Periodic@{Periodic}}}\mbox{\Hypertarget{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324fae2c9e90c80ef46b1a6b3b5c61dd8392e}\label{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324fae2c9e90c80ef46b1a6b3b5c61dd8392e}} 
+Periodic&Periodic lattice. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Extend\+\_\+\+Even\+\_\+\+Even@{Extend\+\_\+\+Even\+\_\+\+Even}!sisl@{sisl}}\index{sisl@{sisl}!Extend\+\_\+\+Even\+\_\+\+Even@{Extend\+\_\+\+Even\+\_\+\+Even}}}\mbox{\Hypertarget{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324faa83636be87d2bc6798c54dbafe922e39}\label{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324faa83636be87d2bc6798c54dbafe922e39}} 
+Extend\+\_\+\+Even\+\_\+\+Even&Even extension about origin, even extension about midpoint. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Extend\+\_\+\+Even\+\_\+\+Odd@{Extend\+\_\+\+Even\+\_\+\+Odd}!sisl@{sisl}}\index{sisl@{sisl}!Extend\+\_\+\+Even\+\_\+\+Odd@{Extend\+\_\+\+Even\+\_\+\+Odd}}}\mbox{\Hypertarget{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324fa4557b0af0e76c30cf1ce9c7be615183c}\label{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324fa4557b0af0e76c30cf1ce9c7be615183c}} 
+Extend\+\_\+\+Even\+\_\+\+Odd&Even extension about origin, odd extension about midpoint. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Extend\+\_\+\+Odd\+\_\+\+Even@{Extend\+\_\+\+Odd\+\_\+\+Even}!sisl@{sisl}}\index{sisl@{sisl}!Extend\+\_\+\+Odd\+\_\+\+Even@{Extend\+\_\+\+Odd\+\_\+\+Even}}}\mbox{\Hypertarget{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324fa7f5a23d007bce2170e4aa405b7a0829e}\label{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324fa7f5a23d007bce2170e4aa405b7a0829e}} 
+Extend\+\_\+\+Odd\+\_\+\+Even&odd extension about origin, even extension about midpoint \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Extend\+\_\+\+Odd\+\_\+\+Odd@{Extend\+\_\+\+Odd\+\_\+\+Odd}!sisl@{sisl}}\index{sisl@{sisl}!Extend\+\_\+\+Odd\+\_\+\+Odd@{Extend\+\_\+\+Odd\+\_\+\+Odd}}}\mbox{\Hypertarget{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324fa1ba3dc19cdffc9a67e046e50e1e64187}\label{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324fa1ba3dc19cdffc9a67e046e50e1e64187}} 
+Extend\+\_\+\+Odd\+\_\+\+Odd&odd extension about origin, even extension about midpoint \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesisl_a41665c7664aae419e4fa4154c7b2acc8}\label{namespacesisl_a41665c7664aae419e4fa4154c7b2acc8}} 
+\index{sisl@{sisl}!\+\_\+\+\_\+fast\+\_\+cubic\+\_\+tp\+\_\+linear\+\_\+\+\_\+@{\+\_\+\+\_\+fast\+\_\+cubic\+\_\+tp\+\_\+linear\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+fast\+\_\+cubic\+\_\+tp\+\_\+linear\+\_\+\+\_\+@{\+\_\+\+\_\+fast\+\_\+cubic\+\_\+tp\+\_\+linear\+\_\+\+\_\+}!sisl@{sisl}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+fast\+\_\+cubic\+\_\+tp\+\_\+linear\+\_\+\+\_\+()}{\_\_fast\_cubic\_tp\_linear\_\_()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double sisl\+::\+\_\+\+\_\+fast\+\_\+cubic\+\_\+tp\+\_\+linear\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&}]{p,  }\item[{const \hyperlink{classsisl_1_1cartesian__cubic}{cartesian\+\_\+cubic}$<$ T $>$ $\ast$}]{lattice }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Dimension\+: 3 Lattice\+: Cartesian (cubic) In this case, we can just do a tri-\/linear interpolation of the values at the corners of a shifted voronoi cell. \mbox{\Hypertarget{namespacesisl_a7295912c88c93a730de6a93f9bfff854}\label{namespacesisl_a7295912c88c93a730de6a93f9bfff854}} 
+\index{sisl@{sisl}!\+\_\+\+\_\+fast\+\_\+planar\+\_\+tp\+\_\+linear\+\_\+\+\_\+@{\+\_\+\+\_\+fast\+\_\+planar\+\_\+tp\+\_\+linear\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+fast\+\_\+planar\+\_\+tp\+\_\+linear\+\_\+\+\_\+@{\+\_\+\+\_\+fast\+\_\+planar\+\_\+tp\+\_\+linear\+\_\+\+\_\+}!sisl@{sisl}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+fast\+\_\+planar\+\_\+tp\+\_\+linear\+\_\+\+\_\+()}{\_\_fast\_planar\_tp\_linear\_\_()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double sisl\+::\+\_\+\+\_\+fast\+\_\+planar\+\_\+tp\+\_\+linear\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&}]{p,  }\item[{const \hyperlink{classsisl_1_1cartesian__planar}{cartesian\+\_\+planar}$<$ T $>$ $\ast$}]{lattice }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Dimension\+: 2 Lattice\+: Cartesian (planar) In this case, we can just do a bi-\/linear interpolation of the values at the corners of a shifted voronoi cell. \mbox{\Hypertarget{namespacesisl_aac0589ffc20d038475dc0b502cbcbfdf}\label{namespacesisl_aac0589ffc20d038475dc0b502cbcbfdf}} 
+\index{sisl@{sisl}!sample\+\_\+on\+\_\+lattice@{sample\+\_\+on\+\_\+lattice}}
+\index{sample\+\_\+on\+\_\+lattice@{sample\+\_\+on\+\_\+lattice}!sisl@{sisl}}
+\subsubsection{\texorpdfstring{sample\+\_\+on\+\_\+lattice()}{sample\_on\_lattice()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void sisl\+::sample\+\_\+on\+\_\+lattice (\begin{DoxyParamCaption}\item[{const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&}]{origin,  }\item[{const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&}]{extent,  }\item[{\hyperlink{classsisl_1_1base__lattice}{base\+\_\+lattice}$<$ T $>$ $\ast$}]{l,  }\item[{\hyperlink{classsisl_1_1function}{function} $\ast$}]{f }\end{DoxyParamCaption})}
+
+Samples a function on to any lattice note that this function may or may not be broken with the most recent convention change 
+\begin{DoxyParams}{Parameters}
+{\em origin} & where to start sampling \\
+\hline
+{\em extent} & cuboid volume to capture \\
+\hline
+{\em l} & lattice on which to sample \\
+\hline
+{\em f} & a fucntion to evaluate \\
+\hline
+\end{DoxyParams}

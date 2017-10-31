@@ -1,0 +1,82 @@
+\hypertarget{classsisl_1_1nearest__neighbor}{}\section{sisl\+:\+:nearest\+\_\+neighbor Class Reference}
+\label{classsisl_1_1nearest__neighbor}\index{sisl\+::nearest\+\_\+neighbor@{sisl\+::nearest\+\_\+neighbor}}
+
+
+Nearest neighbor interpolation for any lattice. Simply finds the nearest lattice site and returns the value at that site. This class doesn\textquotesingle{}t implement phi or dphi functions, as one would need to know the lattice a-\/priori for those, and this class structure isn\textquotesingle{}t sophisticated enough to facilitate that.  
+
+
+
+
+{\ttfamily \#include $<$nearest\+\_\+neighbor.\+hpp$>$}
+
+
+
+Inheritance diagram for sisl\+:\+:nearest\+\_\+neighbor\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classsisl_1_1nearest__neighbor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sisl\+:\+:nearest\+\_\+neighbor\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classsisl_1_1nearest__neighbor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsisl_1_1nearest__neighbor_a14896b09eaa15503259f77e37e49cb6a}\label{classsisl_1_1nearest__neighbor_a14896b09eaa15503259f77e37e49cb6a}} 
+{\footnotesize template$<$int N$>$ }\\static const double \hyperlink{classsisl_1_1nearest__neighbor_a14896b09eaa15503259f77e37e49cb6a}{phi} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&)
+\begin{DoxyCompactList}\small\item\em Evaluates the un-\/scaled basis function. Evaluates the basis function as if it were not scaled by any scaling parameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1nearest__neighbor_aced35f861bd3310d2e171fb63a6144b8}\label{classsisl_1_1nearest__neighbor_aced35f861bd3310d2e171fb63a6144b8}} 
+{\footnotesize template$<$int N$>$ }\\static const double \hyperlink{classsisl_1_1nearest__neighbor_aced35f861bd3310d2e171fb63a6144b8}{phi} (const double \&h, const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p)
+\begin{DoxyCompactList}\small\item\em Evaluates the un-\/scaled basis function. Evaluates the basis function as if it were not scaled by any scaling parameter. This, however, does take a scale parameter, as the basis may change per scale (e.\+g. exponential splines) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1nearest__neighbor_a52533a8b0e380490bbaac09f2d3292bc}\label{classsisl_1_1nearest__neighbor_a52533a8b0e380490bbaac09f2d3292bc}} 
+{\footnotesize template$<$int N$>$ }\\static const double \hyperlink{classsisl_1_1nearest__neighbor_a52533a8b0e380490bbaac09f2d3292bc}{dphi} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const int \&d)
+\begin{DoxyCompactList}\small\item\em Evaluates the derivative of an un-\/scaled basis function. Evaluates the derivative of a basis function as if it were not scaled by any scaling parameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1nearest__neighbor_a7adbe25f4f09abbd366053c673a8e716}\label{classsisl_1_1nearest__neighbor_a7adbe25f4f09abbd366053c673a8e716}} 
+{\footnotesize template$<$int N$>$ }\\static const double \hyperlink{classsisl_1_1nearest__neighbor_a7adbe25f4f09abbd366053c673a8e716}{dphi} (const double \&h, const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const int \&d)
+\begin{DoxyCompactList}\small\item\em Evaluates the derivative of the un-\/scaled basis function. Evaluates the basis function as if it were not scaled by any scaling parameter. This, however, does take a scale parameter, as the basis may change per scale (e.\+g. exponential splines) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1nearest__neighbor_ad71cd45c3d0e315b2abe2f14dbd374b3}\label{classsisl_1_1nearest__neighbor_ad71cd45c3d0e315b2abe2f14dbd374b3}} 
+{\footnotesize template$<$int N$>$ }\\static std\+::vector$<$ \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} $>$ {\bfseries get\+\_\+integer\+\_\+support} ()
+\item 
+\mbox{\Hypertarget{classsisl_1_1nearest__neighbor_ac1c8bef20acdb2ef8a457d4e7a3176cd}\label{classsisl_1_1nearest__neighbor_ac1c8bef20acdb2ef8a457d4e7a3176cd}} 
+static bool {\bfseries has\+\_\+derivative} ()
+\item 
+\mbox{\Hypertarget{classsisl_1_1nearest__neighbor_a00058ae6c642d6a1a64d7e21db24bdab}\label{classsisl_1_1nearest__neighbor_a00058ae6c642d6a1a64d7e21db24bdab}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice)
+\item 
+\mbox{\Hypertarget{classsisl_1_1nearest__neighbor_ae846be683699e686abc143008a072b95}\label{classsisl_1_1nearest__neighbor_ae846be683699e686abc143008a072b95}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum\+\_\+deriv} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const int \&component)
+\item 
+\mbox{\Hypertarget{classsisl_1_1nearest__neighbor_aa765cd2944d9d5262c8f3f8c10a0dca1}\label{classsisl_1_1nearest__neighbor_aa765cd2944d9d5262c8f3f8c10a0dca1}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice)
+\item 
+\mbox{\Hypertarget{classsisl_1_1nearest__neighbor_a0664ce6f5183fe3bcdf4397523bb9956}\label{classsisl_1_1nearest__neighbor_a0664ce6f5183fe3bcdf4397523bb9956}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$base, const L $\ast$$\ast$lattices)
+\item 
+\mbox{\Hypertarget{classsisl_1_1nearest__neighbor_a879c49cd3b642c8ddc5d5da4426b0e7f}\label{classsisl_1_1nearest__neighbor_a879c49cd3b642c8ddc5d5da4426b0e7f}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const double \&h)
+\item 
+\mbox{\Hypertarget{classsisl_1_1nearest__neighbor_a5f13e5fd3eee54b8005a6398bae01ef4}\label{classsisl_1_1nearest__neighbor_a5f13e5fd3eee54b8005a6398bae01ef4}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum\+\_\+deriv\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const double \&h, const int \&component)
+\item 
+\mbox{\Hypertarget{classsisl_1_1nearest__neighbor_a704a5a15db9d47c51137d384c1bdbeef}\label{classsisl_1_1nearest__neighbor_a704a5a15db9d47c51137d384c1bdbeef}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const double \&h)
+\item 
+\mbox{\Hypertarget{classsisl_1_1nearest__neighbor_a75d7b379c635661c35fafd06b8482b89}\label{classsisl_1_1nearest__neighbor_a75d7b379c635661c35fafd06b8482b89}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$base, const L $\ast$$\ast$lattices, const double \&h)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Nearest neighbor interpolation for any lattice. Simply finds the nearest lattice site and returns the value at that site. This class doesn\textquotesingle{}t implement phi or dphi functions, as one would need to know the lattice a-\/priori for those, and this class structure isn\textquotesingle{}t sophisticated enough to facilitate that. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/joshuahoracsek/\+Projects/sisl\+\_\+redux/include/sisl/basis/nearest\+\_\+neighbor.\+hpp\end{DoxyCompactItemize}

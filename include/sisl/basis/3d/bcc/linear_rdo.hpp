@@ -1,12 +1,10 @@
-
-
 /**
- * bcc_linear_rdo.hpp
+ * linear_rdo.hpp
  *
  * Default evaluation code for the spline defined by
-[-1  1  1 -1]
-[ 1 -1  1 -1]
-[ 1  1 -1 -1]
+ * ```[-1  1  1 -1]
+ * [ 1 -1  1 -1]
+ * [ 1  1 -1 -1]'''
  * Auto-generated from the Sage worksheet.
  */
 
@@ -22,6 +20,9 @@
 
 
 namespace sisl {
+    /**
+     * \brief Linear Rhombic Dodecahedron for the BCC lattice.
+     */
     class bcc_linear_rdo : public basis_function {
     private:
         static inline double __pp_r72____(const double &x_0, const double &x_2) {

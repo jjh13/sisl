@@ -1,0 +1,154 @@
+\hypertarget{classsisl_1_1body__centered__cubic}{}\section{sisl\+:\+:body\+\_\+centered\+\_\+cubic$<$ T $>$ Class Template Reference}
+\label{classsisl_1_1body__centered__cubic}\index{sisl\+::body\+\_\+centered\+\_\+cubic$<$ T $>$@{sisl\+::body\+\_\+centered\+\_\+cubic$<$ T $>$}}
+
+
+Defines the body centered cubic lattice in 3d.  
+
+
+
+
+{\ttfamily \#include $<$body\+\_\+centered\+\_\+cubic.\+hpp$>$}
+
+
+
+Inheritance diagram for sisl\+:\+:body\+\_\+centered\+\_\+cubic$<$ T $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classsisl_1_1body__centered__cubic__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sisl\+:\+:body\+\_\+centered\+\_\+cubic$<$ T $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classsisl_1_1body__centered__cubic__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a061da4d24b45a2d4d2ebbc1577a05df9}\label{classsisl_1_1body__centered__cubic_a061da4d24b45a2d4d2ebbc1577a05df9}} 
+\hyperlink{classsisl_1_1body__centered__cubic_a061da4d24b45a2d4d2ebbc1577a05df9}{body\+\_\+centered\+\_\+cubic} ()
+\begin{DoxyCompactList}\small\item\em Dummy zero allocator for the CC lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a4d5c7c5f734201a1e235e7d0ede642a0}\label{classsisl_1_1body__centered__cubic_a4d5c7c5f734201a1e235e7d0ede642a0}} 
+\hyperlink{classsisl_1_1body__centered__cubic_a4d5c7c5f734201a1e235e7d0ede642a0}{body\+\_\+centered\+\_\+cubic} (const int \&rx, const int \&ry, const int \&rz)
+\begin{DoxyCompactList}\small\item\em Allocates a B\+CC lattice. This lattice includes all integer points in \mbox{[}0, rx\mbox{]} x \mbox{[}0, ry\mbox{]} x \mbox{[}0, rz\mbox{]}, with even Z parity note that this is inclusive. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_ac81d4da54d2487737a8066944b6b49dd}\label{classsisl_1_1body__centered__cubic_ac81d4da54d2487737a8066944b6b49dd}} 
+\hyperlink{classsisl_1_1body__centered__cubic_ac81d4da54d2487737a8066944b6b49dd}{body\+\_\+centered\+\_\+cubic} (std\+::ifstream \&stream)
+\begin{DoxyCompactList}\small\item\em Initializes a B\+CC lattice from a file stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a413597e910db22f5aec4113ec6cbd36b}\label{classsisl_1_1body__centered__cubic_a413597e910db22f5aec4113ec6cbd36b}} 
+virtual T \& \hyperlink{classsisl_1_1body__centered__cubic_a413597e910db22f5aec4113ec6cbd36b}{operator()} (int d0,...)
+\begin{DoxyCompactList}\small\item\em Access a lattice site. Operators for accessing lattice sites. These index in the natural coordinate system of the lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_af48bfe2b5475860672a421efc7fd0f41}\label{classsisl_1_1body__centered__cubic_af48bfe2b5475860672a421efc7fd0f41}} 
+virtual const T \& \hyperlink{classsisl_1_1body__centered__cubic_af48bfe2b5475860672a421efc7fd0f41}{operator()} (int d0,...) const
+\begin{DoxyCompactList}\small\item\em Access a lattice site. Operators for accessing lattice sites. These index in the natural coordinate system of the lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a2390a32744243127b2be774fd99871f3}\label{classsisl_1_1body__centered__cubic_a2390a32744243127b2be774fd99871f3}} 
+virtual T \& \hyperlink{classsisl_1_1body__centered__cubic_a2390a32744243127b2be774fd99871f3}{operator()} (int $\ast$d)
+\begin{DoxyCompactList}\small\item\em Access a lattice site. Operators for accessing lattice sites. These index in the natural coordinate system of the lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a7cbc3858d97fe98a25a0570323169aa4}\label{classsisl_1_1body__centered__cubic_a7cbc3858d97fe98a25a0570323169aa4}} 
+virtual const T \& \hyperlink{classsisl_1_1body__centered__cubic_a7cbc3858d97fe98a25a0570323169aa4}{operator()} (int $\ast$d) const
+\begin{DoxyCompactList}\small\item\em Access a lattice site. Operators for accessing lattice sites. These index in the natural coordinate system of the lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_aa8aae2c66e2cf075a419bb8232fbd43b}\label{classsisl_1_1body__centered__cubic_aa8aae2c66e2cf075a419bb8232fbd43b}} 
+virtual T \& \hyperlink{classsisl_1_1body__centered__cubic_aa8aae2c66e2cf075a419bb8232fbd43b}{operator()} (const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&s)
+\begin{DoxyCompactList}\small\item\em Access a lattice site. Operators for accessing lattice sites. These index in the natural coordinate system of the lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a279eb3385f2f252a30ad968951494922}\label{classsisl_1_1body__centered__cubic_a279eb3385f2f252a30ad968951494922}} 
+virtual const T \& \hyperlink{classsisl_1_1body__centered__cubic_a279eb3385f2f252a30ad968951494922}{operator()} (const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&s) const
+\begin{DoxyCompactList}\small\item\em Access a lattice site. Operators for accessing lattice sites. These index in the natural coordinate system of the lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a6dfe90a15bb88786ac5c8b15cfe50285}\label{classsisl_1_1body__centered__cubic_a6dfe90a15bb88786ac5c8b15cfe50285}} 
+virtual const unsigned int \hyperlink{classsisl_1_1body__centered__cubic_a6dfe90a15bb88786ac5c8b15cfe50285}{linear\+\_\+index} (int d0,...) const
+\begin{DoxyCompactList}\small\item\em Uniquely index a lattice site This function return a linearized version of a lattice site, this allows one to uniquely associate a lattice site with an integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a6f12217c00c0a417a80ef7c20b9281a8}\label{classsisl_1_1body__centered__cubic_a6f12217c00c0a417a80ef7c20b9281a8}} 
+virtual const unsigned int \hyperlink{classsisl_1_1body__centered__cubic_a6f12217c00c0a417a80ef7c20b9281a8}{linear\+\_\+index} (int $\ast$d) const
+\begin{DoxyCompactList}\small\item\em Uniquely index a lattice site This function return a linearized version of a lattice site, this allows one to uniquely associate a lattice site with an integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_aa34843f446ce5f8e3b0e64e78597d592}\label{classsisl_1_1body__centered__cubic_aa34843f446ce5f8e3b0e64e78597d592}} 
+virtual const unsigned int \hyperlink{classsisl_1_1body__centered__cubic_aa34843f446ce5f8e3b0e64e78597d592}{linear\+\_\+index} (const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&s) const
+\begin{DoxyCompactList}\small\item\em Uniquely index a lattice site This function return a linearized version of a lattice site, this allows one to uniquely associate a lattice site with an integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_acff7112b5c40c548f1b693f087daeffb}\label{classsisl_1_1body__centered__cubic_acff7112b5c40c548f1b693f087daeffb}} 
+virtual const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \hyperlink{classsisl_1_1body__centered__cubic_acff7112b5c40c548f1b693f087daeffb}{get\+\_\+natural\+\_\+scales} () const
+\begin{DoxyCompactList}\small\item\em Returns a natural scale so that the lattice sites would be scaled to within a unit hyper cube. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a785d7bcf03ca3f6073d5d64c7dff8799}\label{classsisl_1_1body__centered__cubic_a785d7bcf03ca3f6073d5d64c7dff8799}} 
+virtual const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \hyperlink{classsisl_1_1body__centered__cubic_a785d7bcf03ca3f6073d5d64c7dff8799}{get\+\_\+dimensions} () const
+\begin{DoxyCompactList}\small\item\em Returns the integer extent of each dimension, that is, the lattice extends from \mbox{[}0, ret\mbox{[}i\mbox{]}\mbox{]} in each dimension. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_af853fa5d0bebb9e944a436777eb3570e}\label{classsisl_1_1body__centered__cubic_af853fa5d0bebb9e944a436777eb3570e}} 
+virtual \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \hyperlink{classsisl_1_1body__centered__cubic_af853fa5d0bebb9e944a436777eb3570e}{get\+\_\+site\+\_\+position} (int d0,...) const
+\begin{DoxyCompactList}\small\item\em Returns a value within the unit hyper cube that represents the given lattice site scaled within that unit hypercube. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a7f9420a1a443beb5cdd23289ad91f4de}\label{classsisl_1_1body__centered__cubic_a7f9420a1a443beb5cdd23289ad91f4de}} 
+virtual \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \hyperlink{classsisl_1_1body__centered__cubic_a7f9420a1a443beb5cdd23289ad91f4de}{get\+\_\+site\+\_\+position} (int $\ast$d) const
+\begin{DoxyCompactList}\small\item\em Returns a value within the unit hyper cube that represents the given lattice site scaled withing that unit hypercube. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a67cbe56fa247a8f787db629c59a2f3a9}\label{classsisl_1_1body__centered__cubic_a67cbe56fa247a8f787db629c59a2f3a9}} 
+virtual \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \hyperlink{classsisl_1_1body__centered__cubic_a67cbe56fa247a8f787db629c59a2f3a9}{get\+\_\+site\+\_\+position} (const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&s) const
+\begin{DoxyCompactList}\small\item\em Returns a value within the unit hyper cube that represents the given lattice site scaled withing that unit hypercube. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a4ee5d6c2c2ce3154aa62ca53a222510e}\label{classsisl_1_1body__centered__cubic_a4ee5d6c2c2ce3154aa62ca53a222510e}} 
+virtual \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \hyperlink{classsisl_1_1body__centered__cubic_a4ee5d6c2c2ce3154aa62ca53a222510e}{get\+\_\+nearest\+\_\+site} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&pt) const
+\begin{DoxyCompactList}\small\item\em Returns the nearest lattice site for a given point within the unit hyper cube. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a0cc4d7416cc84cf8914677131215b9ee}\label{classsisl_1_1body__centered__cubic_a0cc4d7416cc84cf8914677131215b9ee}} 
+virtual bool \hyperlink{classsisl_1_1body__centered__cubic_a0cc4d7416cc84cf8914677131215b9ee}{is\+\_\+lattice\+\_\+site} (int d0,...) const
+\begin{DoxyCompactList}\small\item\em Returns whether or not a lattice site truely corresponds to a valid lattice site on this particular lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a98d4d9250d92c3677c6b8d58e2f4d034}\label{classsisl_1_1body__centered__cubic_a98d4d9250d92c3677c6b8d58e2f4d034}} 
+virtual bool \hyperlink{classsisl_1_1body__centered__cubic_a98d4d9250d92c3677c6b8d58e2f4d034}{is\+\_\+lattice\+\_\+site} (int $\ast$d) const
+\begin{DoxyCompactList}\small\item\em Returns whether or not a lattice site truely corresponds to a valid lattice site on this particular lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a5347e1116144be97551c3baac90bc75d}\label{classsisl_1_1body__centered__cubic_a5347e1116144be97551c3baac90bc75d}} 
+virtual bool \hyperlink{classsisl_1_1body__centered__cubic_a5347e1116144be97551c3baac90bc75d}{is\+\_\+lattice\+\_\+site} (const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&s) const
+\begin{DoxyCompactList}\small\item\em Returns whether or not a lattice\+\_\+site object truely corresponds to a valid lattice site on this particular lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_ae892bd04e5b649a6aa48dc4f464d0f69}\label{classsisl_1_1body__centered__cubic_ae892bd04e5b649a6aa48dc4f464d0f69}} 
+virtual bool \hyperlink{classsisl_1_1body__centered__cubic_ae892bd04e5b649a6aa48dc4f464d0f69}{is\+\_\+filled} (int d0,...) const
+\begin{DoxyCompactList}\small\item\em Returns whether a lattice site actually contains a value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a8f40907ff91829e226bf224525b984b3}\label{classsisl_1_1body__centered__cubic_a8f40907ff91829e226bf224525b984b3}} 
+virtual bool \hyperlink{classsisl_1_1body__centered__cubic_a8f40907ff91829e226bf224525b984b3}{is\+\_\+filled} (int $\ast$d) const
+\begin{DoxyCompactList}\small\item\em Returns whether a lattice site actually contains a value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a1c60cd88d4ecd4d224cc198fa52dad44}\label{classsisl_1_1body__centered__cubic_a1c60cd88d4ecd4d224cc198fa52dad44}} 
+virtual bool \hyperlink{classsisl_1_1body__centered__cubic_a1c60cd88d4ecd4d224cc198fa52dad44}{is\+\_\+filled} (const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&s) const
+\begin{DoxyCompactList}\small\item\em Returns whether a lattice site actually contains a value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_ae46befbb818394f332b938d3b669581c}\label{classsisl_1_1body__centered__cubic_ae46befbb818394f332b938d3b669581c}} 
+virtual void \hyperlink{classsisl_1_1body__centered__cubic_ae46befbb818394f332b938d3b669581c}{each\+\_\+site} (const std\+::function$<$ void(const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&)$>$ \&func, bool parallel=false)
+\begin{DoxyCompactList}\small\item\em Iterates over every lattice site contained within the dimensions of this lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a0adca596900e43f75eabf139c964d91f}\label{classsisl_1_1body__centered__cubic_a0adca596900e43f75eabf139c964d91f}} 
+virtual std\+::string \hyperlink{classsisl_1_1body__centered__cubic_a0adca596900e43f75eabf139c964d91f}{get\+\_\+lattice\+\_\+name} () const
+\begin{DoxyCompactList}\small\item\em Returns the name of this lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a6f80df144a39eba292b6430179ea8bc0}\label{classsisl_1_1body__centered__cubic_a6f80df144a39eba292b6430179ea8bc0}} 
+virtual const int \hyperlink{classsisl_1_1body__centered__cubic_a6f80df144a39eba292b6430179ea8bc0}{number\+\_\+of\+\_\+lattice\+\_\+sites} () const
+\begin{DoxyCompactList}\small\item\em Returns the theoretical number of sites within this lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_adb35d1330a63d021eed98700f4cb0381}\label{classsisl_1_1body__centered__cubic_adb35d1330a63d021eed98700f4cb0381}} 
+virtual bool \hyperlink{classsisl_1_1body__centered__cubic_adb35d1330a63d021eed98700f4cb0381}{dump\+\_\+to\+\_\+stream} (std\+::ofstream \&stream) const
+\begin{DoxyCompactList}\small\item\em Dumps this lattice to a file stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_af017fb6d5b54b573bcfba03740e51160}\label{classsisl_1_1body__centered__cubic_af017fb6d5b54b573bcfba03740e51160}} 
+virtual bool \hyperlink{classsisl_1_1body__centered__cubic_af017fb6d5b54b573bcfba03740e51160}{read\+\_\+from\+\_\+stream} (std\+::ifstream \&)
+\begin{DoxyCompactList}\small\item\em Reads a lattice to a file stream, replacing all values. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a705c45755b3b186e904a637aabc7026b}\label{classsisl_1_1body__centered__cubic_a705c45755b3b186e904a637aabc7026b}} 
+virtual void \hyperlink{classsisl_1_1body__centered__cubic_a705c45755b3b186e904a637aabc7026b}{set\+\_\+extension\+\_\+type} (const \hyperlink{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324f}{Lattice\+Extension\+Type} \&e, const \hyperlink{namespacesisl_af139f6f74488292ae48c0d71eaa5d4f1}{Lattice\+Region\+Shift} \&s)
+\begin{DoxyCompactList}\small\item\em Sets how a lattice is extended for values that outside of the defined rectangular region. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a47fdb8d33daa6f699aad7ec63387fd93}\label{classsisl_1_1body__centered__cubic_a47fdb8d33daa6f699aad7ec63387fd93}} 
+bool {\bfseries in\+\_\+bound} (const int \&i, const int \&j, const int \&k) const
+\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a2b3b01a3855ca9509d6ff64518b2b5a0}\label{classsisl_1_1body__centered__cubic_a2b3b01a3855ca9509d6ff64518b2b5a0}} 
+virtual const unsigned int {\bfseries linear\+\_\+index} (int d0, va\+\_\+list vl) const
+\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_a279eb7ccc6eeea3a16f960ffd2176b3c}\label{classsisl_1_1body__centered__cubic_a279eb7ccc6eeea3a16f960ffd2176b3c}} 
+virtual T \& {\bfseries operator()} (int d0, va\+\_\+list vl)
+\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_ae3c39465ea275d0958d626fa4c044ede}\label{classsisl_1_1body__centered__cubic_ae3c39465ea275d0958d626fa4c044ede}} 
+virtual const T \& {\bfseries operator()} (int d0, va\+\_\+list vl) const
+\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_ad4f59dcda9bc1e62272a9d2f01a1d164}\label{classsisl_1_1body__centered__cubic_ad4f59dcda9bc1e62272a9d2f01a1d164}} 
+virtual bool {\bfseries is\+\_\+filled} (int d0, va\+\_\+list vl) const
+\item 
+\mbox{\Hypertarget{classsisl_1_1body__centered__cubic_ad370f360adfb1cfcf3d84387be565e29}\label{classsisl_1_1body__centered__cubic_ad370f360adfb1cfcf3d84387be565e29}} 
+virtual bool {\bfseries is\+\_\+lattice\+\_\+site} (int d0, va\+\_\+list vl) const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class sisl\+::body\+\_\+centered\+\_\+cubic$<$ T $>$}
+
+Defines the body centered cubic lattice in 3d. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/joshuahoracsek/\+Projects/sisl\+\_\+redux/include/sisl/lattice/3d/body\+\_\+centered\+\_\+cubic.\+hpp\end{DoxyCompactItemize}

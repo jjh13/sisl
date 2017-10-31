@@ -23,11 +23,11 @@
 namespace sisl{
 namespace utility{
 
-    /** \breif A barebones ply mesh writer.
+    /** \brief A barebones ply mesh writer.
      */
     class ply_mesh {
     public:
-        /** \breif Create an empty mesh
+        /** \brief Create an empty mesh
          */
         ply_mesh() : m_currentIndex(0), m_mergeTolerance(1e-12) {}
         ~ply_mesh(){}

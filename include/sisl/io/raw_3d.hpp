@@ -1,6 +1,6 @@
 /**
- * base_lattice.h
- * Defines the abstract class for a lattice
+ * raw_3d.h
+ * IO for raw files in 3D.
  *
  * @Joshua Horacsek
  */

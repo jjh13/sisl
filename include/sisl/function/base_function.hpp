@@ -1,5 +1,5 @@
 /**
- * function_base.hpp
+ * base_function.hpp
  *
  * Abstract class that defines the basic structure of a function in SISL.
  * Basically, all functions are mappings from R^n to R, and only need to
@@ -16,8 +16,8 @@
 
 
 namespace sisl {
-    /*! \breif Abstract base class for a function.
-     * Defines a function this is defined over all R^n, it's up
+    /*! \brief Abstract base class for a function.
+     * Defines a function that is valid over all R^n, it's up
      * to the underlying implementation to decide how those values map to
      * real values.
      */
@@ -26,15 +26,16 @@ namespace sisl {
         function() { }
         virtual ~function() { }
 
-        /*! \breif Evaluate the function at a point.
+        /*! \brief Evaluate the function at a point.
+         * Evaluate the function at a point.
          */
         virtual const double operator()(double d0, ...) const = 0;
 
-        /*! \breif Evaluate the function at a point.
+        /*! \brief Evaluate the function at a point.
          */
         virtual const double operator()(const vector &p) const = 0;
 
-        /*! \breif Evaluate the function at a point.
+        /*! \brief Evaluate the function at a point.
          */
         virtual const double eval(double d0, ...) {
         	va_list args;  
@@ -50,17 +51,17 @@ namespace sisl {
         	return this->operator()(p);
         }
 
-        /*! \breif Evaluate the function at a point.
+        /*! \brief Evaluate the function at a point.
          */
         virtual const double eval(const vector &p) {
         	return this->operator()(p);
         }
 
-        /*! \breif Evaluate the derivative of a function at a point.
+        /*! \brief Evaluate the derivative of a function at a point.
          */
         virtual const double d(int component, double d0, ...) const = 0;
 
-        /*! \breif Evaluate the derivative of a function at a point.
+        /*! \brief Evaluate the derivative of a function at a point.
          */
         virtual const double d(int component, const vector &p) const = 0;
 
@@ -72,15 +73,15 @@ namespace sisl {
          */
         virtual const vector grad(const vector &p) const = 0;
 
-        /*! \breif Evaluate the n'th partial derivative at a point
+        /*! \brief Evaluate the n'th partial derivative at a point
          */
         virtual const double n_d(const int_tuple &order, double d0, ...) const = 0;
 
-        /*! \breif Evaluate the n'th partial derivative at a point
+        /*! \brief Evaluate the n'th partial derivative at a point
          */
         virtual const double n_d(const int_tuple &order, vector &p) const = 0;
 
-        /*! \breif Returns the input dimension of this function 
+        /*! \brief Returns the input dimension of this function 
         */
         virtual const int dim() const = 0;
     };

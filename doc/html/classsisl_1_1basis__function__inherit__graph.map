@@ -1,0 +1,9 @@
+<map id="sisl::basis_function" name="sisl::basis_function">
+<area shape="rect" id="node2" href="$classsisl_1_1bcc__quintic__rdo.html" title="Quintic BCC basis function. " alt="" coords="192,5,333,31"/>
+<area shape="rect" id="node3" href="$classsisl_1_1nearest__neighbor.html" title="Nearest neighbor interpolation for any lattice. Simply finds the nearest lattice site and returns the..." alt="" coords="187,55,338,80"/>
+<area shape="rect" id="node4" href="$classsisl_1_1tp__cubic.html" title="Tensor product cubic spline. " alt="" coords="214,104,311,129"/>
+<area shape="rect" id="node5" href="$classsisl_1_1tp__cubic__imom.html" title="Tensor product cubic interpolating MOM. " alt="" coords="194,153,331,179"/>
+<area shape="rect" id="node6" href="$classsisl_1_1tp__linear.html" title="Tensor product linear basis function. Tensor product linear basis function. On the planar and cubic C..." alt="" coords="213,203,312,228"/>
+<area shape="rect" id="node7" href="$classsisl_1_1tp__quadratic.html" title="Tensor product quadratic spline. " alt="" coords="202,252,323,277"/>
+<area shape="rect" id="node8" href="$classsisl_1_1zp3__element.html" title="sisl::zp3_element" alt="" coords="200,301,325,327"/>
+</map>

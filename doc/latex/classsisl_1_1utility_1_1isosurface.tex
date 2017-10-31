@@ -1,0 +1,109 @@
+\hypertarget{classsisl_1_1utility_1_1isosurface}{}\section{sisl\+:\+:utility\+:\+:isosurface Class Reference}
+\label{classsisl_1_1utility_1_1isosurface}\index{sisl\+::utility\+::isosurface@{sisl\+::utility\+::isosurface}}
+
+
+An implementation of marching cubes.  
+
+
+
+
+{\ttfamily \#include $<$iso\+\_\+surface.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classsisl_1_1utility_1_1isosurface_a27be7f0e3449d03e955df77e5944d5db}{set\+\_\+shading\+\_\+stepsize} (const double \&ss)
+\begin{DoxyCompactList}\small\item\em Set heuristic parameters. \end{DoxyCompactList}\item 
+void \hyperlink{classsisl_1_1utility_1_1isosurface_ad81b29590b262cf30286591090eabb13}{march\+\_\+function} (\hyperlink{classsisl_1_1function}{function} $\ast$f, const double \&iso\+Value, const double \&step\+Size, \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{sisl\+::vector} origin, \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{sisl\+::vector} extent, bool flip\+\_\+normal=false, \hyperlink{classsisl_1_1function}{sisl\+::function} $\ast$dx=nullptr, \hyperlink{classsisl_1_1function}{sisl\+::function} $\ast$dy=nullptr, \hyperlink{classsisl_1_1function}{sisl\+::function} $\ast$dz=nullptr)
+\begin{DoxyCompactList}\small\item\em March isosurface. \end{DoxyCompactList}\item 
+bool \hyperlink{classsisl_1_1utility_1_1isosurface_ada6c1709527aaee83f1d6e616172b1d4}{write\+\_\+surface} (const std\+::string \&out) const
+\begin{DoxyCompactList}\small\item\em Output file. \end{DoxyCompactList}\item 
+void \hyperlink{classsisl_1_1utility_1_1isosurface_a73bd6c29b9a5a1ff6f34120d2dac5d65}{apply\+\_\+transform} (const \hyperlink{namespacesisl_a2ef12d285ca3e626c05abbdec1f8a679}{transform} \&Tr)
+\begin{DoxyCompactList}\small\item\em Transform mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An implementation of marching cubes. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsisl_1_1utility_1_1isosurface_a73bd6c29b9a5a1ff6f34120d2dac5d65}\label{classsisl_1_1utility_1_1isosurface_a73bd6c29b9a5a1ff6f34120d2dac5d65}} 
+\index{sisl\+::utility\+::isosurface@{sisl\+::utility\+::isosurface}!apply\+\_\+transform@{apply\+\_\+transform}}
+\index{apply\+\_\+transform@{apply\+\_\+transform}!sisl\+::utility\+::isosurface@{sisl\+::utility\+::isosurface}}
+\subsubsection{\texorpdfstring{apply\+\_\+transform()}{apply\_transform()}}
+{\footnotesize\ttfamily void sisl\+::utility\+::isosurface\+::apply\+\_\+transform (\begin{DoxyParamCaption}\item[{const \hyperlink{namespacesisl_a2ef12d285ca3e626c05abbdec1f8a679}{transform} \&}]{Tr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Transform mesh. 
+
+Applies a transformation matrix to the vertices of the levelset. 
+\begin{DoxyParams}{Parameters}
+{\em Tr} & a transformation matrix. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsisl_1_1utility_1_1isosurface_ad81b29590b262cf30286591090eabb13}\label{classsisl_1_1utility_1_1isosurface_ad81b29590b262cf30286591090eabb13}} 
+\index{sisl\+::utility\+::isosurface@{sisl\+::utility\+::isosurface}!march\+\_\+function@{march\+\_\+function}}
+\index{march\+\_\+function@{march\+\_\+function}!sisl\+::utility\+::isosurface@{sisl\+::utility\+::isosurface}}
+\subsubsection{\texorpdfstring{march\+\_\+function()}{march\_function()}}
+{\footnotesize\ttfamily void sisl\+::utility\+::isosurface\+::march\+\_\+function (\begin{DoxyParamCaption}\item[{\hyperlink{classsisl_1_1function}{function} $\ast$}]{f,  }\item[{const double \&}]{iso\+Value,  }\item[{const double \&}]{step\+Size,  }\item[{\hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{sisl\+::vector}}]{origin,  }\item[{\hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{sisl\+::vector}}]{extent,  }\item[{bool}]{flip\+\_\+normal = {\ttfamily false},  }\item[{\hyperlink{classsisl_1_1function}{sisl\+::function} $\ast$}]{dx = {\ttfamily nullptr},  }\item[{\hyperlink{classsisl_1_1function}{sisl\+::function} $\ast$}]{dy = {\ttfamily nullptr},  }\item[{\hyperlink{classsisl_1_1function}{sisl\+::function} $\ast$}]{dz = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+March isosurface. 
+
+Runs marching cubes (with corrected ambiguities) over f. It starts at origin, and marches a prismic volume with the dimensions in extent. If the dx,dy,dz are provided, then they will be used as the normal for the mesh, if not, then this function will attempt to use the grad member of the f. If that doesn\textquotesingle{}t work, it\textquotesingle{}ll use a divided difference to approximate the shading. The step size for this can be set via set\+\_\+shading\+\_\+stepsize.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & the input function \\
+\hline
+{\em iso\+Value} & The iso value to extract \\
+\hline
+{\em step\+Size} & The size of steps, or the length of the edges of the cubes \\
+\hline
+{\em origin} & Where the marching begins in space \\
+\hline
+{\em extent} & The dimensions of the volume to march over \\
+\hline
+{\em flip\+\_\+normal} & Whether to flip the output normal. \\
+\hline
+{\em dx,dy,dz} & If specified, these are functions to use for the dx dy and dz gradient components. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsisl_1_1utility_1_1isosurface_a27be7f0e3449d03e955df77e5944d5db}\label{classsisl_1_1utility_1_1isosurface_a27be7f0e3449d03e955df77e5944d5db}} 
+\index{sisl\+::utility\+::isosurface@{sisl\+::utility\+::isosurface}!set\+\_\+shading\+\_\+stepsize@{set\+\_\+shading\+\_\+stepsize}}
+\index{set\+\_\+shading\+\_\+stepsize@{set\+\_\+shading\+\_\+stepsize}!sisl\+::utility\+::isosurface@{sisl\+::utility\+::isosurface}}
+\subsubsection{\texorpdfstring{set\+\_\+shading\+\_\+stepsize()}{set\_shading\_stepsize()}}
+{\footnotesize\ttfamily void sisl\+::utility\+::isosurface\+::set\+\_\+shading\+\_\+stepsize (\begin{DoxyParamCaption}\item[{const double \&}]{ss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set heuristic parameters. 
+
+If the function we\textquotesingle{}re marching has to rely on using a heuristic for shading, then we\textquotesingle{}ll use ss to do a finite difference to calculate the partial derivatives in x y z.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ss} & Step size for gradient computation \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsisl_1_1utility_1_1isosurface_ada6c1709527aaee83f1d6e616172b1d4}\label{classsisl_1_1utility_1_1isosurface_ada6c1709527aaee83f1d6e616172b1d4}} 
+\index{sisl\+::utility\+::isosurface@{sisl\+::utility\+::isosurface}!write\+\_\+surface@{write\+\_\+surface}}
+\index{write\+\_\+surface@{write\+\_\+surface}!sisl\+::utility\+::isosurface@{sisl\+::utility\+::isosurface}}
+\subsubsection{\texorpdfstring{write\+\_\+surface()}{write\_surface()}}
+{\footnotesize\ttfamily bool sisl\+::utility\+::isosurface\+::write\+\_\+surface (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Output file. 
+
+Writes the marched isosurface into a file. 
+\begin{DoxyParams}{Parameters}
+{\em out} & the filename to output the ply to. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/joshuahoracsek/\+Projects/sisl\+\_\+redux/include/sisl/utility/iso\+\_\+surface.\+hpp\end{DoxyCompactItemize}

@@ -1,9 +1,10 @@
 /**
- * tp_linear.h
- * Implements the tensor product linear b_spline in 'N' dimensions. 
+ * tp_cubic_imom.h
+ * Implements the tensor product interpolating cubic imom
+ * in 'N' dimensions. 
  *
- * b_3imom(x)
- =  *
+ * b_3imom(x) = b_3(x) - 1/6 d^2/dx^2 b_3(x)
+ *
  * @author Joshua Horacsek
  */
 
@@ -24,6 +25,9 @@
 
 namespace sisl {
 
+    /** \brief Tensor product cubic interpolating MOM.
+     * 
+     */
     class tp_cubic_imom : public basis_function {
     private:
 	    static inline const double imom3(const double &t){

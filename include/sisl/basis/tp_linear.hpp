@@ -1,5 +1,5 @@
 /**
- * tp_linear.h
+ * tp_linear.hpp
  * Implements the tensor product linear b_spline in 'N' dimensions. 
  *
  * Box spline generating matrix:
@@ -26,6 +26,11 @@
 
 namespace sisl {
 
+    /** \brief Tensor product linear basis function.
+     * Tensor product linear basis function. On the planar and 
+     * cubic Cartesian lattices, we have FAST_BASES which correspond
+     * to bilinear and trilinear interpolation.
+     */
     class tp_linear : public basis_function {
     private:
         static const double bspline_1(const double &t){

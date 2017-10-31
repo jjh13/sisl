@@ -1,0 +1,82 @@
+\hypertarget{classsisl_1_1tp__linear}{}\section{sisl\+:\+:tp\+\_\+linear Class Reference}
+\label{classsisl_1_1tp__linear}\index{sisl\+::tp\+\_\+linear@{sisl\+::tp\+\_\+linear}}
+
+
+Tensor product linear basis function. Tensor product linear basis function. On the planar and cubic Cartesian lattices, we have F\+A\+S\+T\+\_\+\+B\+A\+S\+ES which correspond to bilinear and trilinear interpolation.  
+
+
+
+
+{\ttfamily \#include $<$tp\+\_\+linear.\+hpp$>$}
+
+
+
+Inheritance diagram for sisl\+:\+:tp\+\_\+linear\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classsisl_1_1tp__linear__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sisl\+:\+:tp\+\_\+linear\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classsisl_1_1tp__linear__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__linear_a896ed9c644c3c7318e6519e9b44b5df1}\label{classsisl_1_1tp__linear_a896ed9c644c3c7318e6519e9b44b5df1}} 
+{\footnotesize template$<$int N$>$ }\\static const double {\bfseries phi} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__linear_a48d52465e7b1ef3956f1d7409dfa7f01}\label{classsisl_1_1tp__linear_a48d52465e7b1ef3956f1d7409dfa7f01}} 
+{\footnotesize template$<$int N$>$ }\\static const double {\bfseries phi} (const double \&h, const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__linear_a608311c529198387c06276c38b53de24}\label{classsisl_1_1tp__linear_a608311c529198387c06276c38b53de24}} 
+{\footnotesize template$<$int N$>$ }\\static const double {\bfseries dphi} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const int \&d)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__linear_a9d749bb2fe2f8bc75a1c93ed61ef742e}\label{classsisl_1_1tp__linear_a9d749bb2fe2f8bc75a1c93ed61ef742e}} 
+{\footnotesize template$<$int N$>$ }\\static const double {\bfseries dphi} (const double \&h, const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const int \&d)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__linear_addadc6697a7c631f1b5a25082f73db1e}\label{classsisl_1_1tp__linear_addadc6697a7c631f1b5a25082f73db1e}} 
+{\footnotesize template$<$int N$>$ }\\static std\+::vector$<$ \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} $>$ {\bfseries get\+\_\+integer\+\_\+support} ()
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__linear_a152b711e8947e3b44cc5236a0bd1b195}\label{classsisl_1_1tp__linear_a152b711e8947e3b44cc5236a0bd1b195}} 
+static bool {\bfseries has\+\_\+derivative} ()
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__linear_ac0f1255414dfe1b16376428cae47d407}\label{classsisl_1_1tp__linear_ac0f1255414dfe1b16376428cae47d407}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__linear_adee0c9f2ee87504cc2ef376b2e2c359a}\label{classsisl_1_1tp__linear_adee0c9f2ee87504cc2ef376b2e2c359a}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum\+\_\+deriv} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const int \&component)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__linear_a98a633bfd39ce17e449820bfbff12cac}\label{classsisl_1_1tp__linear_a98a633bfd39ce17e449820bfbff12cac}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__linear_a101bc6459e8046815c7f5ec093e983f8}\label{classsisl_1_1tp__linear_a101bc6459e8046815c7f5ec093e983f8}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$base, const L $\ast$$\ast$lattices)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__linear_a01ac307fbb6d596d0397a10759540076}\label{classsisl_1_1tp__linear_a01ac307fbb6d596d0397a10759540076}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const double \&h)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__linear_a18c6496aaa2e3fbfe523f0251cd73da9}\label{classsisl_1_1tp__linear_a18c6496aaa2e3fbfe523f0251cd73da9}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static double {\bfseries convolution\+\_\+sum\+\_\+deriv\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const int \&component, const double \&h)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__linear_ab28a77f856fa7f0e35f3f6d49daadeb5}\label{classsisl_1_1tp__linear_ab28a77f856fa7f0e35f3f6d49daadeb5}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$lattice, const double \&h)
+\item 
+\mbox{\Hypertarget{classsisl_1_1tp__linear_a81674ecd19a9729519bb7003c510de81}\label{classsisl_1_1tp__linear_a81674ecd19a9729519bb7003c510de81}} 
+{\footnotesize template$<$int N, class L , class BF $>$ }\\static \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} {\bfseries grad\+\_\+convolution\+\_\+sum\+\_\+h} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&p, const L $\ast$base, const L $\ast$$\ast$lattices, const double \&h)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Tensor product linear basis function. Tensor product linear basis function. On the planar and cubic Cartesian lattices, we have F\+A\+S\+T\+\_\+\+B\+A\+S\+ES which correspond to bilinear and trilinear interpolation. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/joshuahoracsek/\+Projects/sisl\+\_\+redux/include/sisl/basis/tp\+\_\+linear.\+hpp\end{DoxyCompactItemize}

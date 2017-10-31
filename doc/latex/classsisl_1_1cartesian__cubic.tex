@@ -1,0 +1,151 @@
+\hypertarget{classsisl_1_1cartesian__cubic}{}\section{sisl\+:\+:cartesian\+\_\+cubic$<$ T $>$ Class Template Reference}
+\label{classsisl_1_1cartesian__cubic}\index{sisl\+::cartesian\+\_\+cubic$<$ T $>$@{sisl\+::cartesian\+\_\+cubic$<$ T $>$}}
+
+
+A specialized cubic Cartesian lattice class.  
+
+
+
+
+{\ttfamily \#include $<$cartesian\+\_\+cubic.\+hpp$>$}
+
+
+
+Inheritance diagram for sisl\+:\+:cartesian\+\_\+cubic$<$ T $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classsisl_1_1cartesian__cubic__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sisl\+:\+:cartesian\+\_\+cubic$<$ T $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classsisl_1_1cartesian__cubic__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_aa8c27fad87e2d7a21533b8649434fd2a}\label{classsisl_1_1cartesian__cubic_aa8c27fad87e2d7a21533b8649434fd2a}} 
+\hyperlink{classsisl_1_1cartesian__cubic_aa8c27fad87e2d7a21533b8649434fd2a}{cartesian\+\_\+cubic} ()
+\begin{DoxyCompactList}\small\item\em Dummy zero allocator for the CC lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a0dd7f488ca8c00be1eb1b51262534651}\label{classsisl_1_1cartesian__cubic_a0dd7f488ca8c00be1eb1b51262534651}} 
+\hyperlink{classsisl_1_1cartesian__cubic_a0dd7f488ca8c00be1eb1b51262534651}{cartesian\+\_\+cubic} (unsigned int rx, unsigned int ry, unsigned int rz)
+\begin{DoxyCompactList}\small\item\em Allocates a cubic cartesian lattice. This lattice includes all integer points in \mbox{[}0, rx\mbox{]} x \mbox{[}0, ry\mbox{]}, note that this is inclusive. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a620b3d4bcd47b6e45e5ea01e41427bd5}\label{classsisl_1_1cartesian__cubic_a620b3d4bcd47b6e45e5ea01e41427bd5}} 
+\hyperlink{classsisl_1_1cartesian__cubic_a620b3d4bcd47b6e45e5ea01e41427bd5}{cartesian\+\_\+cubic} (std\+::ifstream \&stream)
+\begin{DoxyCompactList}\small\item\em Initializes a CC lattice from a file stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_acabf6e0c838717d24ef7dea204d2aa6f}\label{classsisl_1_1cartesian__cubic_acabf6e0c838717d24ef7dea204d2aa6f}} 
+virtual T \& \hyperlink{classsisl_1_1cartesian__cubic_acabf6e0c838717d24ef7dea204d2aa6f}{operator()} (int d0,...)
+\begin{DoxyCompactList}\small\item\em Access a lattice site. Operators for accessing lattice sites. These index in the natural coordinate system of the lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a8c3e5d7c1471efb3acf1ce5a946f0785}\label{classsisl_1_1cartesian__cubic_a8c3e5d7c1471efb3acf1ce5a946f0785}} 
+virtual const T \& \hyperlink{classsisl_1_1cartesian__cubic_a8c3e5d7c1471efb3acf1ce5a946f0785}{operator()} (int d0,...) const
+\begin{DoxyCompactList}\small\item\em Access a lattice site. Operators for accessing lattice sites. These index in the natural coordinate system of the lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a184aa9f24329d92c953a33d5d7df2f82}\label{classsisl_1_1cartesian__cubic_a184aa9f24329d92c953a33d5d7df2f82}} 
+virtual T \& \hyperlink{classsisl_1_1cartesian__cubic_a184aa9f24329d92c953a33d5d7df2f82}{operator()} (int $\ast$d)
+\begin{DoxyCompactList}\small\item\em Access a lattice site. Operators for accessing lattice sites. These index in the natural coordinate system of the lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a5ab2dfd1ffe49aea1e38384647b3c9b0}\label{classsisl_1_1cartesian__cubic_a5ab2dfd1ffe49aea1e38384647b3c9b0}} 
+virtual const T \& \hyperlink{classsisl_1_1cartesian__cubic_a5ab2dfd1ffe49aea1e38384647b3c9b0}{operator()} (int $\ast$d) const
+\begin{DoxyCompactList}\small\item\em Access a lattice site. Operators for accessing lattice sites. These index in the natural coordinate system of the lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a8cd465a0731e0d2e962329ba3a8e4f6e}\label{classsisl_1_1cartesian__cubic_a8cd465a0731e0d2e962329ba3a8e4f6e}} 
+virtual T \& \hyperlink{classsisl_1_1cartesian__cubic_a8cd465a0731e0d2e962329ba3a8e4f6e}{operator()} (const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&s)
+\begin{DoxyCompactList}\small\item\em Access a lattice site. Operators for accessing lattice sites. These index in the natural coordinate system of the lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_accef876590df812ec191ef66445fd6c7}\label{classsisl_1_1cartesian__cubic_accef876590df812ec191ef66445fd6c7}} 
+virtual const T \& \hyperlink{classsisl_1_1cartesian__cubic_accef876590df812ec191ef66445fd6c7}{operator()} (const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&s) const
+\begin{DoxyCompactList}\small\item\em Access a lattice site. Operators for accessing lattice sites. These index in the natural coordinate system of the lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a50f99d5a3725d7f5cc019700bda8e44d}\label{classsisl_1_1cartesian__cubic_a50f99d5a3725d7f5cc019700bda8e44d}} 
+virtual const unsigned int \hyperlink{classsisl_1_1cartesian__cubic_a50f99d5a3725d7f5cc019700bda8e44d}{linear\+\_\+index} (int d0,...) const
+\begin{DoxyCompactList}\small\item\em Uniquely index a lattice site This function return a linearized version of a lattice site, this allows one to uniquely associate a lattice site with an integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a42fc1105ab760fe34cb6863a79e7856b}\label{classsisl_1_1cartesian__cubic_a42fc1105ab760fe34cb6863a79e7856b}} 
+virtual const unsigned int \hyperlink{classsisl_1_1cartesian__cubic_a42fc1105ab760fe34cb6863a79e7856b}{linear\+\_\+index} (int $\ast$d) const
+\begin{DoxyCompactList}\small\item\em Uniquely index a lattice site This function return a linearized version of a lattice site, this allows one to uniquely associate a lattice site with an integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a6029b29a29a5f6b056532c556ae883df}\label{classsisl_1_1cartesian__cubic_a6029b29a29a5f6b056532c556ae883df}} 
+virtual const unsigned int \hyperlink{classsisl_1_1cartesian__cubic_a6029b29a29a5f6b056532c556ae883df}{linear\+\_\+index} (const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&s) const
+\begin{DoxyCompactList}\small\item\em Uniquely index a lattice site This function return a linearized version of a lattice site, this allows one to uniquely associate a lattice site with an integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a52c6c0f97e7cb5dd2ead2c0a2a94e150}\label{classsisl_1_1cartesian__cubic_a52c6c0f97e7cb5dd2ead2c0a2a94e150}} 
+virtual const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \hyperlink{classsisl_1_1cartesian__cubic_a52c6c0f97e7cb5dd2ead2c0a2a94e150}{get\+\_\+natural\+\_\+scales} () const
+\begin{DoxyCompactList}\small\item\em Returns a natural scale so that the lattice sites would be scaled to within a unit hyper cube. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a4a578c3edf518c565288cfc2d15fcd67}\label{classsisl_1_1cartesian__cubic_a4a578c3edf518c565288cfc2d15fcd67}} 
+virtual const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \hyperlink{classsisl_1_1cartesian__cubic_a4a578c3edf518c565288cfc2d15fcd67}{get\+\_\+dimensions} () const
+\begin{DoxyCompactList}\small\item\em Returns the integer extent of each dimension, that is, the lattice extends from \mbox{[}0, ret\mbox{[}i\mbox{]}\mbox{]} in each dimension. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_ae4e02a25d580cad2e1475c14de4e1775}\label{classsisl_1_1cartesian__cubic_ae4e02a25d580cad2e1475c14de4e1775}} 
+virtual \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \hyperlink{classsisl_1_1cartesian__cubic_ae4e02a25d580cad2e1475c14de4e1775}{get\+\_\+site\+\_\+position} (int d0,...) const
+\begin{DoxyCompactList}\small\item\em Returns a value within the unit hyper cube that represents the given lattice site scaled withing that unit hypercube. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a8737f47b33d8627a262ef6cd3682b259}\label{classsisl_1_1cartesian__cubic_a8737f47b33d8627a262ef6cd3682b259}} 
+virtual \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \hyperlink{classsisl_1_1cartesian__cubic_a8737f47b33d8627a262ef6cd3682b259}{get\+\_\+site\+\_\+position} (int $\ast$d) const
+\begin{DoxyCompactList}\small\item\em Returns a value within the unit hyper cube that represents the given lattice site scaled withing that unit hypercube. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_ad1f7419158bca45dfd6cc82d549e1149}\label{classsisl_1_1cartesian__cubic_ad1f7419158bca45dfd6cc82d549e1149}} 
+virtual \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \hyperlink{classsisl_1_1cartesian__cubic_ad1f7419158bca45dfd6cc82d549e1149}{get\+\_\+site\+\_\+position} (const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&s) const
+\begin{DoxyCompactList}\small\item\em Returns a value within the unit hyper cube that represents the given lattice site scaled withing that unit hypercube. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a75a8483c3ef02993c138d47236312954}\label{classsisl_1_1cartesian__cubic_a75a8483c3ef02993c138d47236312954}} 
+virtual \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \hyperlink{classsisl_1_1cartesian__cubic_a75a8483c3ef02993c138d47236312954}{get\+\_\+nearest\+\_\+site} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&pt) const
+\begin{DoxyCompactList}\small\item\em Returns the nearest lattice site for a given point within the unit hyper cube. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a24d53f68dc4a95343445a3edd7bc5d3d}\label{classsisl_1_1cartesian__cubic_a24d53f68dc4a95343445a3edd7bc5d3d}} 
+virtual bool \hyperlink{classsisl_1_1cartesian__cubic_a24d53f68dc4a95343445a3edd7bc5d3d}{is\+\_\+lattice\+\_\+site} (int d0,...) const
+\begin{DoxyCompactList}\small\item\em Returns whether or not a lattice site truely corresponds to a valid lattice site on this particular lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a3ae9596c32734a5b03eef4d7803d8ce4}\label{classsisl_1_1cartesian__cubic_a3ae9596c32734a5b03eef4d7803d8ce4}} 
+virtual bool \hyperlink{classsisl_1_1cartesian__cubic_a3ae9596c32734a5b03eef4d7803d8ce4}{is\+\_\+lattice\+\_\+site} (int $\ast$d) const
+\begin{DoxyCompactList}\small\item\em Returns whether or not a lattice site truely corresponds to a valid lattice site on this particular lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_af82ea6f5e243e9a24ba95bb37b796546}\label{classsisl_1_1cartesian__cubic_af82ea6f5e243e9a24ba95bb37b796546}} 
+virtual bool \hyperlink{classsisl_1_1cartesian__cubic_af82ea6f5e243e9a24ba95bb37b796546}{is\+\_\+lattice\+\_\+site} (const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&) const
+\begin{DoxyCompactList}\small\item\em Returns whether or not a lattice\+\_\+site object truely corresponds to a valid lattice site on this particular lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_af1915dc2bc734e06d3cfff17d7da1a7f}\label{classsisl_1_1cartesian__cubic_af1915dc2bc734e06d3cfff17d7da1a7f}} 
+virtual bool \hyperlink{classsisl_1_1cartesian__cubic_af1915dc2bc734e06d3cfff17d7da1a7f}{is\+\_\+filled} (int d0,...) const
+\begin{DoxyCompactList}\small\item\em Returns whether a lattice site actually contains a value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a7fcd8a7cc29bc4857c384b9c9d5040d9}\label{classsisl_1_1cartesian__cubic_a7fcd8a7cc29bc4857c384b9c9d5040d9}} 
+virtual bool \hyperlink{classsisl_1_1cartesian__cubic_a7fcd8a7cc29bc4857c384b9c9d5040d9}{is\+\_\+filled} (int $\ast$d) const
+\begin{DoxyCompactList}\small\item\em Returns whether a lattice site actually contains a value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a68f4f410e2711d3cf1e4066679f1910d}\label{classsisl_1_1cartesian__cubic_a68f4f410e2711d3cf1e4066679f1910d}} 
+virtual bool \hyperlink{classsisl_1_1cartesian__cubic_a68f4f410e2711d3cf1e4066679f1910d}{is\+\_\+filled} (const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&s) const
+\begin{DoxyCompactList}\small\item\em Returns whether a lattice site actually contains a value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a6e462e0f77044a855df84a3323660bff}\label{classsisl_1_1cartesian__cubic_a6e462e0f77044a855df84a3323660bff}} 
+virtual void \hyperlink{classsisl_1_1cartesian__cubic_a6e462e0f77044a855df84a3323660bff}{each\+\_\+site} (const std\+::function$<$ void(const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&)$>$ \&func, bool parallel=false)
+\begin{DoxyCompactList}\small\item\em Iterates over every lattice site contained within the dimensions of this lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a9b076e76c2bffc4a0ed38d5fa7e65fad}\label{classsisl_1_1cartesian__cubic_a9b076e76c2bffc4a0ed38d5fa7e65fad}} 
+virtual std\+::string \hyperlink{classsisl_1_1cartesian__cubic_a9b076e76c2bffc4a0ed38d5fa7e65fad}{get\+\_\+lattice\+\_\+name} () const
+\begin{DoxyCompactList}\small\item\em Returns the name of this lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a1f6efaeaabe591bde7f9afa83a1f0699}\label{classsisl_1_1cartesian__cubic_a1f6efaeaabe591bde7f9afa83a1f0699}} 
+virtual const int \hyperlink{classsisl_1_1cartesian__cubic_a1f6efaeaabe591bde7f9afa83a1f0699}{number\+\_\+of\+\_\+lattice\+\_\+sites} () const
+\begin{DoxyCompactList}\small\item\em Returns the theoretical number of sites within this lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a00b578d2ad943a7181b591b5537a358d}\label{classsisl_1_1cartesian__cubic_a00b578d2ad943a7181b591b5537a358d}} 
+virtual bool \hyperlink{classsisl_1_1cartesian__cubic_a00b578d2ad943a7181b591b5537a358d}{dump\+\_\+to\+\_\+stream} (std\+::ofstream \&stream) const
+\begin{DoxyCompactList}\small\item\em Dumps this lattice to a file stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_ab3c5e58ee1b42f18d6bb86925088797d}\label{classsisl_1_1cartesian__cubic_ab3c5e58ee1b42f18d6bb86925088797d}} 
+virtual bool \hyperlink{classsisl_1_1cartesian__cubic_ab3c5e58ee1b42f18d6bb86925088797d}{read\+\_\+from\+\_\+stream} (std\+::ifstream \&)
+\begin{DoxyCompactList}\small\item\em Reads a lattice to a file stream, replacing all values. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_af25cab19b488abbfb22a86887c38ad06}\label{classsisl_1_1cartesian__cubic_af25cab19b488abbfb22a86887c38ad06}} 
+virtual void \hyperlink{classsisl_1_1cartesian__cubic_af25cab19b488abbfb22a86887c38ad06}{set\+\_\+extension\+\_\+type} (const \hyperlink{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324f}{Lattice\+Extension\+Type} \&e, const \hyperlink{namespacesisl_af139f6f74488292ae48c0d71eaa5d4f1}{Lattice\+Region\+Shift} \&s)
+\begin{DoxyCompactList}\small\item\em Sets how a lattice is extended for values that outside of the defined rectangular region. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_af5bf3656432d9da0559f50ed7607a562}\label{classsisl_1_1cartesian__cubic_af5bf3656432d9da0559f50ed7607a562}} 
+virtual const unsigned int {\bfseries linear\+\_\+index} (int d0, va\+\_\+list vl) const
+\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_ab0035db1f1a2b045cbd99f060c158e3b}\label{classsisl_1_1cartesian__cubic_ab0035db1f1a2b045cbd99f060c158e3b}} 
+virtual T \& {\bfseries operator()} (int d0, va\+\_\+list vl)
+\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a176f010635742f3fe75f406759f731a5}\label{classsisl_1_1cartesian__cubic_a176f010635742f3fe75f406759f731a5}} 
+virtual const T \& {\bfseries operator()} (int d0, va\+\_\+list vl) const
+\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a882271145d3a8d2be007545a19ec7f99}\label{classsisl_1_1cartesian__cubic_a882271145d3a8d2be007545a19ec7f99}} 
+virtual bool {\bfseries is\+\_\+filled} (int d0, va\+\_\+list vl) const
+\item 
+\mbox{\Hypertarget{classsisl_1_1cartesian__cubic_a803ae897f35a41e98f15dc5391f53943}\label{classsisl_1_1cartesian__cubic_a803ae897f35a41e98f15dc5391f53943}} 
+virtual bool {\bfseries is\+\_\+lattice\+\_\+site} (int d0, va\+\_\+list vl) const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class sisl\+::cartesian\+\_\+cubic$<$ T $>$}
+
+A specialized cubic Cartesian lattice class. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/joshuahoracsek/\+Projects/sisl\+\_\+redux/include/sisl/lattice/3d/cartesian\+\_\+cubic.\+hpp\end{DoxyCompactItemize}

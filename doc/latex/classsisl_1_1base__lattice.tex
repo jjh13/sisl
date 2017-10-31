@@ -1,0 +1,133 @@
+\hypertarget{classsisl_1_1base__lattice}{}\section{sisl\+:\+:base\+\_\+lattice$<$ T $>$ Class Template Reference}
+\label{classsisl_1_1base__lattice}\index{sisl\+::base\+\_\+lattice$<$ T $>$@{sisl\+::base\+\_\+lattice$<$ T $>$}}
+
+
+Base abstract lattice class. Defines the base class for a lattice, which are by definition subsets of Z$^\wedge$n.  
+
+
+
+
+{\ttfamily \#include $<$base\+\_\+lattice.\+hpp$>$}
+
+
+
+Inheritance diagram for sisl\+:\+:base\+\_\+lattice$<$ T $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsisl_1_1base__lattice__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_a45737aef697099b47f539a6084c81a15}\label{classsisl_1_1base__lattice_a45737aef697099b47f539a6084c81a15}} 
+virtual T \& \hyperlink{classsisl_1_1base__lattice_a45737aef697099b47f539a6084c81a15}{operator()} (int d0,...)=0
+\begin{DoxyCompactList}\small\item\em Access a lattice site. Operators for accessing lattice sites. These index in the natural coordinate system of the lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_ad2193e17c508f1f476164a4494ecba87}\label{classsisl_1_1base__lattice_ad2193e17c508f1f476164a4494ecba87}} 
+virtual const T \& \hyperlink{classsisl_1_1base__lattice_ad2193e17c508f1f476164a4494ecba87}{operator()} (int d0,...) const =0
+\begin{DoxyCompactList}\small\item\em Access a lattice site. Operators for accessing lattice sites. These index in the natural coordinate system of the lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_ac95ec229ba562861dbfd7c43130e3d5f}\label{classsisl_1_1base__lattice_ac95ec229ba562861dbfd7c43130e3d5f}} 
+virtual T \& \hyperlink{classsisl_1_1base__lattice_ac95ec229ba562861dbfd7c43130e3d5f}{operator()} (int $\ast$d)=0
+\begin{DoxyCompactList}\small\item\em Access a lattice site. Operators for accessing lattice sites. These index in the natural coordinate system of the lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_a51e4e2d9717669822dc797b05742db48}\label{classsisl_1_1base__lattice_a51e4e2d9717669822dc797b05742db48}} 
+virtual const T \& \hyperlink{classsisl_1_1base__lattice_a51e4e2d9717669822dc797b05742db48}{operator()} (int $\ast$d) const =0
+\begin{DoxyCompactList}\small\item\em Access a lattice site. Operators for accessing lattice sites. These index in the natural coordinate system of the lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_a4b1b4b0ebdea39182f1962a020ce1dba}\label{classsisl_1_1base__lattice_a4b1b4b0ebdea39182f1962a020ce1dba}} 
+virtual T \& \hyperlink{classsisl_1_1base__lattice_a4b1b4b0ebdea39182f1962a020ce1dba}{operator()} (const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&s)=0
+\begin{DoxyCompactList}\small\item\em Access a lattice site. Operators for accessing lattice sites. These index in the natural coordinate system of the lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_ad522b89ea83ddd5fdead55d51a3e7432}\label{classsisl_1_1base__lattice_ad522b89ea83ddd5fdead55d51a3e7432}} 
+virtual const T \& \hyperlink{classsisl_1_1base__lattice_ad522b89ea83ddd5fdead55d51a3e7432}{operator()} (const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&s) const =0
+\begin{DoxyCompactList}\small\item\em Access a lattice site. Operators for accessing lattice sites. These index in the natural coordinate system of the lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_a75869d632df9aba88b0a8ff289950d23}\label{classsisl_1_1base__lattice_a75869d632df9aba88b0a8ff289950d23}} 
+virtual const unsigned int \hyperlink{classsisl_1_1base__lattice_a75869d632df9aba88b0a8ff289950d23}{linear\+\_\+index} (int d0,...) const =0
+\begin{DoxyCompactList}\small\item\em Uniquely index a lattice site This function return a linearized version of a lattice site, this allows one to uniquely associate a lattice site with an integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_abacb50c47e6b1b790b9ae4130c219818}\label{classsisl_1_1base__lattice_abacb50c47e6b1b790b9ae4130c219818}} 
+virtual const unsigned int \hyperlink{classsisl_1_1base__lattice_abacb50c47e6b1b790b9ae4130c219818}{linear\+\_\+index} (int $\ast$d) const =0
+\begin{DoxyCompactList}\small\item\em Uniquely index a lattice site This function return a linearized version of a lattice site, this allows one to uniquely associate a lattice site with an integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_af773eb97992177cc5249cf951f9daa40}\label{classsisl_1_1base__lattice_af773eb97992177cc5249cf951f9daa40}} 
+virtual const unsigned int \hyperlink{classsisl_1_1base__lattice_af773eb97992177cc5249cf951f9daa40}{linear\+\_\+index} (const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&) const =0
+\begin{DoxyCompactList}\small\item\em Uniquely index a lattice site This function return a linearized version of a lattice site, this allows one to uniquely associate a lattice site with an integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_a832e11c4873b26282d1061986096ca48}\label{classsisl_1_1base__lattice_a832e11c4873b26282d1061986096ca48}} 
+virtual const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \hyperlink{classsisl_1_1base__lattice_a832e11c4873b26282d1061986096ca48}{get\+\_\+natural\+\_\+scales} () const =0
+\begin{DoxyCompactList}\small\item\em Returns a natural scale so that the lattice sites would be scaled to within a unit hyper cube. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_abac229515b996da70ebe94773fc6f941}\label{classsisl_1_1base__lattice_abac229515b996da70ebe94773fc6f941}} 
+virtual const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \hyperlink{classsisl_1_1base__lattice_abac229515b996da70ebe94773fc6f941}{get\+\_\+dimensions} () const =0
+\begin{DoxyCompactList}\small\item\em Returns the integer extent of each dimension, that is, the lattice extends from \mbox{[}0, ret\mbox{[}i\mbox{]} -\/ 1\mbox{]} in each dimension. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_a51a87e1f121f2345f8f6882a29b62f38}\label{classsisl_1_1base__lattice_a51a87e1f121f2345f8f6882a29b62f38}} 
+virtual \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \hyperlink{classsisl_1_1base__lattice_a51a87e1f121f2345f8f6882a29b62f38}{get\+\_\+site\+\_\+position} (int d0,...) const =0
+\begin{DoxyCompactList}\small\item\em Returns a value within the unit hyper cube that represents the given lattice site scaled withing that unit hypercube. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_a25f87033a3974fff880f124c49c3dbe3}\label{classsisl_1_1base__lattice_a25f87033a3974fff880f124c49c3dbe3}} 
+virtual \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \hyperlink{classsisl_1_1base__lattice_a25f87033a3974fff880f124c49c3dbe3}{get\+\_\+site\+\_\+position} (int $\ast$d) const =0
+\begin{DoxyCompactList}\small\item\em Returns a value within the unit hyper cube that represents the given lattice site scaled withing that unit hypercube. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_a030d1230d44e9c88e8f79ef87920b4ed}\label{classsisl_1_1base__lattice_a030d1230d44e9c88e8f79ef87920b4ed}} 
+virtual \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \hyperlink{classsisl_1_1base__lattice_a030d1230d44e9c88e8f79ef87920b4ed}{get\+\_\+site\+\_\+position} (const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&s) const =0
+\begin{DoxyCompactList}\small\item\em Returns a value within the unit hyper cube that represents the given lattice site scaled withing that unit hypercube. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_a0b789f66f4b822a62b2d5b22fa2804b5}\label{classsisl_1_1base__lattice_a0b789f66f4b822a62b2d5b22fa2804b5}} 
+virtual \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \hyperlink{classsisl_1_1base__lattice_a0b789f66f4b822a62b2d5b22fa2804b5}{get\+\_\+nearest\+\_\+site} (const \hyperlink{namespacesisl_a2069bd5374a9be042ff3ce3306d41e1a}{vector} \&) const =0
+\begin{DoxyCompactList}\small\item\em Returns the nearest lattice site for a given point within the unit hyper cube. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_a4db34d7dc53ec4358433218a7daf33f9}\label{classsisl_1_1base__lattice_a4db34d7dc53ec4358433218a7daf33f9}} 
+virtual bool \hyperlink{classsisl_1_1base__lattice_a4db34d7dc53ec4358433218a7daf33f9}{is\+\_\+lattice\+\_\+site} (int d0,...) const =0
+\begin{DoxyCompactList}\small\item\em Returns whether or not a lattice site truely corresponds to a valid lattice site on this particular lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_affd433798fb68d45b7265c0bd5e9e1ac}\label{classsisl_1_1base__lattice_affd433798fb68d45b7265c0bd5e9e1ac}} 
+virtual bool \hyperlink{classsisl_1_1base__lattice_affd433798fb68d45b7265c0bd5e9e1ac}{is\+\_\+lattice\+\_\+site} (int $\ast$d) const =0
+\begin{DoxyCompactList}\small\item\em Returns whether or not a lattice site truely corresponds to a valid lattice site on this particular lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_aae9dc75c53a39031e2c8a5a4b9ce6855}\label{classsisl_1_1base__lattice_aae9dc75c53a39031e2c8a5a4b9ce6855}} 
+virtual bool \hyperlink{classsisl_1_1base__lattice_aae9dc75c53a39031e2c8a5a4b9ce6855}{is\+\_\+lattice\+\_\+site} (const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&) const =0
+\begin{DoxyCompactList}\small\item\em Returns whether or not a lattice\+\_\+site object truely corresponds to a valid lattice site on this particular lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_a2a1746ce0ea77eb219a1667e88502fe4}\label{classsisl_1_1base__lattice_a2a1746ce0ea77eb219a1667e88502fe4}} 
+virtual bool \hyperlink{classsisl_1_1base__lattice_a2a1746ce0ea77eb219a1667e88502fe4}{is\+\_\+filled} (int d0,...) const =0
+\begin{DoxyCompactList}\small\item\em Returns whether a lattice site actually contains a value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_aa58f16669b8cc44aeaa71a87243e588d}\label{classsisl_1_1base__lattice_aa58f16669b8cc44aeaa71a87243e588d}} 
+virtual bool \hyperlink{classsisl_1_1base__lattice_aa58f16669b8cc44aeaa71a87243e588d}{is\+\_\+filled} (int $\ast$d) const =0
+\begin{DoxyCompactList}\small\item\em Returns whether a lattice site actually contains a value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_a883cb05212eb7339bd73dd8ddf8968ca}\label{classsisl_1_1base__lattice_a883cb05212eb7339bd73dd8ddf8968ca}} 
+virtual bool \hyperlink{classsisl_1_1base__lattice_a883cb05212eb7339bd73dd8ddf8968ca}{is\+\_\+filled} (const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&s) const =0
+\begin{DoxyCompactList}\small\item\em Returns whether a lattice site actually contains a value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_a3ff5b00f3d8c41e59672e6fa76456ff9}\label{classsisl_1_1base__lattice_a3ff5b00f3d8c41e59672e6fa76456ff9}} 
+virtual void \hyperlink{classsisl_1_1base__lattice_a3ff5b00f3d8c41e59672e6fa76456ff9}{each\+\_\+site} (const std\+::function$<$ void(const \hyperlink{namespacesisl_acd18feee4026583db6185df2b25434aa}{lattice\+\_\+site} \&)$>$ \&, bool parallel=false)=0
+\begin{DoxyCompactList}\small\item\em Iterates over every lattice site contained within the dimensions of this lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_a663d4e3b07c524970848377b66de9425}\label{classsisl_1_1base__lattice_a663d4e3b07c524970848377b66de9425}} 
+virtual std\+::string \hyperlink{classsisl_1_1base__lattice_a663d4e3b07c524970848377b66de9425}{get\+\_\+lattice\+\_\+name} () const =0
+\begin{DoxyCompactList}\small\item\em Returns the name of this lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_a57946d77d273c39cffba678241f4f8d3}\label{classsisl_1_1base__lattice_a57946d77d273c39cffba678241f4f8d3}} 
+virtual const int \hyperlink{classsisl_1_1base__lattice_a57946d77d273c39cffba678241f4f8d3}{number\+\_\+of\+\_\+lattice\+\_\+sites} () const =0
+\begin{DoxyCompactList}\small\item\em Returns the theoretical number of sites within this lattice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_a78cf60c535a188fd07bbd4ae4379b7bd}\label{classsisl_1_1base__lattice_a78cf60c535a188fd07bbd4ae4379b7bd}} 
+virtual bool \hyperlink{classsisl_1_1base__lattice_a78cf60c535a188fd07bbd4ae4379b7bd}{dump\+\_\+to\+\_\+stream} (std\+::ofstream \&) const =0
+\begin{DoxyCompactList}\small\item\em Dumps this lattice to a file stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_ad81c46a32112789f61bcab1e090ec95d}\label{classsisl_1_1base__lattice_ad81c46a32112789f61bcab1e090ec95d}} 
+virtual bool \hyperlink{classsisl_1_1base__lattice_ad81c46a32112789f61bcab1e090ec95d}{read\+\_\+from\+\_\+stream} (std\+::ifstream \&)=0
+\begin{DoxyCompactList}\small\item\em Reads a lattice to a file stream, replacing all values. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_ac19afb43147c6c4443123b982af3417d}\label{classsisl_1_1base__lattice_ac19afb43147c6c4443123b982af3417d}} 
+virtual void \hyperlink{classsisl_1_1base__lattice_ac19afb43147c6c4443123b982af3417d}{set\+\_\+extension\+\_\+type} (const \hyperlink{namespacesisl_aaf1f41d23ed37dacaa4c9f1bb6d3324f}{Lattice\+Extension\+Type} \&e, const \hyperlink{namespacesisl_af139f6f74488292ae48c0d71eaa5d4f1}{Lattice\+Region\+Shift} \&s)=0
+\begin{DoxyCompactList}\small\item\em Sets how a lattice is extended for values that outside of the defined rectangular region. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_ab04b5358fb717e4f14a7ba8d4c65ebf0}\label{classsisl_1_1base__lattice_ab04b5358fb717e4f14a7ba8d4c65ebf0}} 
+virtual const unsigned int {\bfseries linear\+\_\+index} (int d0, va\+\_\+list vl) const =0
+\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_af588d28f96cd42b92bf0d8f81170899d}\label{classsisl_1_1base__lattice_af588d28f96cd42b92bf0d8f81170899d}} 
+virtual T \& {\bfseries operator()} (int d0, va\+\_\+list vl)=0
+\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_a15fc29455feb062e995773f7dc728114}\label{classsisl_1_1base__lattice_a15fc29455feb062e995773f7dc728114}} 
+virtual const T \& {\bfseries operator()} (int d0, va\+\_\+list vl) const =0
+\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_a7cc857d33e9d15d6ee85d47821d7ab3b}\label{classsisl_1_1base__lattice_a7cc857d33e9d15d6ee85d47821d7ab3b}} 
+virtual bool {\bfseries is\+\_\+filled} (int d0, va\+\_\+list vl) const =0
+\item 
+\mbox{\Hypertarget{classsisl_1_1base__lattice_a64b9bca3305602a1613c8732a4cdb74f}\label{classsisl_1_1base__lattice_a64b9bca3305602a1613c8732a4cdb74f}} 
+virtual bool {\bfseries is\+\_\+lattice\+\_\+site} (int d0, va\+\_\+list vl) const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class sisl\+::base\+\_\+lattice$<$ T $>$}
+
+Base abstract lattice class. Defines the base class for a lattice, which are by definition subsets of Z$^\wedge$n. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/joshuahoracsek/\+Projects/sisl\+\_\+redux/include/sisl/lattice/base\+\_\+lattice.\+hpp\end{DoxyCompactItemize}

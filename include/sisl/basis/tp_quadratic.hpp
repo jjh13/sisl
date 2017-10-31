@@ -21,6 +21,10 @@
 #include <sisl/basis/basis_function.hpp>
 
 namespace sisl {
+
+    /** \brief Tensor product quadratic spline
+     * 
+     */
     class tp_quadratic : public basis_function {
     private:
         static const double bspline_2(const double &t){
