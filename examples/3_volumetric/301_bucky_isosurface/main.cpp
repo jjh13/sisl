@@ -5,6 +5,7 @@
 
 // Basis functions we can use
 #include <sisl/basis/tp_linear.hpp>
+#include <sisl/basis/tp_quadratic.hpp>
 #include <sisl/basis/tp_cubic.hpp>
 #include <sisl/basis/tp_cubic_imom.hpp>
 

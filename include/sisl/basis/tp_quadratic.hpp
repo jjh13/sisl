@@ -28,12 +28,20 @@ namespace sisl {
     class tp_quadratic : public basis_function {
     private:
         static const double bspline_2(const double &t){
-        	//
+            double x = std::abs(t);
+            if(x < 0.5) return -x*x + 3./4.;
+            if(x < 1.5) return 0.5*x*x - (3./2.)*x + 9./8.;
+            return 0;        	
         }
 
         static const double dbspline_2(const double &t){
-        	//
+            double x = std::abs(t);
+            double s =  t < 0 ? -1 : 1;
+            if(x < 0.5) return -2.*x*s;
+            if(x < 1.5) return (x - (3./2.))*s;
+            return 0;
         }
+        
 
     public:
         template <int N>

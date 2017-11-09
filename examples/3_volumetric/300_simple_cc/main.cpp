@@ -5,6 +5,7 @@
 
 // Basis functions we can use
 #include <sisl/basis/tp_linear.hpp>
+#include <sisl/basis/tp_quadratic.hpp>
 #include <sisl/basis/tp_cubic.hpp>
 #include <sisl/basis/tp_cubic_imom.hpp>
 
@@ -73,7 +74,7 @@ int main(int argc, char const *argv[])
 
     // Most of the time, we need to scale the volume
     // we can normalize the input with the following code
-    
+
     vector scale(3);
     // Scaling is in the form f(s*x, s*y, s*z), so we specify 7,7,7 as scale
     scale << 7.,7.,7.;
@@ -94,7 +95,7 @@ int main(int argc, char const *argv[])
     mc.march_function(
             &f_data,
             0.25,
-            0.05,
+            0.01,
             origin,
             extent,
             true
