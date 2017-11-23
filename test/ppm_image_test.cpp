@@ -22,7 +22,7 @@
 
 #include <sisl/utility/ply_mesh.hpp>
 #include <sisl/utility/iso_surface.hpp>
-
+#include <sisl/utility/ppm_image.hpp>
 #include <iostream>
 
 
@@ -31,7 +31,8 @@ using namespace sisl::utility;
 
 /*! \brief Tests that the copy constructor works
  */
-TEST_CASE("cartesian_cubic_copy_assign", "Cartesian Cubic Create Test") {
-    using namespace sisl;
+TEST_CASE("valid_ppm_test", "") {
+	sisl::utility::ppm_image image(256, 256);
 
+	image.write("valid_output.ppm");
 }

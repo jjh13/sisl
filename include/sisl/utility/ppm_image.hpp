@@ -114,11 +114,22 @@ namespace sisl {
              */
             bool write(const std::string &out, bool normalize = true) {
                 using namespace std;
-                vector min_max = this->calc_minmax();
+                vector min_max;
 
                 if(!normalize) {
                     min_max << 0, 1.;
-                }
+                }else {
+                    min_max = calc_minmax();
+                    
+                    if(abs(min_max[1] - min_max[0]) < 1e-6) {
+                        // min and max are the same, so we'll set
+			// max as the highest value between [0,min_max[1]
+                        // similarly for min]
+                        min_max[0] = min_max[0] <  0 ? min_max[0] : 0;
+                        min_max[1] = min_max[1] <  0 ? 0 : min_max[1];
+                    } 
+     
+		}
 
                 // open file and check if it's valid
                 ofstream fp(out.c_str(), ios::out | ios::binary);
@@ -128,6 +139,8 @@ namespace sisl {
                 fp << "P3" << endl;
                 fp << m_iWidth << " " << m_iHeight << endl;
                 fp << "255" << endl;
+
+		
 
                 // Write image data
                 for(int i = 0; i < m_iHeight; i++) {

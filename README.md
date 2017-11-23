@@ -62,10 +62,10 @@ Output executables for each can be found in the corresponding directory in your 
 
 Using SISL in Your Projects
 ====
-SISL is header only, thus all one needs to ensure is that the Eigen and SISL include files can be
+SISL is header only, thus all one needs to do, is to ensure that the Eigen and SISL include files can be
 found by the compiler. For GCC this may look something like
 ```
-gcc {input files .c} -I./path/containing/sisl -I./path/containing/eigen -o output
+gcc {input files .c} -I./path/containing/sisl -I./path/containing/eigen -o output -std=c++11
 ```
 
 
